@@ -1,0 +1,25 @@
+.Sidebar {
+    height: 100%;
+    .ant-layout-sider {
+        height: 100%;
+        background: #233d4d !important;
+
+        .Logo {
+            height: 64px;
+            font-size: 36px;
+            text-align: center;
+            
+            a {
+                color: #f1f2f3;
+                vertical-align: middle;
+            }
+        }
+
+        .ant-menu {
+            background: #233d4d;
+            .ant-menu-item-selected {
+                background-color: #df5a01;
+            }
+        }
+    }
+}

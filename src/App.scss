@@ -2,30 +2,4 @@
 
 .App {
   height: 100%;
-  .ant-layout {
-    height: 100%;
-    .ant-layout-sider {
-      height: 100%;
-      background: #233d4d !important;
-      .logo {
-        height: 64px;
-      }
-
-      .ant-menu{
-        background: #233d4d;
-        .ant-menu-item-selected {
-          background-color: #DF5A01;
-        }
-      }
-    }
-
-    .site-layout {
-      .ant-layout-header {
-        background: #233d4d;
-      }
-      .ant-layout-content {
-        height: 100%;
-      }
-    }
-  }
 }
