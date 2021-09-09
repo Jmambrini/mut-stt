@@ -1,0 +1,21 @@
+.operadores {
+    height: 100%;
+    .ant-carousel {
+        height: 100%;
+        .slick-slider {
+            height: 100%;
+        }
+    }
+    .slick-dots li button {
+        width: 12px;
+        height: 12px;
+        border-radius: 100%;
+        background: black;
+      }
+      .slick-dots li.slick-active button {
+        width: 12px;
+        height: 12px;
+        border-radius: 100%;
+        background: #df5a01;
+      }
+}

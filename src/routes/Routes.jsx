@@ -5,9 +5,11 @@ import {
 
 import PublicRoutes from './PublicRoutes';
 
-import Teste from '../components/Teste/Teste';
-import Topico2 from '../components/Topico2/Tópico2';
-import pagInicial from '../components/pagInicial/pagInicial';
+import pagInicial from '../components/1-pagInicial/pagInicial';
+import Intro from '../components/2-intro/Intro';
+import testeMutacao from '../components/3-testeMutacao/testeMutacao';
+import operadores from '../components/4-operadores/operadores';
+import mutantes from '../components/5-mutantes/mutantes';
 
 function Routes() {
   return (
@@ -21,12 +23,22 @@ function Routes() {
         <PublicRoutes
           path="/intro"
           exact
-          component={Teste}
+          component={Intro}
         />
         <PublicRoutes
-          path="/top2"
+          path="/teste-mutacao"
           exact
-          component={Topico2}
+          component={testeMutacao}
+        />
+        <PublicRoutes
+          path="/operadores"
+          exact
+          component={operadores}
+        />
+        <PublicRoutes
+          path="/mutantes"
+          exact
+          component={mutantes}
         />
       </Switch>
     </BrowserRouter>

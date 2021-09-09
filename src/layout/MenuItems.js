@@ -5,14 +5,19 @@ const menuItems = [
     key: 'intro',
   },
   {
-    name: 'Tópico 2',
-    path: '/top2',
-    key: 'top2',
+    name: 'Teste de Mutação',
+    path: '/teste-mutacao',
+    key: 'teste-mutacao',
   },
   {
-    name: 'Tópico 3',
-    path: '/top3',
-    key: 'top3',
+    name: 'Operadores',
+    path: '/operadores',
+    key: 'operadores',
+  },
+  {
+    name: 'Mutantes',
+    path: '/mutantes',
+    key: 'mutantes',
   },
 ];
 

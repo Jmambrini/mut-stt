@@ -3,12 +3,10 @@
     .ant-layout-sider {
         height: 100%;
         background: #233d4d !important;
-
         .Logo {
             height: 64px;
-            font-size: 36px;
+            font-size: 30px;
             text-align: center;
-            
             a {
                 color: #f1f2f3;
                 vertical-align: middle;
@@ -16,6 +14,9 @@
         }
 
         .ant-menu {
+            text-align: center;
+            text-decoration: underline;
+            font-size: 14px;
             background: #233d4d;
             .ant-menu-item-selected {
                 background-color: #df5a01;

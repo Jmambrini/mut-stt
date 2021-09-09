@@ -15,6 +15,7 @@ class SideBar extends Component {
   }
 
   render() {
+    const { pathname } = window.location;
     return (
       <div className="Sidebar">
         <Layout.Sider
@@ -29,6 +30,7 @@ class SideBar extends Component {
           <Menu
             mode="inline"
             theme="dark"
+            selectedKeys={pathname}
           >
             {menuItems.map((menu) => (
               <Menu.Item key={menu.path}>
