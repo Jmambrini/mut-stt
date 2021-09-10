@@ -5,6 +5,11 @@ const menuItems = [
     key: 'intro',
   },
   {
+    name: 'Critérios de testes baseados em defeitos',
+    path: '/mutantes',
+    key: 'mutantes',
+  },
+  {
     name: 'Teste de Mutação',
     path: '/teste-mutacao',
     key: 'teste-mutacao',
@@ -16,6 +21,26 @@ const menuItems = [
   },
   {
     name: 'Mutantes',
+    path: '/mutantes',
+    key: 'mutantes',
+  },
+  {
+    name: 'Ferramentas ',
+    path: '/mutantes',
+    key: 'mutantes',
+  },
+  {
+    name: 'MutPy ',
+    path: '/mutantes',
+    key: 'mutantes',
+  },
+  {
+    name: 'MutPy - Aplicação',
+    path: '/mutantes',
+    key: 'mutantes',
+  },
+  {
+    name: 'Sobre',
     path: '/mutantes',
     key: 'mutantes',
   },
