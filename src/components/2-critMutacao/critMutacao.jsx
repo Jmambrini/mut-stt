@@ -3,18 +3,18 @@ import {
   Carousel,
 } from 'antd';
 
-import './operadores.scss';
+import './critMutacao.scss';
 
-function operadores() {
+function critMutacao() {
   return (
-    <div className="operadores">
+    <div className="critMutacao">
       <Carousel
         dotPosition="bottom"
         arrows
         infinite={false}
       >
         <div>
-          Nessa página, daremos um breve resumo as operadores
+          Nessa página, daremos um breve resumo as critMutacao
         </div>
         <div>
           Explicação com exemplos
@@ -33,4 +33,4 @@ function operadores() {
   );
 }
 
-export default operadores;
+export default critMutacao;

@@ -5,11 +5,14 @@ import {
 
 import PublicRoutes from './PublicRoutes';
 
-import pagInicial from '../components/1-pagInicial/pagInicial';
-import Intro from '../components/2-intro/Intro';
+import notFound from '../components/0-notFound/notFound';
+import Intro from '../components/1-intro/Intro';
+import critMutacao from '../components/2-critMutacao/critMutacao';
 import testeMutacao from '../components/3-testeMutacao/testeMutacao';
 import operadores from '../components/4-operadores/operadores';
 import mutantes from '../components/5-mutantes/mutantes';
+import ferramentas from '../components/6-ferramentas/ferramentas';
+import mutPy from '../components/7-mutPy/mutPy';
 
 function Routes() {
   return (
@@ -18,12 +21,12 @@ function Routes() {
         <PublicRoutes
           path="/"
           exact
-          component={pagInicial}
+          component={Intro}
         />
         <PublicRoutes
-          path="/intro"
+          path="/criterio-defeitos"
           exact
-          component={Intro}
+          component={critMutacao}
         />
         <PublicRoutes
           path="/teste-mutacao"
@@ -39,6 +42,19 @@ function Routes() {
           path="/mutantes"
           exact
           component={mutantes}
+        />
+        <PublicRoutes
+          path="/ferramentas"
+          exact
+          component={ferramentas}
+        />
+        <PublicRoutes
+          path="/mutpy"
+          exact
+          component={mutPy}
+        />
+        <PublicRoutes
+          component={notFound}
         />
       </Switch>
     </BrowserRouter>

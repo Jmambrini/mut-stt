@@ -1,0 +1,15 @@
+.notFound {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    .ant-result {
+        padding: 0px 0px;
+    }
+    .ant-result-image {
+        margin-bottom: 0px;
+    }
+    .ant-result-content {
+        background-color: white;
+    }
+}

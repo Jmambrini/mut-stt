@@ -2,12 +2,20 @@ import React, { useState } from 'react';
 import {
   Carousel, Radio, Space, Card, Button,
 } from 'antd';
+// import { RightCircleFilled } from '@ant-design/icons';
 
 import './testeMutacao.scss';
 
 function testeMutacao() {
   const [value1, setValue1] = useState(-1);
   const [color1, setColor1] = useState(['#fdd872', '#fdd872', '#fdd872']);
+
+  // const Arrow = ({
+  //   // eslint-disable-next-line react/prop-types
+  //   onClick,
+  // }) => (
+  //   <RightCircleFilled onClick={onClick} />
+  // );
 
   function checarResposta1() {
     setColor1(['#F96462', '#F96462', '#A1C181']);
@@ -17,8 +25,11 @@ function testeMutacao() {
     <div className="testeMutacao">
       <Carousel
         dotPosition="bottom"
+        arrows
+        infinite={false}
+        // nextArrow={<Arrow />}
       >
-        <div className="pag1">
+        <div>
           Nessa página, daremos um breve resumo sobre o que é um
           teste de mutação.
         </div>

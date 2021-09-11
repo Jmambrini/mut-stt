@@ -3,18 +3,18 @@ import {
   Carousel,
 } from 'antd';
 
-import './operadores.scss';
+import './ferramentas.scss';
 
-function operadores() {
+function ferramentas() {
   return (
-    <div className="operadores">
+    <div className="ferramentas">
       <Carousel
         dotPosition="bottom"
         arrows
         infinite={false}
       >
         <div>
-          Nessa página, daremos um breve resumo as operadores
+          Nessa página, daremos um breve resumo as ferramentas
         </div>
         <div>
           Explicação com exemplos
@@ -33,4 +33,4 @@ function operadores() {
   );
 }
 
-export default operadores;
+export default ferramentas;

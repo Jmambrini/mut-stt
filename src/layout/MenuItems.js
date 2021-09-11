@@ -1,13 +1,13 @@
 const menuItems = [
   {
     name: 'Introdução',
-    path: '/intro',
-    key: 'intro',
+    path: '/',
+    key: '',
   },
   {
     name: 'Critérios de testes baseados em defeitos',
-    path: '/mutantes',
-    key: 'mutantes',
+    path: '/criterio-defeitos',
+    key: 'criterio-defeitos',
   },
   {
     name: 'Teste de Mutação',
@@ -26,23 +26,23 @@ const menuItems = [
   },
   {
     name: 'Ferramentas ',
-    path: '/mutantes',
-    key: 'mutantes',
+    path: '/ferramentas',
+    key: 'ferramentas',
   },
   {
     name: 'MutPy ',
-    path: '/mutantes',
-    key: 'mutantes',
+    path: '/mutpy',
+    key: 'mutpy',
   },
   {
     name: 'MutPy - Aplicação',
-    path: '/mutantes',
-    key: 'mutantes',
+    path: '/mutpy-app',
+    key: 'mutpy-app',
   },
   {
     name: 'Sobre',
-    path: '/mutantes',
-    key: 'mutantes',
+    path: '/sobre',
+    key: 'sobre',
   },
 ];
 
