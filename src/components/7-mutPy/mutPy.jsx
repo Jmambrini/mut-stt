@@ -4,6 +4,11 @@ import {
 } from 'antd';
 
 import AOR from '../../generics/imgs/AOR.png';
+import COD from '../../generics/imgs/COD.png';
+import COI from '../../generics/imgs/COI.png';
+import CRP from '../../generics/imgs/CRP.png';
+import LCR from '../../generics/imgs/LCR.png';
+import ROR from '../../generics/imgs/ROR.png';
 
 import './mutPy.scss';
 
@@ -32,6 +37,7 @@ function mutPy() {
         footer={false}
         closable
         onCancel={handleCancel}
+        width="600px"
       >
         {modalContent}
       </Modal>
@@ -74,15 +80,17 @@ function mutPy() {
             </Col>
           </Row>
           <Row>
-            <Col offset={1} span={16} justify="center" className="text">
+            <Col offset={1} span={20} justify="center" className="text" style={{ marginTop: '-16px' }}>
               <Collapse accordion>
                 <Panel header="Versões do Python suportadas" key="1">
-                  <p>A MutPy suporta versões do Python acima da versão 3.3</p>
-                  <a href="https://www.python.org/" target="_blank" rel="noreferrer">https://www.python.org/</a>
+                  <p>
+                    A MutPy suporta versões do Python acima da versão 3.3.
+                    No desenvolvimento, utilizei a versão 3.7.9:
+                  </p>
+                  <a href="https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe" target="_blank" rel="noreferrer"> https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe</a>
                 </Panel>
                 <Panel header="Documentação da ferramenta" key="3">
-                  <p>A documentação do MutPy pode ser encontrada no seguinte link</p>
-                  https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe
+                  <p>A documentação do MutPy pode ser encontrada no seguinte link:</p>
                   <a href="https://github.com/mutpy/mutpy" target="_blank" rel="noreferrer">https://github.com/mutpy/mutpy</a>
                 </Panel>
               </Collapse>
@@ -144,21 +152,69 @@ function mutPy() {
           <Row>
             <Col span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'COD - conditional operator deletion' })}
+                onClick={() => showModal({
+                  headerTitle: 'COD - conditional operator deletion',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador COD remove um operador condicional.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( not )
+                        foi removido no código:
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={COD} alt="COD" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 COD
               </Card>
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'COI - conditional operator insertion' })}
+                onClick={() => showModal({
+                  headerTitle: 'COI - conditional operator insertion',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador COI insere um operador condicional.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( not )
+                        foi inserido no código:
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={COI} alt="COI" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 COI
               </Card>
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'CRP - constant replacement' })}
+                onClick={() => showModal({
+                  headerTitle: 'CRP - constant replacement',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador CRP altera uma constante por outra.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, a constante ( 0 )
+                        foi alterada no código pela constante ( 1 ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={CRP} alt="CRP" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 CRP
               </Card>
@@ -211,7 +267,23 @@ function mutPy() {
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'LCR - logical connector replacement' })}
+                onClick={() => showModal({
+                  headerTitle: 'LCR - logical connector replacement',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador LCR altera um conector lógico.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o conector ( or )
+                        foi alterado no código pelo conector ( and ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={LCR} alt="LCR" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 LCR
               </Card>
@@ -234,7 +306,23 @@ function mutPy() {
           <Row>
             <Col offset span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'ROR - relational operator replacement' })}
+                onClick={() => showModal({
+                  headerTitle: 'ROR - relational operator replacement',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador ROR altera um operador relacional por outro.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( &gt; )
+                        foi alterado no código pelo operador ( &lt; ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={ROR} alt="ROR" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 ROR
               </Card>
