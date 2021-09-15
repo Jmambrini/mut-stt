@@ -45,7 +45,7 @@ function mutPy() {
         footer={false}
         closable
         onCancel={handleCancel}
-        width="600px"
+        width="700px"
       >
         {modalContent}
       </Modal>
@@ -124,6 +124,14 @@ function mutPy() {
                       <Row>
                         No exemplo abaixo, o operador ( - )
                         foi removido:
+                      </Row>
+                      <Row>
+                        <Col>
+                          Original:
+                        </Col>
+                        <Col>
+                          Mutante:
+                        </Col>
                       </Row>
                       <Row justify="center" className="images">
                         <img src={AOD} alt="AOD" style={{ marginTop: '16px' }} />
@@ -333,14 +341,18 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row>
-                        O operador AOR altera um operador aritmético por outro.
+                        Esse operador causa uma &quot;swallowing exception&quot;. Explicando,
+                        é a prática de detectar um erro ou exceção e, em seguida,
+                        continuar sem registrar, processar ou relatar o erro a outras
+                        partes do software.
+                        <a href="https://en.wikipedia.org/wiki/Error_hiding">[1]</a>
                       </Row>
                       <Row>
-                        No exemplo abaixo, o operador ( + )
-                        foi alterado para o ( - ):
+                        No exemplo abaixo, o ( return 1 )
+                        foi alterado para o ( pass ):
                       </Row>
                       <Row justify="center" className="images">
-                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                        <img src={EXS} alt="EXS" style={{ marginTop: '16px' }} />
                       </Row>
                     </div>
                   ),
@@ -356,14 +368,14 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row>
-                        O operador AOR altera um operador aritmético por outro.
+                        O operador IHD altera um operador aritmético por outro.
                       </Row>
                       <Row>
                         No exemplo abaixo, o operador ( + )
                         foi alterado para o ( - ):
                       </Row>
                       <Row justify="center" className="images">
-                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                        <img src={IHD} alt="IHD" style={{ marginTop: '16px' }} />
                       </Row>
                     </div>
                   ),
@@ -379,14 +391,21 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row>
-                        O operador AOR altera um operador aritmético por outro.
+                        Quando utilizamos a lógica de orientação a objetos, temos que uma classe
+                        pode ser criada a partir de outra. No nosso caso, temos a classe Base como
+                        pai, e a classe Teste como filho, e também podemos observar que ambas
+                        possuem a função foo(). Quando chamamos uma função da classe filho,
+                        ela irá sobrescrever a função já existente da classe pai. Esse operator
+                        remove a função da classe filho que sobrescreve a pré-existente na classe
+                        pai, no nosso caso, a função da classe Teste, que sobrescreve a da classe
+                        Base.
                       </Row>
                       <Row>
-                        No exemplo abaixo, o operador ( + )
-                        foi alterado para o ( - ):
+                        No exemplo abaixo, a função ( foo() )
+                        da classe Teste foi removida:
                       </Row>
                       <Row justify="center" className="images">
-                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                        <img src={IOD} alt="IOD" style={{ marginTop: '16px' }} />
                       </Row>
                     </div>
                   ),
