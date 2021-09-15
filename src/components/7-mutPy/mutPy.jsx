@@ -3,10 +3,18 @@ import {
   Carousel, Row, Col, Collapse, Card, Modal,
 } from 'antd';
 
+import AOD from '../../generics/imgs/AOD.png';
 import AOR from '../../generics/imgs/AOR.png';
+import ASR from '../../generics/imgs/ASR.png';
+import BCR from '../../generics/imgs/BCR.png';
 import COD from '../../generics/imgs/COD.png';
 import COI from '../../generics/imgs/COI.png';
 import CRP from '../../generics/imgs/CRP.png';
+import DDL from '../../generics/imgs/DDL.png';
+import EHD from '../../generics/imgs/EHD.png';
+import EXS from '../../generics/imgs/EXS.png';
+import IHD from '../../generics/imgs/IHD.png';
+import IOD from '../../generics/imgs/IOD.png';
 import LCR from '../../generics/imgs/LCR.png';
 import ROR from '../../generics/imgs/ROR.png';
 
@@ -106,7 +114,23 @@ function mutPy() {
           <Row>
             <Col span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'AOD - arithmetic operator deletion' })}
+                onClick={() => showModal({
+                  headerTitle: 'AOD - arithmetic operator deletion',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador AOD remove um operador aritmético.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( - )
+                        foi removido:
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={AOD} alt="AOD" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 AOD
               </Card>
@@ -136,14 +160,46 @@ function mutPy() {
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'ASR - assignment operator replacement' })}
+                onClick={() => showModal({
+                  headerTitle: 'ASR - assignment operator replacement',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador ASR altera um operador de atribuição por outro.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( += )
+                        foi alterado para o ( -= ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={ASR} alt="ASR" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 ASR
               </Card>
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'BCR - break continue replacement' })}
+                onClick={() => showModal({
+                  headerTitle: 'BCR - break continue replacement',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador BCR altera um break por um continue, e o inverso também.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o ( break )
+                        foi alterado para o ( continue ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={BCR} alt="BCR" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 BCR
               </Card>
@@ -221,7 +277,25 @@ function mutPy() {
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'DDL - decorator deletion' })}
+                onClick={() => showModal({
+                  headerTitle: 'DDL - decorator deletion',
+                  content: () => (
+                    <div>
+                      <Row>
+                        Esse operador trabalha com decoradores de Python.
+                        Um decorador precisa ser definido com @staticmethod ou @classmethod.
+                        Então, o que esse operador faz é remover um dos parâmetros
+                        citados anteriormente.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o ( @staticmethod ) é removido:
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={DDL} alt="DDL" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 DDL
               </Card>
@@ -230,28 +304,93 @@ function mutPy() {
           <Row>
             <Col span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'EHD - exception handler deletion' })}
+                onClick={() => showModal({
+                  headerTitle: 'EHD - exception handler deletion',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador EHD remove a função que trataria o erro da exceção,
+                        e insere uma função raise no lugar, que retornará o erro novamente
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o ( return 1 )
+                        foi alterado para o ( raise ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={EHD} alt="EHD" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 EHD
               </Card>
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'EXS - exception swallowing' })}
+                onClick={() => showModal({
+                  headerTitle: 'EXS - exception swallowing',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador AOR altera um operador aritmético por outro.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( + )
+                        foi alterado para o ( - ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 EXS
               </Card>
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'IHD - hiding variable deletion' })}
+                onClick={() => showModal({
+                  headerTitle: 'IHD - hiding variable deletion',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador AOR altera um operador aritmético por outro.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( + )
+                        foi alterado para o ( - ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 IHD
               </Card>
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'IOD - overriding method deletion' })}
+                onClick={() => showModal({
+                  headerTitle: 'IOD - overriding method deletion',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador AOR altera um operador aritmético por outro.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( + )
+                        foi alterado para o ( - ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 IOD
               </Card>
@@ -260,7 +399,23 @@ function mutPy() {
           <Row>
             <Col span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'IOP - overridden method calling position change' })}
+                onClick={() => showModal({
+                  headerTitle: 'IOP - overridden method calling position change',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador AOR altera um operador aritmético por outro.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( + )
+                        foi alterado para o ( - ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 IOP
               </Card>
@@ -290,14 +445,46 @@ function mutPy() {
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'LOD - logical operator deletion' })}
+                onClick={() => showModal({
+                  headerTitle: 'LOD - logical operator deletion',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador AOR altera um operador aritmético por outro.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( + )
+                        foi alterado para o ( - ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 LOD
               </Card>
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'LOR - logical operator replacement' })}
+                onClick={() => showModal({
+                  headerTitle: 'LOR - logical operator replacement',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador AOR altera um operador aritmético por outro.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( + )
+                        foi alterado para o ( - ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 LOR
               </Card>
@@ -329,21 +516,69 @@ function mutPy() {
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'SCD - super calling deletion' })}
+                onClick={() => showModal({
+                  headerTitle: 'SCD - super calling deletion',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador AOR altera um operador aritmético por outro.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( + )
+                        foi alterado para o ( - ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 SCD
               </Card>
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'SCI - super calling insert' })}
+                onClick={() => showModal({
+                  headerTitle: 'SCI - super calling insert',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador AOR altera um operador aritmético por outro.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( + )
+                        foi alterado para o ( - ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 SCI
               </Card>
             </Col>
             <Col offset={1} span={5} justify="center" className="text">
               <Card
-                onClick={() => showModal({ headerTitle: 'SIR - slice index remove' })}
+                onClick={() => showModal({
+                  headerTitle: 'SIR - slice index remove',
+                  content: () => (
+                    <div>
+                      <Row>
+                        O operador AOR altera um operador aritmético por outro.
+                      </Row>
+                      <Row>
+                        No exemplo abaixo, o operador ( + )
+                        foi alterado para o ( - ):
+                      </Row>
+                      <Row justify="center" className="images">
+                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                      </Row>
+                    </div>
+                  ),
+                })}
               >
                 SIR
               </Card>
