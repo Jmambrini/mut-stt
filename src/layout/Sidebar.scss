@@ -14,13 +14,58 @@
         }
 
         .ant-menu {
-            text-align: right;
+            width: 80%;
+            margin-left: 10%;
+            text-align: center;
             text-decoration: underline;
             font-size: 14px;
             background: #233d4d;
+            .ant-menu-item {
+                background: #233d4d;
+                display: inline-block;
+                text-align: center;
+                cursor: pointer;
+                box-shadow: inset 0 0 0 0 #31302b;
+                -webkit-transition: all ease 0.8s;
+                -moz-transition: all ease 0.8s;
+                transition: all ease 0.8s;
+            }
+            .ant-menu-item:hover {
+                box-shadow: inset 240px 0 0 0 #df5a01;
+                color: #fff;
+            }
             .ant-menu-item-selected {
                 background-color: #df5a01;
             }
+            .ant-menu-item-selected:hover {
+                background-color: #df5a01;
+                box-shadow: none;
+            }
         }
     }
+}
+
+.btn {
+    color: #31302b;
+    background: #fff;
+    padding: 12px 17px;
+    margin: 25px;
+    font-family: "OpenSansBold", sans-serif;
+    border: 3px solid #31302b;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #31302b;
+    -webkit-transition: all ease 0.8s;
+    -moz-transition: all ease 0.8s;
+    transition: all ease 0.8s;
+}
+.btn:hover {
+    box-shadow: inset 100px 0 0 0 #e0e0e0;
+    color: #fff;
 }

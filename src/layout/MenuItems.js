@@ -5,7 +5,7 @@ const menuItems = [
     key: '',
   },
   {
-    name: 'Critérios de testes baseados em defeitos',
+    name: 'Critérios de teste',
     path: '/criterio-defeitos',
     key: 'criterio-defeitos',
   },
