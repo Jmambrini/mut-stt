@@ -1,35 +1,38 @@
 import React, { useState } from 'react';
 import {
-  Carousel, Row, Col, Collapse, Card, Modal,
+  Carousel, Row, Col, Collapse, Card, Modal, Steps,
 } from 'antd';
 
-import AOD from '../../generics/imgs/AOD.png';
-import AOR from '../../generics/imgs/AOR.png';
-import ASR from '../../generics/imgs/ASR.png';
-import BCR from '../../generics/imgs/BCR.png';
-import COD from '../../generics/imgs/COD.png';
-import COI from '../../generics/imgs/COI.png';
-import CRP from '../../generics/imgs/CRP.png';
-import DDL from '../../generics/imgs/DDL.png';
-import EHD from '../../generics/imgs/EHD.png';
-import EXS from '../../generics/imgs/EXS.png';
-import IHD from '../../generics/imgs/IHD.png';
-import IOD from '../../generics/imgs/IOD.png';
-import IOP from '../../generics/imgs/IOP.png';
-import LCR from '../../generics/imgs/LCR.png';
-import LOD from '../../generics/imgs/LOD.png';
-import LOR from '../../generics/imgs/LOR.png';
-import ROR from '../../generics/imgs/ROR.png';
-import SCD from '../../generics/imgs/SCD.png';
-import SCI from '../../generics/imgs/SCI.png';
-import SIR from '../../generics/imgs/SIR.png';
+import AOD from '../../generics/operators/AOD.png';
+import AOR from '../../generics/operators/AOR.png';
+import ASR from '../../generics/operators/ASR.png';
+import BCR from '../../generics/operators/BCR.png';
+import COD from '../../generics/operators/COD.png';
+import COI from '../../generics/operators/COI.png';
+import CRP from '../../generics/operators/CRP.png';
+import DDL from '../../generics/operators/DDL.png';
+import EHD from '../../generics/operators/EHD.png';
+import EXS from '../../generics/operators/EXS.png';
+import IHD from '../../generics/operators/IHD.png';
+import IOD from '../../generics/operators/IOD.png';
+import IOP from '../../generics/operators/IOP.png';
+import LCR from '../../generics/operators/LCR.png';
+import LOD from '../../generics/operators/LOD.png';
+import LOR from '../../generics/operators/LOR.png';
+import ROR from '../../generics/operators/ROR.png';
+import SCD from '../../generics/operators/SCD.png';
+import SCI from '../../generics/operators/SCI.png';
+import SIR from '../../generics/operators/SIR.png';
 
 import './mutPy.scss';
+
+const { Step } = Steps;
 
 function mutPy() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalHeaderTitle, setModalHeaderTitle] = useState();
   const [modalContent, setModalContent] = useState();
+  const [stepPosition, setStepPosition] = useState(0);
 
   const { Panel } = Collapse;
 
@@ -1034,9 +1037,26 @@ function mutPy() {
             </Col>
           </Row>
           <Row>
-            <Col>
-              teste
-            </Col>
+            <Steps
+              type="navigation"
+              size="small"
+              current={stepPosition}
+            >
+              <Step title="Código Inicial" onClick={() => setStepPosition(0)} />
+              <Step title="Criação dos casos de teste" onClick={() => setStepPosition(1)} />
+              <Step title="Criação do mutante" onClick={() => setStepPosition(2)} />
+              <Step title="Teste do mutante" onClick={() => setStepPosition(3)} />
+            </Steps>
+          </Row>
+          <Row>
+            {
+              {
+                0: (<pre>1</pre>),
+                1: <div>2</div>,
+                2: <div>3</div>,
+                3: <div>4</div>,
+              }[stepPosition]
+            }
           </Row>
         </div>
         <div>
