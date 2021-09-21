@@ -17,7 +17,12 @@ import IHD from '../../generics/imgs/IHD.png';
 import IOD from '../../generics/imgs/IOD.png';
 import IOP from '../../generics/imgs/IOP.png';
 import LCR from '../../generics/imgs/LCR.png';
+import LOD from '../../generics/imgs/LOD.png';
+import LOR from '../../generics/imgs/LOR.png';
 import ROR from '../../generics/imgs/ROR.png';
+import SCD from '../../generics/imgs/SCD.png';
+import SCI from '../../generics/imgs/SCI.png';
+import SIR from '../../generics/imgs/SIR.png';
 
 import './mutPy.scss';
 
@@ -124,14 +129,19 @@ function mutPy() {
                         O operador AOD remove um operador aritmético.
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o operador ( - )
-                        foi removido:
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o operador
+                          {' '}
+                          <i style={{ color: 'red' }}>-</i>
+                          {' '}
+                          foi removido:
+                        </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col offset={6} span={7} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={11} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
@@ -155,14 +165,23 @@ function mutPy() {
                         O operador AOR altera um operador aritmético por outro.
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o operador ( + )
-                        foi alterado para o ( - ):
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o operador
+                          {' '}
+                          <i style={{ color: 'red' }}>+</i>
+                          {' '}
+                          foi alterado para o
+                          {' '}
+                          <i style={{ color: 'red' }}>-</i>
+                          {' '}
+                          :
+                        </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col offset={6} span={7} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={10} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
@@ -186,8 +205,17 @@ function mutPy() {
                         O operador ASR altera um operador de atribuição por outro.
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o operador ( += )
-                        foi alterado para o ( -= ):
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o operador
+                          {' '}
+                          <i style={{ color: 'red' }}>+=</i>
+                          {' '}
+                          foi alterado para o
+                          {' '}
+                          <i style={{ color: 'red' }}>-=</i>
+                          {' '}
+                          :
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -217,8 +245,17 @@ function mutPy() {
                         O operador BCR altera um break por um continue, e o inverso também.
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o ( break )
-                        foi alterado para o ( continue ):
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o
+                          {' '}
+                          <i style={{ color: 'red' }}>break</i>
+                          {' '}
+                          foi alterado para o
+                          {' '}
+                          <i style={{ color: 'red' }}>continue</i>
+                          {' '}
+                          :
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -250,8 +287,13 @@ function mutPy() {
                         O operador COD remove um operador condicional.
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o operador ( not )
-                        foi removido no código:
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o operador
+                          {' '}
+                          <i style={{ color: 'red' }}>not</i>
+                          {' '}
+                          foi removido no código:
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -281,8 +323,13 @@ function mutPy() {
                         O operador COI insere um operador condicional.
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o operador ( not )
-                        foi inserido no código:
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o operador
+                          {' '}
+                          <i style={{ color: 'red' }}>not</i>
+                          {' '}
+                          foi inserido no código:
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -312,8 +359,17 @@ function mutPy() {
                         O operador CRP altera uma constante por outra.
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, a constante ( 0 )
-                        foi alterada no código pela constante ( 1 ):
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, a constante
+                          {' '}
+                          <i style={{ color: 'red' }}>0</i>
+                          {' '}
+                          foi alterada no código pela constante
+                          {' '}
+                          <i style={{ color: 'red' }}>1</i>
+                          {' '}
+                          :
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -340,13 +396,29 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row justify="center">
-                        O operador DDL trabalha com decoradores de Python.
-                        Um decorador precisa ser definido com @staticmethod ou @classmethod.
-                        Então, o que esse operador faz é remover um dos parâmetros
-                        citados anteriormente.
+                        <div style={{ textAlign: 'center' }}>
+                          O operador DDL trabalha com decoradores de Python.
+                          Um decorador precisa ser definido com
+                          {' '}
+                          <i style={{ color: 'red' }}>@staticmethod</i>
+                          {' '}
+                          ou
+                          {' '}
+                          <i style={{ color: 'red' }}>@classmethod</i>
+                          {' '}
+                          .
+                          Então, o que esse operador faz é remover um dos parâmetros
+                          citados anteriormente.
+                        </div>
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o ( @staticmethod ) é removido:
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o
+                          {' '}
+                          <i style={{ color: 'red' }}>@staticmethod</i>
+                          {' '}
+                          é removido:
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -375,12 +447,22 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row justify="center">
-                        O operador EHD remove a função que trataria o erro da exceção,
-                        e insere uma função raise no lugar, que retornará o erro novamente
+                        <div style={{ textAlign: 'center' }}>
+                          O operador EHD remove a função que trataria o erro da exceção,
+                          e insere uma função raise no lugar, que retornará o erro novamente.
+                        </div>
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o ( return 1 )
-                        foi alterado para o ( raise ):
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o
+                          {' '}
+                          <i style={{ color: 'red' }}>return 1</i>
+                          {' '}
+                          foi alterado para o
+                          {' '}
+                          <i style={{ color: 'red' }}>raise</i>
+                          :
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -407,14 +489,25 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row justify="center">
-                        O operador EXS causa uma &quot;swallowing exception&quot;. Explicando,
-                        é a prática de detectar um erro ou exceção e, em seguida,
-                        continuar sem registrar, processar ou relatar o erro a outras
-                        partes do software.
+                        <div style={{ textAlign: 'center' }}>
+                          O operador EXS causa uma &quot;swallowing exception&quot;. Explicando,
+                          é a prática de detectar um erro ou exceção e, em seguida,
+                          continuar sem registrar, processar ou relatar o erro a outras
+                          partes do software.
+                        </div>
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o ( return 1 )
-                        foi alterado para o ( pass ):
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o
+                          {' '}
+                          <i style={{ color: 'red' }}>return 1</i>
+                          {' '}
+                          foi alterado para o
+                          {' '}
+                          <i style={{ color: 'red' }}>pass</i>
+                          {' '}
+                          :
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -441,19 +534,41 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row justify="center">
-                        Quando utilizamos a lógica de orientação a objetos, temos que
-                        uma classe pode ser criada a partir de outra. No nosso caso,
-                        temos a classe Base como pai, e a classe Teste como filho, e
-                        também temos a variável ( X ) sendo declarada em ambos, porém
-                        com valores diferentes, e nos nossos testes, utilizamos o ( X )
-                        da classe filho para fazer uma validação. O operador IHD remove
-                        a declaração do ( X ) na classe filho, assim, quando fizermos nossa
-                        validação, ela retornará o valor de X declarado na classe Pai, causando
-                        um retorno de erro do nosso caso de teste.
+                        <div style={{ textAlign: 'center' }}>
+                          Quando utilizamos a lógica de orientação a objetos, temos que
+                          uma classe pode ser criada a partir de outra. No nosso caso,
+                          temos a classe Base como pai, e a classe Teste como filho, e
+                          também temos a variável
+                          {' '}
+                          <i style={{ color: 'red' }}>X</i>
+                          {' '}
+                          sendo declarada em ambos, porém
+                          com valores diferentes. Nos nossos testes, utilizamos o
+                          {' '}
+                          <i style={{ color: 'red' }}>X</i>
+                          {' '}
+                          da classe filho para fazer uma validação. O operador IHD remove
+                          a declaração do
+                          {' '}
+                          <i style={{ color: 'red' }}>X</i>
+                          {' '}
+                          na classe filho, assim, quando fizermos nossa
+                          validação, ela retornará o valor de
+                          {' '}
+                          <i style={{ color: 'red' }}>X</i>
+                          {' '}
+                          declarado na classe Pai, causando
+                          um retorno de erro do nosso caso de teste.
+                        </div>
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, a variável ( X )
-                        da classe Teste foi removida:
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, a variável
+                          {' '}
+                          <i style={{ color: 'red' }}>X</i>
+                          {' '}
+                          da classe Teste foi removida:
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -480,17 +595,28 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row justify="center">
-                        Quando utilizamos a lógica de orientação a objetos, temos que uma classe
-                        pode ser criada a partir de outra. No nosso caso, temos a classe Base como
-                        pai, e a classe Teste como filho, e também podemos observar que ambas
-                        possuem a função foo(). Quando chamamos uma função da classe filho,
-                        ela irá sobrescrever a função já existente da classe pai. O operator IOD
-                        remove a função da classe filho que sobrescreve a pré-existente na classe
-                        pai.
+                        <div style={{ textAlign: 'center' }}>
+                          Quando utilizamos a lógica de orientação a objetos, temos que uma classe
+                          pode ser criada a partir de outra. No nosso caso, temos a classe Base como
+                          pai, e a classe Teste como filho, e também podemos observar que ambas
+                          possuem a função
+                          {' '}
+                          <i style={{ color: 'red' }}>foo()</i>
+                          {' '}
+                          . Quando chamamos uma função da classe filho,
+                          ela irá sobrescrever a função já existente da classe pai. O operator IOD
+                          remove a função da classe filho que sobrescreve a pré-existente na classe
+                          pai.
+                        </div>
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, a função ( foo() )
-                        da classe Teste foi removida:
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, a função
+                          {' '}
+                          <i style={{ color: 'red' }}>foo()</i>
+                          {' '}
+                          da classe Teste foi removida:
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -519,14 +645,26 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row justify="center">
-                        Quando utilizamos a lógica de orientação a objetos, temos que uma classe
-                        pode ser criada a partir de outra. No nosso caso, temos a classe Base como
-                        pai, e a classe Teste como filho. No código inicial, utilizamos o
-                        ( super().bar() ) na classe Teste para chamar a função ( bar() ) da
-                        classe Base, e depois utilizamos o ( x ) que retornou.
-                        O operador IOP muda a ordem das funções dentro da classe filho, para que ela
-                        tente usar a variável antes dela ser chamada da classe pai, retornando um
-                        erro.
+                        <div style={{ textAlign: 'center' }}>
+                          Quando utilizamos a lógica de orientação a objetos, temos que uma classe
+                          pode ser criada a partir de outra. No nosso caso, temos a classe Base como
+                          pai, e a classe Teste como filho. No código inicial, utilizamos o
+                          {' '}
+                          <i style={{ color: 'red' }}>super().bar()</i>
+                          {' '}
+                          na classe Teste para chamar a função
+                          {' '}
+                          <i style={{ color: 'red' }}>bar()</i>
+                          {' '}
+                          da classe Base, e depois utilizamos o
+                          {' '}
+                          <i style={{ color: 'red' }}>x</i>
+                          {' '}
+                          que retornou.
+                          O operador IOP muda a ordem das funções dentro da classe filho, para que
+                          ela tente usar a variável antes dela ser chamada da classe pai, retornando
+                          um erro.
+                        </div>
                       </Row>
                       <Row justify="center">
                         No exemplo abaixo, as duas linhas da função bar presente da classe
@@ -560,8 +698,17 @@ function mutPy() {
                         O operador LCR altera um conector lógico.
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o conector ( or )
-                        foi alterado no código pelo conector ( and ):
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o conector
+                          {' '}
+                          <i style={{ color: 'red' }}>or</i>
+                          {' '}
+                          foi alterado no código pelo conector
+                          {' '}
+                          <i style={{ color: 'red' }}>and</i>
+                          {' '}
+                          :
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -588,11 +735,16 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row justify="center">
-                        O operador AOR altera um operador aritmético por outro.
+                        O operador LOD remove um operador lógico.
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o operador ( + )
-                        foi alterado para o ( - ):
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o operador
+                          {' '}
+                          <i style={{ color: 'red' }}>~</i>
+                          {' '}
+                          foi removido:
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -603,7 +755,7 @@ function mutPy() {
                         </Col>
                       </Row>
                       <Row justify="center" className="images">
-                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                        <img src={LOD} alt="LOD" style={{ marginTop: '16px' }} />
                       </Row>
                     </div>
                   ),
@@ -619,11 +771,20 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row justify="center">
-                        O operador AOR altera um operador aritmético por outro.
+                        O operador LOR altera um operador lógico por outro.
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o operador ( + )
-                        foi alterado para o ( - ):
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o operador
+                          {' '}
+                          <i style={{ color: 'red' }}>|</i>
+                          {' '}
+                          foi alterado para o
+                          {' '}
+                          <i style={{ color: 'red' }}>&</i>
+                          {' '}
+                          :
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -634,7 +795,7 @@ function mutPy() {
                         </Col>
                       </Row>
                       <Row justify="center" className="images">
-                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                        <img src={LOR} alt="LOR" style={{ marginTop: '16px' }} />
                       </Row>
                     </div>
                   ),
@@ -655,8 +816,17 @@ function mutPy() {
                         O operador ROR altera um operador relacional por outro.
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o operador ( &gt; )
-                        foi alterado no código pelo operador ( &lt; ):
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o operador
+                          {' '}
+                          <i style={{ color: 'red' }}>&gt;</i>
+                          {' '}
+                          foi alterado no código pelo operador
+                          {' '}
+                          <i style={{ color: 'red' }}>&lt;</i>
+                          {' '}
+                          :
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -683,11 +853,40 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row justify="center">
-                        O operador AOR altera um operador aritmético por outro.
+                        <div style={{ textAlign: 'center' }}>
+                          Quando utilizamos a lógica de orientação a objetos, temos que uma classe
+                          pode ser criada a partir de outra. No nosso caso, temos a classe Base como
+                          pai, e a classe Teste como filho. Quando desejamos utilizar uma função da
+                          classe pai, utilizamos o
+                          {' '}
+                          <i style={{ color: 'red' }}>super</i>
+                          {' '}
+                          .
+                        </div>
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o operador ( + )
-                        foi alterado para o ( - ):
+                        <div style={{ textAlign: 'center' }}>
+                          O operador SCI remove um chamado
+                          {' '}
+                          <i style={{ color: 'red' }}>super</i>
+                          {' '}
+                          em uma função já existente na classe gilho, reescrita
+                          da classe pai. Assim, ao remover, ela passará a utilizar
+                          sua própria lógica, ao invés da lógica escrita na função pai.
+                        </div>
+                      </Row>
+                      <Row justify="center">
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o
+                          {' '}
+                          <i style={{ color: 'red' }}>super.bar()</i>
+                          {' '}
+                          foi trocado pelo
+                          {' '}
+                          <i style={{ color: 'red' }}>pass</i>
+                          {' '}
+                          na função da classe filho:
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -698,7 +897,7 @@ function mutPy() {
                         </Col>
                       </Row>
                       <Row justify="center" className="images">
-                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                        <img src={SCD} alt="SCD" style={{ marginTop: '16px' }} />
                       </Row>
                     </div>
                   ),
@@ -714,11 +913,40 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row justify="center">
-                        O operador AOR altera um operador aritmético por outro.
+                        <div style={{ textAlign: 'center' }}>
+                          Quando utilizamos a lógica de orientação a objetos, temos que uma classe
+                          pode ser criada a partir de outra. No nosso caso, temos a classe Base como
+                          pai, e a classe Teste como filho. Quando desejamos utilizar uma função da
+                          classe pai, utilizamos o
+                          {' '}
+                          <i style={{ color: 'red' }}>super</i>
+                          {' '}
+                          .
+                        </div>
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o operador ( + )
-                        foi alterado para o ( - ):
+                        <div style={{ textAlign: 'center' }}>
+                          O operador SCI insere um chamado
+                          {' '}
+                          <i style={{ color: 'red' }}>super</i>
+                          {' '}
+                          em uma função já existente na classe filho, reescrita
+                          da classe pai. Assim, mesmo sendo reescrita, ela utilizará as
+                          informações da classe pai. No nosso caso, é a função
+                          {' '}
+                          <i style={{ color: 'red' }}>foo()</i>
+                          {' '}
+                          .
+                        </div>
+                      </Row>
+                      <Row justify="center">
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, foi inserido o
+                          {' '}
+                          <i style={{ color: 'red' }}>super.foo()</i>
+                          {' '}
+                          na função da classe filho:
+                        </div>
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -729,7 +957,7 @@ function mutPy() {
                         </Col>
                       </Row>
                       <Row justify="center" className="images">
-                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                        <img src={SCI} alt="SCI" style={{ marginTop: '16px' }} />
                       </Row>
                     </div>
                   ),
@@ -745,11 +973,39 @@ function mutPy() {
                   content: () => (
                     <div>
                       <Row justify="center">
-                        O operador AOR altera um operador aritmético por outro.
+                        <div style={{ textAlign: 'center' }}>
+                          Um elemento de um vetor pode ser referenciado usando o
+                          operador de acesso
+                          {' '}
+                          <i style={{ color: 'red' }}>[ ]</i>
+                          {' '}
+                          . Também é possível usar o mesmo operador para obter
+                          um subconjunto desse vetor. Para isso, podemos utilizar a seguinte
+                          sintaxe:
+                          {' '}
+                          <i style={{ color: 'red' }}>vetor[início:fim:intervalo]</i>
+                          {' '}
+                          , onde início determina a posição do primeiro item do subconjunto,
+                          fim determina o último item do subconjunto,
+                          e o invervalo determina a distancia entre dois intens consecutivos.
+                        </div>
+                      </Row>
+                      <Row>
+                        <div style={{ textAlign: 'center' }}>
+                          O operator SIR modifica essa lógica do subconjunto.
+                        </div>
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o operador ( + )
-                        foi alterado para o ( - ):
+                        No exemplo abaixo, o operador
+                        {' '}
+                        <i style={{ color: 'red' }}>x[2:]</i>
+                        {' '}
+                        , que retornaria somente os itens a partir da segunda posição
+                        foi alterado para o
+                        {' '}
+                        <i style={{ color: 'red' }}>x[:]</i>
+                        {' '}
+                        , que retorna todos os itens do vetor:
                       </Row>
                       <Row>
                         <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
@@ -760,7 +1016,7 @@ function mutPy() {
                         </Col>
                       </Row>
                       <Row justify="center" className="images">
-                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                        <img src={SIR} alt="SIR" style={{ marginTop: '16px' }} />
                       </Row>
                     </div>
                   ),
@@ -772,7 +1028,16 @@ function mutPy() {
           </Row>
         </div>
         <div>
-          Explicação com exemplos
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Como o Mut.py funciona
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              teste
+            </Col>
+          </Row>
         </div>
         <div>
           Explicação com exemplos
