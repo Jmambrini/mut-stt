@@ -13,6 +13,7 @@ import operadores from '../components/4-operadores/operadores';
 import mutantes from '../components/5-mutantes/mutantes';
 import ferramentas from '../components/6-ferramentas/ferramentas';
 import mutPy from '../components/7-mutPy/mutPy';
+import mutPyAp from '../components/8-mutPyAp/mutPyAp';
 
 function Routes() {
   return (
@@ -52,6 +53,11 @@ function Routes() {
           path="/mutpy"
           exact
           component={mutPy}
+        />
+        <PublicRoutes
+          path="/mutpy-app"
+          exact
+          component={mutPyAp}
         />
         <PublicRoutes
           component={notFound}

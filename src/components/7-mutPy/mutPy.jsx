@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import {
-  Carousel, Row, Col, Collapse, Card, Modal, Steps,
+  Carousel, Row, Col, Collapse, Card, Modal, Steps, Result, Button,
 } from 'antd';
+
+import { SmileOutlined } from '@ant-design/icons';
 
 import AOD from '../../generics/operators/AOD.png';
 import AOR from '../../generics/operators/AOR.png';
@@ -24,11 +26,16 @@ import SCD from '../../generics/operators/SCD.png';
 import SCI from '../../generics/operators/SCI.png';
 import SIR from '../../generics/operators/SIR.png';
 
+import mutpyStep1 from '../../generics/codes/mutpyStep1.png';
+import mutpyStep2 from '../../generics/codes/mutpyStep2.png';
+import mutpyStep3 from '../../generics/codes/mutpyStep3.png';
+import mutpyStep4 from '../../generics/codes/mutpyStep4.png';
+
 import './mutPy.scss';
 
 const { Step } = Steps;
 
-function mutPy() {
+function mutPy(props) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalHeaderTitle, setModalHeaderTitle] = useState();
   const [modalContent, setModalContent] = useState();
@@ -55,7 +62,7 @@ function mutPy() {
         closable
         onCancel={handleCancel}
         width="fit-content"
-        style={{ maxWidth: '700px' }}
+        style={{ maxWidth: '800px' }}
       >
         {modalContent}
       </Modal>
@@ -102,7 +109,7 @@ function mutPy() {
               <Collapse accordion>
                 <Panel header="Versões do Python suportadas" key="1">
                   <p>
-                    A MutPy suporta versões do Python acima da versão 3.3.
+                    A MutPy suporta versões do Python acima da versão 4.3.
                     No desenvolvimento, utilizei a versão 3.7.9:
                   </p>
                   <a href="https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe" target="_blank" rel="noreferrer"> https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe</a>
@@ -121,7 +128,7 @@ function mutPy() {
               Operadores da MutPy - clique em algum :)
             </Col>
           </Row>
-          <Row>
+          <Row justify="center">
             <Col span={5} justify="center" className="text">
               <Card
                 onClick={() => showModal({
@@ -141,15 +148,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col offset={6} span={7} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col offset={3} span={12} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={11} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={9} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={AOD} alt="AOD" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={AOD} alt="AOD" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -181,15 +188,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col offset={6} span={7} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col offset={3} span={13} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={10} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={AOR} alt="AOR" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={AOR} alt="AOR" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -221,15 +228,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={6} offset={5} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={5} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={ASR} alt="ASR" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={ASR} alt="ASR" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -261,15 +268,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={5} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={6} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={BCR} alt="BCR" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={BCR} alt="BCR" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -279,7 +286,7 @@ function mutPy() {
               </Card>
             </Col>
           </Row>
-          <Row>
+          <Row justify="center">
             <Col span={5} justify="center" className="text">
               <Card
                 onClick={() => showModal({
@@ -299,15 +306,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={5} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={7} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={COD} alt="COD" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={COD} alt="COD" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -335,15 +342,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={5} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={6} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={COI} alt="COI" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={COI} alt="COI" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -375,15 +382,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={6} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={4} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={CRP} alt="CRP" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={CRP} alt="CRP" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -424,15 +431,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={7} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={3} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={DDL} alt="DDL" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={DDL} alt="DDL" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -442,7 +449,7 @@ function mutPy() {
               </Card>
             </Col>
           </Row>
-          <Row>
+          <Row justify="center">
             <Col span={5} justify="center" className="text">
               <Card
                 onClick={() => showModal({
@@ -468,15 +475,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={5} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={7} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={EHD} alt="EHD" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={EHD} alt="EHD" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -513,15 +520,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={6} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={6} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={EXS} alt="EXS" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={EXS} alt="EXS" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -550,7 +557,12 @@ function mutPy() {
                           {' '}
                           <i style={{ color: 'red' }}>X</i>
                           {' '}
-                          da classe filho para fazer uma validação. O operador IHD remove
+                          da classe filho para fazer uma validação.
+                        </div>
+                      </Row>
+                      <Row>
+                        <div style={{ textAlign: 'center' }}>
+                          O operador IHD remove
                           a declaração do
                           {' '}
                           <i style={{ color: 'red' }}>X</i>
@@ -560,7 +572,7 @@ function mutPy() {
                           {' '}
                           <i style={{ color: 'red' }}>X</i>
                           {' '}
-                          declarado na classe Pai, causando
+                          declarado na classe pai, causando
                           um retorno de erro do nosso caso de teste.
                         </div>
                       </Row>
@@ -574,15 +586,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={7} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={3} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={IHD} alt="IHD" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={IHD} alt="IHD" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -607,9 +619,13 @@ function mutPy() {
                           <i style={{ color: 'red' }}>foo()</i>
                           {' '}
                           . Quando chamamos uma função da classe filho,
-                          ela irá sobrescrever a função já existente da classe pai. O operator IOD
-                          remove a função da classe filho que sobrescreve a pré-existente na classe
-                          pai.
+                          ela irá sobrescrever a função já existente da classe pai.
+                        </div>
+                      </Row>
+                      <Row>
+                        <div style={{ textAlign: 'center' }}>
+                          O operator IOD remove a função da classe filho que sobrescreve a
+                          pré-existente na classe pai.
                         </div>
                       </Row>
                       <Row justify="center">
@@ -622,15 +638,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={7} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={3} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={IOD} alt="IOD" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={IOD} alt="IOD" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -640,7 +656,7 @@ function mutPy() {
               </Card>
             </Col>
           </Row>
-          <Row>
+          <Row justify="center">
             <Col span={5} justify="center" className="text">
               <Card
                 onClick={() => showModal({
@@ -664,6 +680,10 @@ function mutPy() {
                           <i style={{ color: 'red' }}>x</i>
                           {' '}
                           que retornou.
+                        </div>
+                      </Row>
+                      <Row>
+                        <div style={{ textAlign: 'center' }}>
                           O operador IOP muda a ordem das funções dentro da classe filho, para que
                           ela tente usar a variável antes dela ser chamada da classe pai, retornando
                           um erro.
@@ -674,15 +694,15 @@ function mutPy() {
                         Teste, foram trocadas de posição:
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={7} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={3} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={IOP} alt="IOP" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={IOP} alt="IOP" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -714,15 +734,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={4} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={8} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={LCR} alt="LCR" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={LCR} alt="LCR" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -750,15 +770,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={4} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={8} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={LOD} alt="LOD" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={LOD} alt="LOD" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -790,15 +810,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={5} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={7} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={LOR} alt="LOR" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={LOR} alt="LOR" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -808,7 +828,7 @@ function mutPy() {
               </Card>
             </Col>
           </Row>
-          <Row>
+          <Row justify="center">
             <Col offset span={5} justify="center" className="text">
               <Card
                 onClick={() => showModal({
@@ -832,15 +852,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={6} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={4} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={ROR} alt="ROR" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={ROR} alt="ROR" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -869,11 +889,11 @@ function mutPy() {
                       </Row>
                       <Row justify="center">
                         <div style={{ textAlign: 'center' }}>
-                          O operador SCI remove um chamado
+                          O operador SCD remove um chamado
                           {' '}
                           <i style={{ color: 'red' }}>super</i>
                           {' '}
-                          em uma função já existente na classe gilho, reescrita
+                          em uma função já existente na classe filho, reescrita
                           da classe pai. Assim, ao remover, ela passará a utilizar
                           sua própria lógica, ao invés da lógica escrita na função pai.
                         </div>
@@ -892,15 +912,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={7} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={3} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={SCD} alt="SCD" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={SCD} alt="SCD" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -935,7 +955,7 @@ function mutPy() {
                           {' '}
                           em uma função já existente na classe filho, reescrita
                           da classe pai. Assim, mesmo sendo reescrita, ela utilizará as
-                          informações da classe pai. No nosso caso, é a função
+                          informações da classe pai, no nosso caso, a função
                           {' '}
                           <i style={{ color: 'red' }}>foo()</i>
                           {' '}
@@ -952,15 +972,15 @@ function mutPy() {
                         </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={7} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={3} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={SCI} alt="SCI" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={SCI} alt="SCI" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -987,39 +1007,36 @@ function mutPy() {
                           sintaxe:
                           {' '}
                           <i style={{ color: 'red' }}>vetor[início:fim:intervalo]</i>
-                          {' '}
                           , onde início determina a posição do primeiro item do subconjunto,
                           fim determina o último item do subconjunto,
                           e o invervalo determina a distancia entre dois intens consecutivos.
                         </div>
                       </Row>
-                      <Row>
-                        <div style={{ textAlign: 'center' }}>
-                          O operator SIR modifica essa lógica do subconjunto.
-                        </div>
+                      <Row justify="center">
+                        O operator SIR modifica essa lógica do subconjunto.
                       </Row>
                       <Row justify="center">
-                        No exemplo abaixo, o operador
-                        {' '}
-                        <i style={{ color: 'red' }}>x[2:]</i>
-                        {' '}
-                        , que retornaria somente os itens a partir da segunda posição
-                        foi alterado para o
-                        {' '}
-                        <i style={{ color: 'red' }}>x[:]</i>
-                        {' '}
-                        , que retorna todos os itens do vetor:
+                        <div style={{ textAlign: 'center' }}>
+                          No exemplo abaixo, o operador
+                          {' '}
+                          <i style={{ color: 'red' }}>x[2:]</i>
+                          , que retornaria somente os itens a partir da segunda posição
+                          foi alterado para o
+                          {' '}
+                          <i style={{ color: 'red' }}>x[:]</i>
+                          , que retorna todos os itens do vetor:
+                        </div>
                       </Row>
                       <Row>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={4} justify="center" style={{ fontWeight: 'bold' }}>
                           Original:
                         </Col>
-                        <Col span={12} justify="center" style={{ fontWeight: 'bold' }}>
+                        <Col span={5} offset={6} justify="center" style={{ fontWeight: 'bold' }}>
                           Mutante:
                         </Col>
                       </Row>
-                      <Row justify="center" className="images">
-                        <img src={SIR} alt="SIR" style={{ marginTop: '16px' }} />
+                      <Row justify="center">
+                        <img src={SIR} alt="SIR" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -1033,7 +1050,7 @@ function mutPy() {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Como o Mut.py funciona
+              Como o Mut.py funciona - clique nos steps
             </Col>
           </Row>
           <Row>
@@ -1043,27 +1060,126 @@ function mutPy() {
               current={stepPosition}
             >
               <Step title="Código Inicial" onClick={() => setStepPosition(0)} />
-              <Step title="Criação dos casos de teste" onClick={() => setStepPosition(1)} />
+              <Step title="Casos de teste" onClick={() => setStepPosition(1)} />
               <Step title="Criação do mutante" onClick={() => setStepPosition(2)} />
               <Step title="Teste do mutante" onClick={() => setStepPosition(3)} />
+              <Step title="Resumo" onClick={() => setStepPosition(4)} />
             </Steps>
           </Row>
           <Row>
             {
               {
-                0: (<pre>1</pre>),
-                1: <div>2</div>,
-                2: <div>3</div>,
-                3: <div>4</div>,
+                0: (
+                  <div style={{ width: '100%', marginTop: '32px' }}>
+                    <Row>
+                      O Mut.py funciona da seguinte maneira:
+                    </Row>
+                    <Row>
+                      Inicialmente, temos um código que desejamos testar. Por
+                      exemplo, um código para validar triângulos, mostrado abaixo:
+                    </Row>
+                    <Row justify="center">
+                      <img src={mutpyStep1} alt="mutpyStep1" style={{ marginTop: '14px' }} />
+                    </Row>
+                  </div>
+                ),
+                1: (
+                  <div style={{ width: '100%', marginTop: '32px' }}>
+                    <Row>
+                      Com o nosso código inicial, precisamos criar casos de teste
+                      para validar e testar nosso código.
+                    </Row>
+                    <Row>
+                      Abaixo temos a classe Tests, com casos escritos em unittest:
+                    </Row>
+                    <Row justify="center">
+                      <img src={mutpyStep2} alt="mutpyStep2" style={{ marginTop: '14px' }} />
+                    </Row>
+                  </div>
+                ),
+                2: (
+                  <div style={{ width: '100%', marginTop: '32px' }}>
+                    <Row>
+                      Com o código e os casos de teste, a Mut.py modifica nosso código
+                      com os operadores citados anteriormente (somente os que encaixam no
+                      contexto do nosso código).
+                    </Row>
+                    <Row>
+                      <div>
+                        Por exemplo, temos o mutante abaixo, que foi gerado com o operador
+                        AOR, e trocou o
+                        {' '}
+                        <i style={{ color: 'red' }}>+</i>
+                        {' '}
+                        pelo
+                        {' '}
+                        <i style={{ color: 'red' }}>-</i>
+                        {' '}
+                        na linha 4, na primeira condição do nosso if:
+                      </div>
+                    </Row>
+                    <Row justify="center">
+                      <img src={mutpyStep3} alt="mutpyStep3" style={{ marginTop: '14px' }} />
+                    </Row>
+                  </div>
+                ),
+                3: (
+                  <div style={{ width: '100%', marginTop: '32px' }}>
+                    <Row>
+                      Com o mutante, a Mut.py utiliza os casos de teste para verificar
+                      se o mesmo vai ser morto.
+                    </Row>
+                    <Row>
+                      <div>
+                        Por exemplo, temos o mutante do passo anterior sendo testado
+                        com o caso de teste mostrado abaixo. Podemos analisar que
+                        com esse caso escolhido o mutante será morto, pois a condição
+                        {' '}
+                        <i style={{ color: 'red' }}>(1 - 2 &gt;= 3)</i>
+                        {' '}
+                        é falsa, e o caso de teste espera um retorno verdadeiro.
+                      </div>
+                    </Row>
+                    <Row justify="center">
+                      <img src={mutpyStep4} alt="mutpyStep4" style={{ marginTop: '14px' }} />
+                    </Row>
+                  </div>
+                ),
+                4: (
+                  <div style={{ width: '100%', marginTop: '32px', marginLeft: '14px' }}>
+                    <Row align="middle">
+                      <Col span={16}>
+                        Com isso, concluímos a explicação do fluxo básico
+                        da Mut.py
+                        <ul>
+                          <li className="list">
+                            Desenvolvemos nosso código e nossos casos testes;
+                          </li>
+                          <li className="list">
+                            Rodamos a Mut.py, que criará diversos mutantes;
+                          </li>
+                          <li className="list">
+                            Com os mutantes, a ferramenta testará cada um deles
+                            com o conjunto de casos de testes;
+                          </li>
+                          <li className="list">
+                            Com a validação anterior, teremos o score de mutação.
+                          </li>
+                        </ul>
+                      </Col>
+                      <Col span={8}>
+                        <Result
+                          icon={<SmileOutlined />}
+                          title="Agora, vamos colocar a Mut.py na prática!"
+                          extra={<Button type="primary" onClick={() => props.history.push('/mutpy-app')}>Próximo tópico!</Button>}
+                        />
+                      </Col>
+                    </Row>
+                  </div>
+                ),
               }[stepPosition]
             }
           </Row>
-        </div>
-        <div>
-          Explicação com exemplos
-        </div>
-        <div>
-          aaaa
         </div>
       </Carousel>
     </div>

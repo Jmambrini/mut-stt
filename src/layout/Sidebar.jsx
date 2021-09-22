@@ -23,7 +23,7 @@ class SideBar extends Component {
         >
           <div className="Logo">
             <Link to="/">
-              MUT SITE
+              MUT-STT
             </Link>
           </div>
 
