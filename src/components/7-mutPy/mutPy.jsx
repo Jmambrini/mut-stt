@@ -109,7 +109,7 @@ function mutPy(props) {
               <Collapse accordion>
                 <Panel header="Versões do Python suportadas" key="1">
                   <p>
-                    A MutPy suporta versões do Python acima da versão 4.3.
+                    A MutPy suporta versões do Python acima da versão 3.3.
                     No desenvolvimento, utilizei a versão 3.7.9:
                   </p>
                   <a href="https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe" target="_blank" rel="noreferrer"> https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe</a>
