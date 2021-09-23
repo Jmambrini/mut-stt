@@ -110,9 +110,12 @@ function mutPy(props) {
                 <Panel header="Versões do Python suportadas" key="1">
                   <p>
                     A MutPy suporta versões do Python acima da versão 3.3.
-                    No desenvolvimento, utilizei a versão 3.7.9:
+                    Porém, durante o desenvolvimento desse site, não consegui utilizar
+                    a ferramenta com versões do Python acima da 3.9. Então, fica a dica se
+                    você encontrar esse erro:
+                    {' '}
+                    <a href="https://stackoverflow.com/questions/64940369/getting-error-while-running-mutation-testing-on-python-code-attributeerror-m" target="_blank" rel="noreferrer">link</a>
                   </p>
-                  <a href="https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe" target="_blank" rel="noreferrer"> https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe</a>
                 </Panel>
                 <Panel header="Documentação da ferramenta" key="3">
                   <p>A documentação do MutPy pode ser encontrada no seguinte link:</p>

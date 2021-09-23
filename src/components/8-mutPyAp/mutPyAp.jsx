@@ -13,6 +13,8 @@ import testes from '../../generics/mutpytest/testes.py';
 import linux1 from '../../generics/app/linux1.png';
 import linux2 from '../../generics/app/linux2.png';
 import linux3 from '../../generics/app/linux3.png';
+import win1 from '../../generics/app/win1.png';
+import win2 from '../../generics/app/win2.png';
 
 function mutPyAp() {
   const slider = useRef();
@@ -83,7 +85,7 @@ function mutPyAp() {
             <Col offset={2} span={6} justify="center" className="text">
               <Button
                 onClick={() => {
-                  slider.current.goTo(2);
+                  slider.current.goTo(4);
                 }}
               >
                 <QqOutlined />
@@ -95,7 +97,73 @@ function mutPyAp() {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Configurando no Windows
+              Configurando no Windows - Pt 1
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} justify="center" className="text">
+              O primeiro passo será checar se o Python está instalado na sua máquina, e se ele
+              também está em uma versão que a Mut.py aceite.
+              Para a Mut.py, precisamos que a versão seja acima da 3.3, e abaixo da 3.9,
+              como expliquei anteriormente.
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} justify="center" className="text">
+              Por isso, utilizei a 3.7.9 no Windows ( baixada daqui:
+              {' '}
+              <a href="https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe" target="_blank" rel="noreferrer">link</a>
+              {' '}
+              )
+            </Col>
+          </Row>
+          <Row style={{ justifyContent: 'center' }}>
+            <Col>
+              <img src={win1} alt="win1" style={{ marginTop: '14px', maxWidth: '100%' }} />
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} justify="center" className="text">
+              *Uma observação: utilizei o
+              {' '}
+              <i style={{ color: 'red' }}>PowerShell</i>
+              {' '}
+              e o
+              {' '}
+              <i style={{ color: 'red' }}>Git Bash</i>
+              {' '}
+              em alguns testes, e ambos apresentaram erros.
+              Depois disso, segui só com o
+              {' '}
+              <i style={{ color: 'red' }}>Prompt de Comando</i>
+              {' '}
+              e não tive mais problemas.
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Configurando no Windows - Pt 2
+            </Col>
+          </Row>
+          <Row style={{ justifyContent: 'center' }}>
+            <Col>
+              O próximo passo é instalar a ferramenta. Para isso, basta rodar o
+              comando abaixo. Se não tiver o pip instalado, é só da um Google que você
+              acha rapidinho como instalar.
+            </Col>
+          </Row>
+          <Row style={{ justifyContent: 'center' }}>
+            <Col>
+              <img src={win2} alt="win2" style={{ marginTop: '14px', maxWidth: '100%' }} />
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Configurando no Windows - Pt 1
             </Col>
           </Row>
         </div>
@@ -109,11 +177,8 @@ function mutPyAp() {
             <Col span={24} justify="center" className="text">
               O primeiro passo será checar se o Python está instalado na sua máquina, e se ele
               também está em uma versão que a Mut.py aceite.
-              Para a Mut.py, precisamos que a versão seja acima da 3.3, e durante o desenvolvimento
-              desse site, não consegui utilizar a ferramenta com versões do Python acima da 3.9,
-              então fica a dica se você se deparar com esse erro:
-              {' '}
-              <a href="https://stackoverflow.com/questions/64940369/getting-error-while-running-mutation-testing-on-python-code-attributeerror-m" target="_blank" rel="noreferrer">link</a>
+              Para a Mut.py, precisamos que a versão seja acima da 3.3, e abaixo da 3.9,
+              como expliquei anteriormente.
             </Col>
           </Row>
           <Row>

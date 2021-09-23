@@ -15,7 +15,7 @@ const menuItems = [
     key: 'teste-mutacao',
   },
   {
-    name: 'Operadores',
+    name: 'Operadores de Mutação',
     path: '/operadores',
     key: 'operadores',
   },
