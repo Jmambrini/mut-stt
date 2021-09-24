@@ -15,6 +15,8 @@ import linux2 from '../../generics/app/linux2.png';
 import linux3 from '../../generics/app/linux3.png';
 import win1 from '../../generics/app/win1.png';
 import win2 from '../../generics/app/win2.png';
+import win3 from '../../generics/app/win3.png';
+import results1 from '../../generics/app/results1.png';
 
 function mutPyAp() {
   const slider = useRef();
@@ -163,7 +165,49 @@ function mutPyAp() {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Configurando no Windows - Pt 1
+              Configurando no Windows - Pt 3
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} justify="center" className="text">
+              Com a Mut.py instalada, precisamos abrir a pasta que salvamos nossos
+              códigos no terminal, e executar o seguinte código:
+            </Col>
+          </Row>
+          <Row style={{ justifyContent: 'center' }}>
+            <Col span={20}>
+              <img src={win3} alt="win3" style={{ marginTop: '14px', width: '100%' }} />
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} justify="center" className="text">
+              No comando, temos os seguintes parâmetros:
+              <ul>
+                <li>
+                  --target mostra ao Mut.py o código que queremos testar
+                </li>
+                <li>
+                  --unit-test mostra ao Mut.py os casos de teste escritos em unittest
+                </li>
+                <li>
+                  -m é uma flag que fala para o Mut.py nos mostrar os mutantes gerados
+                </li>
+                <li>
+                  --report-html fala ao Mut.py que queremos que nossos resultados sejam
+                  mostrados em uma página HTML, que será salva na pasta &quot;resultados&quot;,
+                  dentro da pasta que criamos
+                </li>
+              </ul>
+            </Col>
+          </Row>
+          <Row style={{ justifyContent: 'right', marginTop: '-24px' }}>
+            <Col span={6}>
+              <Button onClick={() => {
+                slider.current.goTo(7);
+              }}
+              >
+                Ir para os resultados
+              </Button>
             </Col>
           </Row>
         </div>
@@ -253,7 +297,75 @@ function mutPyAp() {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Resultados (tanto Windows, quanto Linux)
+              Resultados (tanto Windows, quanto Linux) - Pt1
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              Devido a tag
+              {' '}
+              <i style={{ color: 'red' }}>--report-html</i>
+              , teremos uma página html para mostrar os resultados
+              do processo executado pela Mut.py. Essa página estará
+              dentro da pasta
+              {' '}
+              <i style={{ color: 'red' }}>resultados</i>
+              , nome inserido depois da tag
+              {' '}
+              <i style={{ color: 'red' }}>--report-html</i>
+              .
+            </Col>
+          </Row>
+          <Row style={{ maxHeight: '80%' }}>
+            <Col span={8}>
+              <img src={results1} alt="results1" style={{ marginTop: '14px', maxWidth: '100%' }} />
+            </Col>
+            <Col span={16} style={{ marginTop: '60px' }}>
+              Ao lado, temos os seguintes dados:
+              <ul>
+                <li>
+                  Target: mostra o nome do arquivo com o código que utilizamos;
+                </li>
+                <li>
+                  Tests [X]: mostra o nome do arquivo com os casos de teste que criamos, onde
+                  X é o número de arquivos de casos de testes utilizados;
+                </li>
+                <li>
+                  Result summary
+                  <ul>
+                    <li>
+                      Score: mostra o score de mutação que nosso código e casos de testes obtiveram;
+                    </li>
+                    <li>
+                      Time: mostra o tempo de execução da ferramenta;
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Mutants[X]: resumos dos mutantes gerados, onde X é o número total de mutantes;
+                  <ul>
+                    <li>
+                      killed: mostra o número de mutantes que foram mortos;
+                    </li>
+                    <li>
+                      survived: mostra o número de mutantes que sobreviveram;
+                    </li>
+                    <li>
+                      incompetent: mostra o número de mutantes incompetentes que foram gerados;
+                    </li>
+                    <li>
+                      timeout: mostra o número de mutantes que passaram do tempo máximo de execução;
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Resultados - Pt2
             </Col>
           </Row>
         </div>
