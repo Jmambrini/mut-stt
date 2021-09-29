@@ -20,17 +20,17 @@ const menuItems = [
     key: 'operadores',
   },
   {
-    name: 'Mutantes',
+    name: 'Tipos de Mutantes',
     path: '/mutantes',
     key: 'mutantes',
   },
   {
-    name: 'Ferramentas ',
+    name: 'Ferramentas',
     path: '/ferramentas',
     key: 'ferramentas',
   },
   {
-    name: 'MutPy ',
+    name: 'MutPy',
     path: '/mutpy',
     key: 'mutpy',
   },

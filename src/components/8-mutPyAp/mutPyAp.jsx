@@ -17,6 +17,9 @@ import win1 from '../../generics/app/win1.png';
 import win2 from '../../generics/app/win2.png';
 import win3 from '../../generics/app/win3.png';
 import results1 from '../../generics/app/results1.png';
+import results2 from '../../generics/app/results2.png';
+import results3 from '../../generics/app/results3.png';
+import results4 from '../../generics/app/results4.png';
 
 function mutPyAp() {
   const slider = useRef();
@@ -150,7 +153,7 @@ function mutPyAp() {
             </Col>
           </Row>
           <Row style={{ justifyContent: 'center' }}>
-            <Col>
+            <Col span={24} justify="center" className="text">
               O próximo passo é instalar a ferramenta. Para isso, basta rodar o
               comando abaixo. Se não tiver o pip instalado, é só da um Google que você
               acha rapidinho como instalar.
@@ -297,7 +300,7 @@ function mutPyAp() {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Resultados (tanto Windows, quanto Linux) - Pt1
+              Resultados (tanto Windows, quanto Linux) - Pt 1
             </Col>
           </Row>
           <Row>
@@ -313,7 +316,7 @@ function mutPyAp() {
               , nome inserido depois da tag
               {' '}
               <i style={{ color: 'red' }}>--report-html</i>
-              .
+              . Abaixo, temos a parte inicial da página de resultados:
             </Col>
           </Row>
           <Row style={{ maxHeight: '80%' }}>
@@ -321,7 +324,7 @@ function mutPyAp() {
               <img src={results1} alt="results1" style={{ marginTop: '14px', maxWidth: '100%' }} />
             </Col>
             <Col span={16} style={{ marginTop: '60px' }}>
-              Ao lado, temos os seguintes dados:
+              Na parte inicial, temos os seguintes dados:
               <ul>
                 <li>
                   Target: mostra o nome do arquivo com o código que utilizamos;
@@ -365,7 +368,155 @@ function mutPyAp() {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Resultados - Pt2
+              Resultados - Pt 2
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              Depois do resumos inicial, temos os mutantes que a ferramenta
+              criou, organizados em uma tabela.
+            </Col>
+          </Row>
+          <Row style={{ justifyContent: 'center' }}>
+            <Col span={22}>
+              <img src={results2} alt="results2" style={{ marginTop: '14px', maxWidth: '700px' }} />
+            </Col>
+          </Row>
+          <Row>
+            <Col span={15}>
+              Nessa tabela temos:
+              <ul>
+                <li>
+                  #: número identificador do mutante.;
+                </li>
+                <li>
+                  Module: nome do módulo a ser testado;
+                </li>
+                <li>
+                  Operator: operador de mutação que foi utilizado para gerar o mutante;
+                </li>
+                <li>
+                  Tests run: quantidade de testes utilizados para analisar o mutante;
+                </li>
+                <li>
+                  Duration: tempo de execução da ferramenta no mutante;
+                </li>
+                <li>
+                  Result: resultado do mutante (se foi morto, se sobreviveu, etc);
+                </li>
+              </ul>
+            </Col>
+            <Col span={9} style={{ marginTop: '60px', fontWeight: 'bold' }}>
+              Ao clicar na setinha do final da linha da tabela,
+              poderemos visualizar os dados de determinado mutante.
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Resultados - Pt 3
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              Nessa tela, poderemos analisar o que ocorreu com o código, e com o
+              mutante gerado.
+            </Col>
+          </Row>
+          <Row>
+            <Col offset={1} span={11}>
+              <img src={results3} alt="results3" style={{ marginTop: '14px', maxHeight: '400px' }} />
+            </Col>
+            <Col span={12} style={{ marginTop: '24px' }}>
+              Na primeira parte do resultado, temos o tópico
+              {' '}
+              <i style={{ color: 'red' }}>Details</i>
+              , que possui os mesmos campos explicados na tela anterior.
+              Seguindo, temos o tópico
+              {' '}
+              <i style={{ color: 'red' }}>Exception traceback</i>
+              .
+              <br />
+              <br />
+              No
+              {' '}
+              <i style={{ color: 'red' }}>Exception traceback</i>
+              , temos o retorno da ferramenta sobre qual dos nossos casos de teste
+              matou o mutante (esse tópico aparece somente quando o mutante é morto). No exemplo,
+              temos que nosso mutante foi morto por um caso da função
+              {' '}
+              <i style={{ color: 'red' }}>test_func</i>
+              , sendo este o caso de teste
+              <br />
+              {' '}
+              <i style={{ color: 'red' }}>self.assertEqual(codigo.func(1,2,3), True)</i>
+              .
+              <br />
+              <br />
+              O teste esperava as entradas
+              {' '}
+              <i style={{ color: 'red' }}>(1,2,3)</i>
+              , e um retorno
+              {' '}
+              <i style={{ color: 'red' }}>True</i>
+              . Porém, devido a mutação, o retorno do caso de teste foi
+              {' '}
+              <i style={{ color: 'red' }}>False</i>
+              .
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Resultados - Pt 4
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              Por fim, estudaremos agora a segunda parte da análise individual dos mutantes,
+              e também última parte dos nossos resultados.
+            </Col>
+          </Row>
+          <Row>
+            <Col offset={1} span={11}>
+              <img src={results4} alt="results4" style={{ marginTop: '14px', maxHeight: '400px' }} />
+            </Col>
+            <Col span={12} style={{ marginTop: '80px' }}>
+              Na primeira parte, temos o tópico
+              {' '}
+              <i style={{ color: 'red' }}>Mutations</i>
+              . Nele, podemos analisar o operador de mutação que foi utilizado
+              na geração do mutante, e a linha do código que foi modificada.
+              No mutante escolhido, a ferramenta utilizou o operador
+              {' '}
+              <i style={{ color: 'red' }}>AOR</i>
+              , e a mutação ocorreu na
+              {' '}
+              <i style={{ color: 'red' }}>linha 4</i>
+              .
+              <br />
+              <br />
+              O próximo tópico dessa parte é o
+              {' '}
+              <i style={{ color: 'red' }}>Mutant</i>
+              . Nesse tópico a ferramenta nos mostra o mutante que foi
+              gerado à partir do código original.
+              <br />
+              Como falado no tópico anterior, a mutação ocorreu na linha 4, com o
+              operador AOR. Observando a linha 4, podemos ver que o
+              {' '}
+              <i style={{ color: 'red' }}>+</i>
+              {' '}
+              foi alterado por um
+              {' '}
+              <i style={{ color: 'red' }}>-</i>
+              {' '}
+              no trecho
+              {' '}
+              <i style={{ color: 'red' }}>(a - b &gt;= c)</i>
+              .
             </Col>
           </Row>
         </div>

@@ -1,11 +1,31 @@
 import React from 'react';
+import {
+  Carousel, Row, Col,
+} from 'antd';
 
-const Intro = () => (
-  <div>
-    o que são testes baseados em erros.
-    Analogia da cidade (crimes acontecem em uma cidade. para saber se a policia consegue lidar
-    com esses crimes, precisamos simular crimes e ver se a polícia consegue lidar com os mesmos)
-  </div>
-);
+import './Intro.scss';
+
+function Intro() {
+  return (
+    <div className="Intro">
+      <Carousel
+        dotPosition="bottom"
+        arrows
+        infinite={false}
+      >
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Introdução
+            </Col>
+          </Row>
+        </div>
+        <div>
+          asdasd
+        </div>
+      </Carousel>
+    </div>
+  );
+}
 
 export default Intro;

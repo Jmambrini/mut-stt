@@ -2,13 +2,13 @@
     height: 100%;
     .ant-layout-sider {
         height: 100%;
-        background: #233d4d !important;
+        background: #1094ab !important;
         .Logo {
             height: 64px;
             font-size: 30px;
             text-align: center;
             a {
-                color: #f1f2f3;
+                color: #fff;
                 vertical-align: middle;
             }
         }
@@ -19,9 +19,9 @@
             text-align: center;
             text-decoration: underline;
             font-size: 14px;
-            background: #233d4d;
+            background: #1094ab;
             .ant-menu-item {
-                background: #233d4d;
+                background: #1094ab;
                 display: inline-block;
                 text-align: center;
                 cursor: pointer;
@@ -29,43 +29,28 @@
                 -webkit-transition: all ease 0.8s;
                 -moz-transition: all ease 0.8s;
                 transition: all ease 0.8s;
+                a {
+                    color: white;
+                }
             }
             .ant-menu-item:hover {
-                box-shadow: inset 240px 0 0 0 #df5a01;
+                box-shadow: inset 240px 0 0 0 #fcb421;
                 color: #fff;
+                a {
+                    color: black;
+                }
             }
             .ant-menu-item-selected {
-                background-color: #df5a01;
+                background-color: #fcb421;
+                a {
+                    color: black;
+                    text-decoration: underline;
+                }
             }
             .ant-menu-item-selected:hover {
-                background-color: #df5a01;
+                background-color: #fcb421;
                 box-shadow: none;
             }
         }
     }
-}
-
-.btn {
-    color: #31302b;
-    background: #fff;
-    padding: 12px 17px;
-    margin: 25px;
-    font-family: "OpenSansBold", sans-serif;
-    border: 3px solid #31302b;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-radius: 2px;
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: inset 0 0 0 0 #31302b;
-    -webkit-transition: all ease 0.8s;
-    -moz-transition: all ease 0.8s;
-    transition: all ease 0.8s;
-}
-.btn:hover {
-    box-shadow: inset 100px 0 0 0 #e0e0e0;
-    color: #fff;
 }
