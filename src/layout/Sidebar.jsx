@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import menuItems from './MenuItems';
 import './Sidebar.scss';
 
+const { SubMenu } = Menu;
+
 class SideBar extends Component {
   constructor(props) {
     super(props);
@@ -31,13 +33,27 @@ class SideBar extends Component {
             mode="inline"
             theme="dark"
             selectedKeys={pathname}
+            defaultOpenKeys={['sub1']}
           >
             {menuItems.map((menu) => (
-              <Menu.Item key={menu.path}>
-                <Link to={menu.path}>
-                  <span>{menu.name}</span>
-                </Link>
-              </Menu.Item>
+              menu.type === 'normal'
+                ? (
+                  <Menu.Item key={menu.path}>
+                    <Link to={menu.path}>
+                      <span>{menu.name}</span>
+                    </Link>
+                  </Menu.Item>
+                ) : (
+                  <SubMenu title={menu.name} key={menu.key}>
+                    {menu.sub.map((e) => (
+                      <Menu.Item key={e.path} className="subMenu">
+                        <Link to={e.path}>
+                          <span>{e.name}</span>
+                        </Link>
+                      </Menu.Item>
+                    ))}
+                  </SubMenu>
+                )
             ))}
           </Menu>
         </Layout.Sider>

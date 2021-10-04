@@ -17,10 +17,11 @@ function mutantes() {
           Nessa página, daremos um breve resumo as mutantes
         </div>
         <div>
-          Explicação com exemplos
+          mutantes vivos, mortos, equivalentes, incompetente, timeout
+          equivalente - nunca vai ser morto, não existe caso de teste para ele
         </div>
         <div>
-          Explicação com exemplos
+          mutantes extras caso queira aprofundar na matéria
         </div>
         <div>
           Explicação com exemplos

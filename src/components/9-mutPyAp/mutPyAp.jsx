@@ -72,11 +72,6 @@ function mutPyAp() {
             </Col>
           </Row>
           <Row>
-            <Col span={24} justify="center" className="mini-text">
-              Ninguém vai te julgar por usar Windows. Eu acho...
-            </Col>
-          </Row>
-          <Row>
             <Col offset={5} span={6} justify="center" className="text">
               <Button
                 onClick={() => {

@@ -9,7 +9,7 @@ import {
   mdiLanguageSwift,
   mdiLanguagePhp,
   mdiLanguagePython,
-  mdiLanguageCpp,
+  mdiLanguageC,
 } from '@mdi/js';
 
 import cpp from '../../generics/languages/c++.png';
@@ -20,7 +20,7 @@ import stryker from '../../generics/languages/stryker.png';
 
 import './ferramentas.scss';
 
-function ferramentas() {
+function ferramentas(props) {
   const slider = useRef();
   const { Panel } = Collapse;
 
@@ -42,22 +42,21 @@ function ferramentas() {
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
-              Nesse tópico, vamos discutir sobre algumas ferramentas para
-              realizar os testes de mutação.
+              Existem diversas ferramentas que podem apoiar o teste de mutação.
+              https://spectrum.ieee.org/top-programming-languages-2021
             </Col>
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
-              Após uma pesquisa breve em alguns materiais de ensino,
-              compilei ferramentas de determinadas linguagens para
-              dar uma breve explicação, e também dar a possibilidade de, caso
-              for do seu interesse, aprofundar em outras ferramentas diferentes
-              da que abordamos majoritamente, a Mut.py.
+              As linguagens foram selecionadas baseando-se nas mais usadas em 2021,
+              de acordo com o ranking da IEEE:
+              {' '}
+              <a href="https://spectrum.ieee.org/top-programming-languages-2021" target="_blank" rel="noreferrer">ieee.org</a>
             </Col>
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
-              As linguagens selecionadas foram:
+              As linguagens e ferramentas selecionadas foram:
             </Col>
           </Row>
           <Row justify="center">
@@ -66,9 +65,9 @@ function ferramentas() {
                 slider.current.goTo(1);
               }}
               >
-                <Icon path={mdiLanguageCpp} size={1} color="black" />
+                <Icon path={mdiLanguageC} size={1} color="black" />
                 <div className="languageText">
-                  Mutate++
+                  Proteum
                 </div>
               </Card>
             </Col>
@@ -120,7 +119,7 @@ function ferramentas() {
             </Col>
             <Col offset={2} span={6}>
               <Card onClick={() => {
-                slider.current.goTo(6);
+                props.history.push('/mutpy-def');
               }}
               >
                 <Icon path={mdiLanguagePython} size={1} color="black" />
@@ -134,14 +133,14 @@ function ferramentas() {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Mutate++ - C++
+              Proteum - C
             </Col>
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
               A primeira ferramenta que abordaremos é a
               {' '}
-              <i style={{ color: 'red' }}>Mutate++</i>
+              <i style={{ color: 'red' }}>Proteum</i>
               {' '}
               .
             </Col>
@@ -150,7 +149,7 @@ function ferramentas() {
             <Col span={12} justify="center" className="text" style={{ marginTop: '80px' }}>
               Ela realiza mutações em códigos com a linguagem
               {' '}
-              <i style={{ color: 'red' }}>C++</i>
+              <i style={{ color: 'red' }}>C</i>
               , e utiliza a linguagem
               {' '}
               <i style={{ color: 'red' }}>Python</i>
@@ -161,18 +160,9 @@ function ferramentas() {
               <img src={cpp} alt="cpp" style={{ width: '200px' }} />
             </Col>
           </Row>
-          <Row style={{ marginTop: '50px' }}>
-            <Col span={24} justify="center" className="text">
-              Caso tenha interesse em aprofundar seu conhecimento
-              , logo abaixo está a documentação da ferramenta.
-            </Col>
-          </Row>
           <Collapse accordion>
             <Panel header="Documentação" key="1">
               <p>
-                Clique no link para acessar a documentação:
-                <br />
-                <br />
                 <a href="https://github.com/nlohmann/mutate_cpp" target="_blank" rel="noreferrer">https://github.com/nlohmann/mutate_cpp</a>
               </p>
             </Panel>
@@ -185,25 +175,29 @@ function ferramentas() {
             </Col>
           </Row>
           <Row>
-            <Col span={12} justify="center" className="text">
-              asdasdasdasdasd
+            <Col span={14} justify="center" className="text">
+              <div>
+                A
+                {' '}
+                <i style={{ color: 'red' }}>Muter</i>
+                {' '}
+                é uma ferramenta de apoio ao teste de mutação para a linguagem de progração
+                {' '}
+                <i style={{ color: 'red' }}>Swift</i>
+                , linguagem desenvolvida pela Apple para ser utilizada nos seus produtos
+                (iOS, macOS, watchOS, tvOS).
+              </div>
+              <div>
+                https://github.com/muter-mutation-testing/muter/blob/master/Docs/mutation_operators.md
+              </div>
             </Col>
-            <Col span={12}>
+            <Col offset={1} span={7}>
               <img src={muter} alt="muter" style={{ width: '400px', textAlign: '-webkit-right' }} />
-            </Col>
-          </Row>
-          <Row style={{ marginTop: '50px' }}>
-            <Col span={24} justify="center" className="text">
-              Caso tenha interesse em aprofundar seu conhecimento
-              , logo abaixo está a documentação da ferramenta.
             </Col>
           </Row>
           <Collapse accordion>
             <Panel header="Documentação" key="1">
               <p>
-                Clique no link para acessar a documentação:
-                <br />
-                <br />
                 <a href="https://github.com/muter-mutation-testing/muter" target="_blank" rel="noreferrer">https://github.com/muter-mutation-testing/muter</a>
               </p>
             </Panel>
@@ -217,24 +211,15 @@ function ferramentas() {
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
-              asdasdasdasdasd
+              https://infection.github.io/guide/mutators.html
             </Col>
             <Col>
               <img src={infection} alt="cpp" />
             </Col>
           </Row>
-          <Row style={{ marginTop: '50px' }}>
-            <Col span={24} justify="center" className="text">
-              Caso tenha interesse em aprofundar seu conhecimento
-              , logo abaixo está a documentação da ferramenta.
-            </Col>
-          </Row>
           <Collapse accordion>
             <Panel header="Documentação" key="1">
               <p>
-                Clique no link para acessar a documentação:
-                <br />
-                <br />
                 <a href="https://infection.github.io/" target="_blank" rel="noreferrer">https://infection.github.io/</a>
               </p>
             </Panel>
@@ -248,24 +233,15 @@ function ferramentas() {
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
-              asdasdasdasdasd
+              https://stryker-mutator.io/docs/mutation-testing-elements/supported-mutators
             </Col>
             <Col>
               <img src={stryker} alt="stryker" />
             </Col>
           </Row>
-          <Row style={{ marginTop: '50px' }}>
-            <Col span={24} justify="center" className="text">
-              Caso tenha interesse em aprofundar seu conhecimento
-              , logo abaixo está a documentação da ferramenta.
-            </Col>
-          </Row>
           <Collapse accordion>
             <Panel header="Documentação" key="1">
               <p>
-                Clique no link para acessar a documentação:
-                <br />
-                <br />
                 <a href="https://github.com/stryker-mutator/stryker-js" target="_blank" rel="noreferrer">https://github.com/stryker-mutator/stryker-js</a>
               </p>
             </Panel>
@@ -279,40 +255,19 @@ function ferramentas() {
           </Row>
           <Row>
             <Col span={12} justify="center" className="text">
-              asdasdasdasdasd
+              http://pitest.org/quickstart/mutators/
             </Col>
             <Col>
               <img src={pitest} alt="pitest" />
             </Col>
           </Row>
-          <Row style={{ marginTop: '50px' }}>
-            <Col span={24} justify="center" className="text">
-              Caso tenha interesse em aprofundar seu conhecimento
-              , logo abaixo está a documentação da ferramenta.
-            </Col>
-          </Row>
           <Collapse accordion>
             <Panel header="Documentação" key="1">
               <p>
-                Clique no link para acessar a documentação:
-                <br />
-                <br />
                 <a href="http://pitest.org/" target="_blank" rel="noreferrer">http://pitest.org/</a>
               </p>
             </Panel>
           </Collapse>
-        </div>
-        <div>
-          <Row>
-            <Col span={24} justify="center" align="middle" className="title">
-              Mutpy - Python
-            </Col>
-          </Row>
-          <Row>
-            <Col span={24} justify="center" className="text">
-              asdasdasdasdasd
-            </Col>
-          </Row>
         </div>
       </Carousel>
     </div>

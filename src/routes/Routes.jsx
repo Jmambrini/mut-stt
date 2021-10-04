@@ -13,7 +13,8 @@ import operadores from '../components/4-operadores/operadores';
 import mutantes from '../components/5-mutantes/mutantes';
 import ferramentas from '../components/6-ferramentas/ferramentas';
 import mutPy from '../components/7-mutPy/mutPy';
-import mutPyAp from '../components/8-mutPyAp/mutPyAp';
+import mutPyFunc from '../components/8-mutPyFunc/mutPyFunc';
+import mutPyAp from '../components/9-mutPyAp/mutPyAp';
 
 function Routes() {
   return (
@@ -50,9 +51,14 @@ function Routes() {
           component={ferramentas}
         />
         <PublicRoutes
-          path="/mutpy"
+          path="/mutpy-def"
           exact
           component={mutPy}
+        />
+        <PublicRoutes
+          path="/mutpy-func"
+          exact
+          component={mutPyFunc}
         />
         <PublicRoutes
           path="/mutpy-app"

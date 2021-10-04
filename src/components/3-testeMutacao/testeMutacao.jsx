@@ -10,13 +10,6 @@ function testeMutacao() {
   const [value1, setValue1] = useState(-1);
   const [color1, setColor1] = useState(['#fdd872', '#fdd872', '#fdd872']);
 
-  // const Arrow = ({
-  //   // eslint-disable-next-line react/prop-types
-  //   onClick,
-  // }) => (
-  //   <RightCircleFilled onClick={onClick} />
-  // );
-
   function checarResposta1() {
     setColor1(['#F96462', '#F96462', '#A1C181']);
   }
@@ -27,20 +20,26 @@ function testeMutacao() {
         dotPosition="bottom"
         arrows
         infinite={false}
-        // nextArrow={<Arrow />}
       >
         <div>
           Nessa página, daremos um breve resumo sobre o que é um
           teste de mutação.
         </div>
         <div>
-          Explicação com exemplos
+          Histórico de teste de mutação
+          Hipotese do programador competente
+          Hipotese do efeito de acoplamento
+          Programas equivalentes
         </div>
         <div>
-          Explicação com exemplos
+          O QUE É UM MUTANTE - PROGRAMA ORIGINAL, MUTANTE
+          SURGE BASEADO QUE PROGRAMADORES SÃO COMPETENTES, PROGRAMAS COM BOA QUALIDADE
+          O TESTE DE MUTACAO ASSUME QUE VOCE TEM UM PROGRAMA LIVRE DE DEFEITOS, E PARA TESTAR,
+          CRIAMOS PROGRAMAS QUE POSSUEM DEFEITOS.
         </div>
         <div>
-          Explicação com exemplos
+          comentar sobre as criações dos mutantes
+          classes de modelos baseados em uma linguagem (principais erros)
         </div>
         <div>
           <div className="quizz-question">
