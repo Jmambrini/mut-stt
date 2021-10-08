@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Carousel, Radio, Space, Card, Button,
+  Carousel, Radio, Space, Card, Button, Row, Col,
 } from 'antd';
 // import { RightCircleFilled } from '@ant-design/icons';
 
@@ -22,8 +22,11 @@ function testeMutacao() {
         infinite={false}
       >
         <div>
-          Nessa página, daremos um breve resumo sobre o que é um
-          teste de mutação.
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Teste de Mutação
+            </Col>
+          </Row>
         </div>
         <div>
           Histórico de teste de mutação

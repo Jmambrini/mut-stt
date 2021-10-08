@@ -28,13 +28,13 @@ function Intro() {
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
-              Nesse REA, serão abordados os seguintes tópicos:
+              Nesse REA, são abordados os seguintes tópicos:
               <ul style={{ marginTop: '12px' }}>
                 <li className="list">
                   <Link to="/criterio-defeitos">
                     Critérios de teste
                   </Link>
-                  : um breve resumo sobre os critérios de teste baseados em erros
+                  : um breve resumo sobre os critérios de teste baseados em defeitos
                 </li>
                 <li className="list">
                   <Link to="/teste-mutacao">
@@ -47,14 +47,14 @@ function Intro() {
                     Operadores de Mutação
                   </Link>
                   : explicação sobre os operadores de mutação, com um foco nos operadores
-                  da Mut.py
+                  da linguagem Python
                 </li>
                 <li className="list">
                   <Link to="/mutantes">
                     Tipos de Mutantes
                   </Link>
                   : listagem dos diferentes tipos de mutantes existentes, e também uma explicação
-                  sobre os mesmos
+                  sobre eles
                 </li>
                 <li className="list">
                   <Link to="/ferramentas">

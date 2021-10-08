@@ -146,15 +146,20 @@ function ferramentas(props) {
             </Col>
           </Row>
           <Row>
-            <Col span={12} justify="center" className="text" style={{ marginTop: '80px' }}>
-              Ela realiza mutações em códigos com a linguagem
+            <Col span={12} justify="center" className="text" style={{ marginTop: '16px' }}>
+              &quot;A
               {' '}
-              <i style={{ color: 'red' }}>C</i>
-              , e utiliza a linguagem
+              <i style={{ color: 'red' }}>Proteum</i>
               {' '}
-              <i style={{ color: 'red' }}>Python</i>
-              {' '}
-              para realizar os seus testes.
+              é uma ferramenta de teste de mutação que consiste em módulos
+              funcionais independentes (programas) que permitem
+              usuários experientes apliquem testes por meio de scripts de shell, reduzindo
+              a quantidade de interação entre o usuário e Proteum e economizando tempo.&quot;
+              <a href="https://github.com/magsilva/proteum/raw/master/doc/manual-proteumim.pdf">[M. E. Delamaro e J. C. Maldonado, Proteum User&lsquo;s Guide]</a>
+              <br />
+              <br />
+              Essa ferramenta possui uma interface gráfica implementada, mas também pode ser
+              utilizada via terminal, utilizando os comandos citados na documentação.
             </Col>
             <Col span={12} style={{ textAlign: '-webkit-center' }}>
               <img src={cpp} alt="cpp" style={{ width: '200px' }} />
@@ -163,7 +168,7 @@ function ferramentas(props) {
           <Collapse accordion>
             <Panel header="Documentação" key="1">
               <p>
-                <a href="https://github.com/nlohmann/mutate_cpp" target="_blank" rel="noreferrer">https://github.com/nlohmann/mutate_cpp</a>
+                <a href="https://github.com/magsilva/proteum" target="_blank" rel="noreferrer">https://github.com/magsilva/proteum</a>
               </p>
             </Panel>
           </Collapse>
@@ -175,7 +180,7 @@ function ferramentas(props) {
             </Col>
           </Row>
           <Row>
-            <Col span={14} justify="center" className="text">
+            <Col span={12} justify="center" className="text">
               <div>
                 A
                 {' '}
@@ -186,13 +191,29 @@ function ferramentas(props) {
                 <i style={{ color: 'red' }}>Swift</i>
                 , linguagem desenvolvida pela Apple para ser utilizada nos seus produtos
                 (iOS, macOS, watchOS, tvOS).
+                <br />
+                <br />
+                &quot;Com o
+                {' '}
+                <i style={{ color: 'red' }}>Muter</i>
+                , você pode garantir que seu conjunto de testes atenda a todos
+                os seus requisitos, falhe de forma significativa e clara e permaneça estável
+                diante de alterações de código inesperadas ou acidentais.&quot;
               </div>
-              <div>
-                https://github.com/muter-mutation-testing/muter/blob/master/Docs/mutation_operators.md
+            </Col>
+          </Row>
+          <Row>
+            <Col span={12} justify="center" className="text">
+              <div style={{ textAlignLast: 'center' }}>
+                Os operadores suportados pela ferramenta estão disponíveis no link:
+                <br />
+                <a className="operators" href="https://github.com/muter-mutation-testing/muter/blob/master/Docs/mutation_operators.md" target="_blank" rel="noreferrer">
+                  Operadores de mutação da Muter
+                </a>
               </div>
             </Col>
             <Col offset={1} span={7}>
-              <img src={muter} alt="muter" style={{ width: '400px', textAlign: '-webkit-right' }} />
+              <img src={muter} alt="muter" style={{ width: '350px', textAlign: '-webkit-right' }} />
             </Col>
           </Row>
           <Collapse accordion>
@@ -210,11 +231,39 @@ function ferramentas(props) {
             </Col>
           </Row>
           <Row>
-            <Col span={24} justify="center" className="text">
-              https://infection.github.io/guide/mutators.html
+            <Col span={12} justify="center" className="text">
+              <div>
+                A
+                {' '}
+                <i style={{ color: 'red' }}>Infection</i>
+                {' '}
+                é uma ferramenta de apoio ao teste de mutação para a linguagem de progração
+                {' '}
+                <i style={{ color: 'red' }}>PHP</i>
+                , linguagem utilizada prioritariamente para o desenvolvimento de aplicações
+                Web e sites.
+                <br />
+                <br />
+                A
+                {' '}
+                <i style={{ color: 'red' }}>Infection</i>
+                {' '}
+                é baseada em
+                mutações AST (Abstract Syntax Tree). Ela funciona como uma ferramenta CLI
+                (command-line interface)
+                e pode ser executado a partir da raiz do seu projeto.
+              </div>
+              <div style={{ textAlignLast: 'center' }}>
+                <br />
+                Os operadores suportados pela ferramenta estão disponíveis no link:
+                <br />
+                <a className="operators" href="https://infection.github.io/guide/mutators.html" target="_blank" rel="noreferrer">
+                  Operadores de mutação da Infection
+                </a>
+              </div>
             </Col>
-            <Col>
-              <img src={infection} alt="cpp" />
+            <Col offset={1} span={11} style={{ textAlign: '-webkit-center' }}>
+              <img src={infection} alt="cpp" style={{ width: '200px' }} />
             </Col>
           </Row>
           <Collapse accordion>
@@ -232,11 +281,53 @@ function ferramentas(props) {
             </Col>
           </Row>
           <Row>
-            <Col span={24} justify="center" className="text">
-              https://stryker-mutator.io/docs/mutation-testing-elements/supported-mutators
+            <Col span={14} justify="center" className="text">
+              A
+              {' '}
+              <i style={{ color: 'red' }}>Stryker</i>
+              {' '}
+              é uma ferramenta de apoio ao teste de mutação para a linguagem de progração
+              {' '}
+              <i style={{ color: 'red' }}>JavaScript</i>
+              , linguagem utilizada prioritariamente para o desenvolvimento de aplicações
+              Web e sites. Além disso, a ferramenta também suporta integração com bibliotecas como
+              {' '}
+              <i style={{ color: 'red' }}>React</i>
+              ,
+              {' '}
+              <i style={{ color: 'red' }}>VueJS</i>
+              ,
+              {' '}
+              <i style={{ color: 'red' }}>Angular</i>
+              {' '}
+              e
+              {' '}
+              <i style={{ color: 'red' }}>NodeJS</i>
+              .
+              <br />
+              <br />
+              Uma ferramenta muito interessante disponível no
+              {' '}
+              <i style={{ color: 'red' }}>StrykerJS</i>
+              {' '}
+              é a disponibilidade de um Dashboard online que mostra os resultados do teste de
+              mutação. Só é necessário se cadastrar na plataforma, e sincronizar
+              com o GitHub de um projeto já configurado com o
+              {' '}
+              <i style={{ color: 'red' }}>StrykerJS</i>
+              .
+              <br />
+              <br />
+              <div style={{ textAlignLast: 'center' }}>
+                Os operadores suportados pela ferramenta estão disponíveis no link:
+                <br />
+                <a className="operators" href="https://stryker-mutator.io/docs/mutation-testing-elements/supported-mutators" target="_blank" rel="noreferrer">
+                  Operadores de mutação da StrykerJS
+                </a>
+              </div>
             </Col>
-            <Col>
-              <img src={stryker} alt="stryker" />
+            <Col offset={1} span={9} style={{ textAlign: '-webkit-center' }}>
+              <img src={stryker} alt="stryker" style={{ width: '200px' }} />
             </Col>
           </Row>
           <Collapse accordion>
@@ -255,10 +346,38 @@ function ferramentas(props) {
           </Row>
           <Row>
             <Col span={12} justify="center" className="text">
-              http://pitest.org/quickstart/mutators/
+              A
+              {' '}
+              <i style={{ color: 'red' }}>PITest</i>
+              {' '}
+              é uma ferramenta de apoio ao teste de mutação para a linguagem de progração
+              {' '}
+              <i style={{ color: 'red' }}>Java</i>
+              .
+              <br />
+              <br />
+              A ferramenta oferece suporte integrado para as ferramentas
+              {' '}
+              <i style={{ color: 'red' }}>Maven</i>
+              {' '}
+              e
+              {' '}
+              <i style={{ color: 'red' }}>Ant</i>
+              , ambas utilizadas para compilação e organização das dependencias de um projeto.
+              Além disso, a ferramenta também suporta que o usuário utilize o terminal de comando
+              para executar o teste de mutação.
+              <br />
+              <br />
+              <div style={{ textAlignLast: 'center' }}>
+                Os operadores suportados pela ferramenta estão disponíveis no link:
+                <br />
+                <a className="operators" href="http://pitest.org/quickstart/mutators/" target="_blank" rel="noreferrer">
+                  Operadores de mutação da PITest
+                </a>
+              </div>
             </Col>
-            <Col>
-              <img src={pitest} alt="pitest" />
+            <Col offset={1} span={9} style={{ textAlign: '-webkit-center' }}>
+              <img src={pitest} alt="pitest" style={{ marginTop: '60px' }} />
             </Col>
           </Row>
           <Collapse accordion>
