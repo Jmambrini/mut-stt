@@ -15,6 +15,7 @@ import ferramentas from '../components/6-ferramentas/ferramentas';
 import mutPy from '../components/7-mutPy/mutPy';
 import mutPyFunc from '../components/8-mutPyFunc/mutPyFunc';
 import mutPyAp from '../components/9-mutPyAp/mutPyAp';
+import Sobre from '../components/10 - sobre/Sobre';
 
 function Routes() {
   return (
@@ -64,6 +65,11 @@ function Routes() {
           path="/mutpy-app"
           exact
           component={mutPyAp}
+        />
+        <PublicRoutes
+          path="/sobre"
+          exact
+          component={Sobre}
         />
         <PublicRoutes
           component={notFound}

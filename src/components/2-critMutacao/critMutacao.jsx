@@ -1,45 +1,25 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import {
-  Carousel, Row, Col, Modal, Card,
+  Carousel, Row, Col, Button,
 } from 'antd';
+
+import { CaretRightOutlined, CaretDownOutlined } from '@ant-design/icons';
 
 import errorSeeding from '../../generics/codes/errorSeeding.png';
 
 import './critMutacao.scss';
 
 function critMutacao(props) {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [modalHeaderTitle, setModalHeaderTitle] = useState();
-  const [modalContent, setModalContent] = useState();
-
-  const showModal = ({ headerTitle, content }) => {
-    setModalHeaderTitle(headerTitle);
-    setModalContent(content);
-    setIsModalVisible(true);
-  };
-
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
-
+  const slider = useRef();
   return (
     <div className="critMutacao">
-      <Modal
-        title={modalHeaderTitle}
-        visible={isModalVisible}
-        footer={false}
-        closable
-        onCancel={handleCancel}
-        width="fit-content"
-        style={{ maxWidth: '800px', top: '35px' }}
-        bodyStyle={{ fontSize: '16px' }}
-      >
-        {modalContent}
-      </Modal>
       <Carousel
         dotPosition="bottom"
         arrows
         infinite={false}
+        ref={(ref) => {
+          slider.current = ref;
+        }}
       >
         <div>
           <Row>
@@ -89,55 +69,70 @@ function critMutacao(props) {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Critérios de teste baseados em defeitos
+              Semeadura de defeitos
             </Col>
           </Row>
           <Row>
             <Col span={24} className="text">
-              Os dois critérios de teste baseados em defeitos mais estudados são a
-              &quot;Semeadura de Defeitos&quot; e o &quot;Teste de Mutação&quot;, sendo
-              o segundo o mais utilizado.
+              A Semeadura de Defeitos é um dos critérios de teste baseado em defeitos.
+              É uma técnica no qual o desenvolvedor introduz
+              diversos erros no seu código para checar se os casos de testes desenvolvidos
+              são efetivos na captura dos erros que foram inseridos.
+              <br />
+              Esse técnica tenta obter uma proporção entre os erros
+              inseridos pelo desenvolvedor, e os erros que ainda são desconhecidos e
+              que serão revelados com os casos de teste.
+              No caso abaixo, alguns erros foram inseridos no código original, marcados
+              com um traço branco no programa com os erros inseridos.
+              <div style={{ textAlign: '-webkit-center' }}>
+                <img src={errorSeeding} alt="muter" style={{ width: '600px' }} />
+              </div>
             </Col>
           </Row>
+        </div>
+        <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              <Card
-                style={{ width: '70%' }}
-                onClick={() => showModal({
-                  headerTitle: 'Semeadura de Defeitos',
-                  content: () => (
-                    <div>
-                      A Semeadura de Defeitos é um processo que o desenvolvedor introduz
-                      diversos erros no seu código para checar se os casos de testes desenvolvidos
-                      são efetivos na captura dos erros que foram inseridos.
-                      <br />
-                      Esse técnica tenta obter uma proporção entre os erros
-                      inseridos pelo desenvolvedor, e os erros que ainda são desconhecidos e
-                      que serão revelados com os casos de teste.
-                      <br />
-                      No caso abaixo, alguns erros foram inseridos no código original, marcados
-                      com um traço branco no programa com os erros inseridos.
-                      <div style={{ textAlignLast: 'center' }}>
-                        <img src={errorSeeding} alt="muter" style={{ width: '600px', textAlign: '-webkit-right' }} />
-                      </div>
-                    </div>
-                  ),
-                })}
-              >
-                Semeadura de Defeitos
-              </Card>
+              Teste de Mutação
             </Col>
           </Row>
-          <Row>
-            <Col span={24} justify="center" align="middle" className="title">
-              <Card
-                style={{ width: '70%' }}
+          <Row style={{ height: '400px' }}>
+            <Col span={12} className="text" style={{ alignSelf: 'center' }}>
+              O Teste de Mutação é o critério mais utilizado nos testes
+              baseados em defeitos. E por isso, também é o foco desse REA.
+              <br />
+              <br />
+              Por esse motivos, a técnica será abordada em tópicos separados
+              para explicar o conteúdo de maneira mais aprofundada.
+              <br />
+              <br />
+              À partir desse ponto, será possível seguir para o tópico voltado
+              ao Teste de Mutação, ou aprofundar o conhecimento adquirido até aqui
+              com os Exercícios Propostos.
+            </Col>
+            <Col offset={2} span={8} style={{ alignSelf: 'center' }}>
+              <Button
                 onClick={() => {
-                  props.history.push('/teste-mutacao');
+                  slider.current.next();
                 }}
+
+              >
+                Exercícios propostos
+                <CaretRightOutlined style={{ fontSize: '20px' }} />
+              </Button>
+              <Button
+                onClick={() => props.history.push('/teste-mutacao')}
               >
                 Teste de Mutação
-              </Card>
+                <CaretDownOutlined style={{ fontSize: '20px' }} />
+              </Button>
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Exercícios propostos
             </Col>
           </Row>
         </div>

@@ -145,9 +145,15 @@ function mutPyFunc(props) {
               </Col>
               <Col span={8}>
                 <Result
-                  icon={<SmileOutlined />}
+                  icon={<SmileOutlined style={{ color: '#df5a01' }} />}
                   title="Agora, vamos colocar a Mut.py na prática!"
-                  extra={<Button type="primary" onClick={() => props.history.push('/mutpy-app')}>Próximo tópico!</Button>}
+                  extra={(
+                    <Button
+                      onClick={() => props.history.push('/mutpy-app')}
+                    >
+                      Próximo tópico!
+                    </Button>
+                  )}
                 />
               </Col>
             </Row>
