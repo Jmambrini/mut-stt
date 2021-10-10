@@ -3,9 +3,11 @@ import {
   Carousel, Row, Col, Modal, Card,
 } from 'antd';
 
+import errorSeeding from '../../generics/codes/errorSeeding.png';
+
 import './critMutacao.scss';
 
-function critMutacao() {
+function critMutacao(props) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalHeaderTitle, setModalHeaderTitle] = useState();
   const [modalContent, setModalContent] = useState();
@@ -29,7 +31,8 @@ function critMutacao() {
         closable
         onCancel={handleCancel}
         width="fit-content"
-        style={{ maxWidth: '800px' }}
+        style={{ maxWidth: '800px', top: '35px' }}
+        bodyStyle={{ fontSize: '16px' }}
       >
         {modalContent}
       </Modal>
@@ -91,57 +94,52 @@ function critMutacao() {
           </Row>
           <Row>
             <Col span={24} className="text">
-              Critérios de teste baseados em defeitos
+              Os dois critérios de teste baseados em defeitos mais estudados são a
+              &quot;Semeadura de Defeitos&quot; e o &quot;Teste de Mutação&quot;, sendo
+              o segundo o mais utilizado.
             </Col>
           </Row>
-        </div>
-        <div>
           <Row>
-            <Col span={12} justify="center" align="middle" className="title">
+            <Col span={24} justify="center" align="middle" className="title">
               <Card
+                style={{ width: '70%' }}
                 onClick={() => showModal({
-                  headerTitle: 'Teste de mutação',
+                  headerTitle: 'Semeadura de Defeitos',
                   content: () => (
                     <div>
-                      asdasdasd
+                      A Semeadura de Defeitos é um processo que o desenvolvedor introduz
+                      diversos erros no seu código para checar se os casos de testes desenvolvidos
+                      são efetivos na captura dos erros que foram inseridos.
+                      <br />
+                      Esse técnica tenta obter uma proporção entre os erros
+                      inseridos pelo desenvolvedor, e os erros que ainda são desconhecidos e
+                      que serão revelados com os casos de teste.
+                      <br />
+                      No caso abaixo, alguns erros foram inseridos no código original, marcados
+                      com um traço branco no programa com os erros inseridos.
+                      <div style={{ textAlignLast: 'center' }}>
+                        <img src={errorSeeding} alt="muter" style={{ width: '600px', textAlign: '-webkit-right' }} />
+                      </div>
                     </div>
                   ),
                 })}
               >
-                Teste de Mutação
+                Semeadura de Defeitos
               </Card>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
               <Card
-                onClick={() => showModal({
-                  headerTitle: 'Teste de mutação',
-                  content: () => (
-                    <div>
-                      asdasdasd
-                    </div>
-                  ),
-                })}
+                style={{ width: '70%' }}
+                onClick={() => {
+                  props.history.push('/teste-mutacao');
+                }}
               >
                 Teste de Mutação
               </Card>
             </Col>
           </Row>
-        </div>
-        <div>
-          TESTE BASEADO EM DEFEITO
-          EXEMPLIFICAR E FOCAR NO DE MUTAÇÃO
-          CARD - teste de mutação (expandir um quadro)
-          CARD - semeadura de defeitos (hyperlink com alguma documentação)
-        </div>
-        <div>
-          Explicação com exemplos
-        </div>
-        <div>
-          Explicação com exemplos
-        </div>
-        <div>
-          Explicação com exemplos
-        </div>
-        <div>
-          aaaa
         </div>
       </Carousel>
     </div>
