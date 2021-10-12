@@ -38,32 +38,32 @@ function testeMutacao() {
       {
         name: 'Mutante 1',
         shape: 'rect',
-        coords: [4, 168, 215, 34],
+        coords: [160, 24, 0, 125],
       },
       {
         name: 'Mutante 2',
         shape: 'rect',
-        coords: [220, 198, 1, 331],
+        coords: [162, 147, 2, 247],
       },
       {
         name: 'Mutante 3',
         shape: 'rect',
-        coords: [369, 364, 156, 502],
+        coords: [272, 270, 115, 372],
       },
       {
         name: 'Mutante 4',
         shape: 'rect',
-        coords: [662, 363, 446, 500],
+        coords: [329, 270, 490, 372],
       },
       {
         name: 'Mutante 5',
         shape: 'rect',
-        coords: [594, 199, 808, 335],
+        coords: [439, 148, 599, 248],
       },
       {
         name: 'Mutante 6',
         shape: 'rect',
-        coords: [597, 29, 810, 169],
+        coords: [439, 22, 599, 124],
       },
     ],
   };
@@ -187,8 +187,13 @@ function testeMutacao() {
             </Col>
           </Row>
           <Row>
-            <Col offset={1}>
-              <ImageMapper src={mutEx} map={AREAS_MAP} onClick={(area) => showModal(area)} />
+            <Col span={24} justify="center" align="middle">
+              <ImageMapper
+                src={mutEx}
+                width={600}
+                map={AREAS_MAP}
+                onClick={(area) => showModal(area)}
+              />
             </Col>
             <Col offset={1} span={5}>
               {/* <Card
