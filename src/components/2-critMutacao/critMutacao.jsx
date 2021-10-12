@@ -102,7 +102,7 @@ function critMutacao(props) {
               baseados em defeitos. E por isso, também é o foco desse REA.
               <br />
               <br />
-              Por esse motivos, a técnica será abordada em tópicos separados
+              Por esse motivo, a técnica será abordada em tópicos separados
               para explicar o conteúdo de maneira mais aprofundada.
               <br />
               <br />

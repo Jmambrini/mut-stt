@@ -1,26 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Carousel, Radio, Space, Card, Button, Row, Col, Modal,
 } from 'antd';
 import ImageMapper from 'react-image-mapper';
 
+import { CaretRightOutlined, CaretDownOutlined } from '@ant-design/icons';
+
 import mutEx from '../../generics/mutExample/mutEx.png';
 
 import './testeMutacao.scss';
 
-// const { Panel } = Collapse;
+function testeMutacao(props) {
+  const slider = useRef();
 
-function testeMutacao() {
   const [value1, setValue1] = useState(-1);
   const [color1, setColor1] = useState(['#fdd872', '#fdd872', '#fdd872']);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalHeaderTitle, setModalHeaderTitle] = useState();
   const [modalContent, setModalContent] = useState();
 
-  const showModal = (area) => {
-    console.log(area);
-    setModalHeaderTitle(area.name);
-    setModalContent(area.name);
+  const showModal = ({ headerTitle, content }) => {
+    setModalHeaderTitle(headerTitle);
+    setModalContent(content);
     setIsModalVisible(true);
   };
 
@@ -36,34 +37,46 @@ function testeMutacao() {
     name: 'my Map',
     areas: [
       {
-        name: 'Mutante 1',
+        key: '1',
+        name: 'Mutante 1:',
         shape: 'rect',
         coords: [160, 24, 0, 125],
       },
       {
-        name: 'Mutante 2',
+        key: '2',
+        name: 'Mutante 2:',
         shape: 'rect',
         coords: [162, 147, 2, 247],
       },
       {
-        name: 'Mutante 3',
+        key: '3',
+        name: 'Mutante 3:',
         shape: 'rect',
         coords: [272, 270, 115, 372],
       },
       {
-        name: 'Mutante 4',
+        key: '4',
+        name: 'Mutante 4:',
         shape: 'rect',
         coords: [329, 270, 490, 372],
       },
       {
-        name: 'Mutante 5',
+        key: '5',
+        name: 'Mutante 5:',
         shape: 'rect',
         coords: [439, 148, 599, 248],
       },
       {
-        name: 'Mutante 6',
+        key: '6',
+        name: 'Mutante 6:',
         shape: 'rect',
         coords: [439, 22, 599, 124],
+      },
+      {
+        key: 'original',
+        name: 'Código Original:',
+        shape: 'rect',
+        coords: [217, 96, 379, 198],
       },
     ],
   };
@@ -79,6 +92,7 @@ function testeMutacao() {
         width="fit-content"
         bodyStyle={{ fontSize: '16px' }}
         style={{ maxWidth: '400px' }}
+        centered
       >
         {modalContent}
       </Modal>
@@ -86,6 +100,9 @@ function testeMutacao() {
         dotPosition="bottom"
         arrows
         infinite={false}
+        ref={(ref) => {
+          slider.current = ref;
+        }}
       >
         <div>
           <Row>
@@ -102,28 +119,28 @@ function testeMutacao() {
               <br />
               Essa técnica se assemelha à de &ldquo;Semeadura de Defeitos&ldquo;
               citada no tópico anterior, porém, com a introdução dos conceitos de
-              Mutantes e Operadores de Mutação, conceitos que serão explicados no decorrer
+              Mutantes e Operadores de Mutação, que serão explicados no decorrer
               dos próximos tópicos.
               <br />
               <br />
-              Além disso, o Teste de Mutação se baseia em duas hipóteses: a primeira é
+              Ela se baseia em duas hipóteses: a primeira é
               a do &ldquo;Programador Competente&ldquo;, e a segunda é a do &ldquo;Efeito de
               Acoplamento&ldquo;, ambas explicadas abaixo:
               <br />
             </Col>
           </Row>
           <Row style={{ marginTop: '18px' }}>
-            <Col span={12} justify="center" align="middle" className="title">
+            <Col span={12} align="middle" className="title">
               <Card
                 style={{ width: '400px' }}
                 onClick={() => showModal({
                   headerTitle: 'Hipótese do Programador Competente',
                   content: () => (
                     <div>
-                      <Row justify="center">
-                        <div style={{ textAlign: 'center' }}>
+                      <Row>
+                        <div>
                           A Hipótese do Programador Competente diz que um programador
-                          experiente, consegue escrever programas corretos, ou muito
+                          experiente consegue escrever programas corretos, ou muito
                           próximo do correto.
                           <br />
                           <br />
@@ -146,11 +163,11 @@ function testeMutacao() {
                   headerTitle: 'Efeito de Acoplamento',
                   content: () => (
                     <div>
-                      <Row justify="center">
-                        <div style={{ textAlign: 'center' }}>
+                      <Row>
+                        <div>
                           O Efeito de Acoplamento diz que casos de testes
                           capazes de detectar erros simples, também possuem uma
-                          alta porcentagem de detecção de erros complexos do código.
+                          alta porcentagem de detecção de erros complexos.
                         </div>
                       </Row>
                     </div>
@@ -163,9 +180,10 @@ function testeMutacao() {
           </Row>
           <Row>
             <Col span={24} className="text">
-              Baseando-se nas duas hipóteses explicadas acima, a técnica de Teste
-              de Mutação utiliza dos Mutantes e dos Operadores de Mutação, conceitos que serão
-              explicados a seguir.
+              Baseando-se nas duas hipóteses, a técnica de Teste
+              de Mutação utiliza os Mutantes e os Operadores de Mutação, conceitos
+              que serão explicados a seguir, para criar esses códigos
+              com pequenos erros inseridos.
             </Col>
           </Row>
         </div>
@@ -178,12 +196,14 @@ function testeMutacao() {
           <Row>
             <Col span={24} className="text">
               Os Mutantes são um dos conceitos do Teste de Mutação.
-              Eles são é gerados à partir do código inicial, introduzindo um pequeno
-              erro dentro desse código. Abaixo, está representado um exemplo de tipos
+              Eles são é gerados à partir do código original, introduzindo um pequeno
+              erro dentro desse código. Abaixo, estão representados exemplos
               de Mutantes, sendo derivados de um código original.
               <br />
-              O Código Orignal é bem simples, e teria apenas um Caso de Teste, mostrando
-              uma saída igual a &quot;7 12&quot;
+              <b>
+                Clique inicialmente no &quot;Código Original&quot;,
+                e depois em cada um do Mutantes para observar o que foi alterado.
+              </b>
             </Col>
           </Row>
           <Row>
@@ -192,216 +212,208 @@ function testeMutacao() {
                 src={mutEx}
                 width={600}
                 map={AREAS_MAP}
-                onClick={(area) => showModal(area)}
+                onClick={(area) => showModal({
+                  headerTitle: area.name,
+                  content: () => {
+                    switch (area.key) {
+                      case '1':
+                        return (
+                          <div>
+                            No Mutante 1, o
+                            {' '}
+                            <i style={{ color: 'red' }}>número 3</i>
+                            {' '}
+                            da linha 2 do Código Original foi alterado pelo
+                            {' '}
+                            <i style={{ color: 'red' }}>número 5</i>
+                            .
+                            <br />
+                            <br />
+                            Dessa maneira, a comparação realizada na linha 2 nunca
+                            será verdadeira, e o retorno do programa será somente
+                            {' '}
+                            <i style={{ color: 'red' }}>( 12 )</i>
+                            {' '}
+                            , gerando uma falha no caso de teste criado.
+                          </div>
+                        );
+                      case '2':
+                        return (
+                          <div>
+                            No Mutante 2, o
+                            {' '}
+                            <i style={{ color: 'red' }}>operador &gt;</i>
+                            {' '}
+                            da linha 2 do Código Original foi alterado pelo
+                            {' '}
+                            <i style={{ color: 'red' }}>operador &lt;</i>
+                            .
+                            <br />
+                            <br />
+                            Dessa maneira, a comparação realizada na linha 2 não
+                            será verdadeira, e o retorno do programa será somente
+                            {' '}
+                            <i style={{ color: 'red' }}>( 12 )</i>
+                            {' '}
+                            , gerando uma falha no caso de teste criado.
+                          </div>
+                        );
+                      case '3':
+                        return (
+                          <div>
+                            No Mutante 3, o
+                            {' '}
+                            <i style={{ color: 'red' }}>operador *</i>
+                            {' '}
+                            da linha 6 do Código Original foi alterado pelo
+                            {' '}
+                            <i style={{ color: 'red' }}>operador /</i>
+                            .
+                            <br />
+                            <br />
+                            Dessa maneira, o retorno do programa será
+                            <br />
+                            <i style={{ color: 'red' }}>( 7 e 0.75 )</i>
+                            {' '}
+                            , gerando uma falha no caso de teste criado.
+                          </div>
+                        );
+                      case '4':
+                        return (
+                          <div>
+                            No Mutante 4, o
+                            {' '}
+                            <i style={{ color: 'red' }}>operador ==</i>
+                            {' '}
+                            da linha 5 do Código Original foi alterado pelo
+                            {' '}
+                            <i style={{ color: 'red' }}>operador !=</i>
+                            .
+                            <br />
+                            <br />
+                            Dessa maneira, a comparação realizada na linha 5 não
+                            será verdadeira, e o retorno do programa será somente
+                            {' '}
+                            <i style={{ color: 'red' }}>( 7 )</i>
+                            {' '}
+                            , gerando uma falha no caso de teste criado.
+                          </div>
+                        );
+                      case '5':
+                        return (
+                          <div>
+                            No Mutante 5, foi inserido um
+                            {' '}
+                            <i style={{ color: 'red' }}>operador not</i>
+                            {' '}
+                            na linha 2 do Código Original
+                            .
+                            <br />
+                            <br />
+                            Dessa maneira, a comparação realizada na linha 2 não
+                            será verdadeira, e o retorno do programa será somente
+                            {' '}
+                            <i style={{ color: 'red' }}>( 12 )</i>
+                            {' '}
+                            , gerando uma falha no caso de teste criado.
+                          </div>
+                        );
+                      case '6':
+                        return (
+                          <div>
+                            No Mutante 6, o
+                            {' '}
+                            <i style={{ color: 'red' }}>operador +</i>
+                            {' '}
+                            da linha 3 do Código Original foi alterado pelo
+                            {' '}
+                            <i style={{ color: 'red' }}>operador -</i>
+                            .
+                            <br />
+                            <br />
+                            Dessa maneira, o retorno do programa será
+                            <br />
+                            <i style={{ color: 'red' }}>( -1 e 12 )</i>
+                            {' '}
+                            , gerando uma falha no caso de teste criado.
+                          </div>
+                        );
+                      case 'original':
+                        return (
+                          <div>
+                            Esse código foi criado com o intuito de ser o mais
+                            simples possível, justamente para explicar como são
+                            gerados os Mutantes. Por exemplo, as duas condições
+                            inseridas no código,
+                            <br />
+                            {' '}
+                            <div style={{ textAlignLast: 'center' }}>
+                              <div style={{ color: 'red' }}>
+                                if (4 &gt; 3)
+                              </div>
+                              e
+                              <div style={{ color: 'red' }}>
+                                if (1 + 1 == 2)
+                              </div>
+                            </div>
+                            {' '}
+                            sempre serão verdadeiras por não dependerem de
+                            constantes externas à função.
+                            <br />
+                            Além disso, devido a simplicidade do código utilizado, o caso
+                            de teste desenvolvido também será simples. Ele apenas verifica se
+                            o retorno do programa será
+                            {' '}
+                            <div style={{ color: 'red', textAlignLast: 'center' }}>( 7 e 12 )</div>
+                          </div>
+                        );
+                      default:
+                        return null;
+                    }
+                  },
+                })}
               />
-            </Col>
-            <Col offset={1} span={5}>
-              {/* <Card
-                onClick={() => showModal({
-                  headerTitle: 'Mutante 1',
-                  content: () => (
-                    <div>
-                      <Row justify="center">
-                        <div style={{ textAlign: 'center' }}>
-                          No Mutante 1, o número
-                          {' '}
-                          <i style={{ color: 'red' }}>3</i>
-                          {' '}
-                          da linha 2 do Código original
-                          foi alterado pelo número
-                          {' '}
-                          <i style={{ color: 'red' }}>5</i>
-                          .
-                        </div>
-                      </Row>
-                    </div>
-                  ),
-                })}
-              >
-                Mutante 1:
-              </Card>
-              {' '}
-              <Card
-                style={{ marginTop: '8px', width: '130px' }}
-                onClick={() => showModal({
-                  headerTitle: 'Mutante 2',
-                  content: () => (
-                    <div>
-                      <Row justify="center">
-                        <div style={{ textAlign: 'center' }}>
-                          No Mutante 2,
-                        </div>
-                      </Row>
-                    </div>
-                  ),
-                })}
-              >
-                Mutante 2:
-              </Card>
-              {' '}
-              <Card
-                style={{ marginTop: '8px', width: '130px' }}
-                onClick={() => showModal({
-                  headerTitle: 'Mutante 3',
-                  content: () => (
-                    <div>
-                      <Row justify="center">
-                        <div style={{ textAlign: 'center' }}>
-                          No Mutante 3,
-                        </div>
-                      </Row>
-                    </div>
-                  ),
-                })}
-              >
-                Mutante 3:
-              </Card>
-              {' '}
-              <Card
-                style={{ marginTop: '8px', width: '130px' }}
-                onClick={() => showModal({
-                  headerTitle: 'Mutante 4',
-                  content: () => (
-                    <div>
-                      <Row justify="center">
-                        <div style={{ textAlign: 'center' }}>
-                          No Mutante 4,
-                        </div>
-                      </Row>
-                    </div>
-                  ),
-                })}
-              >
-                Mutante 4:
-              </Card>
-              {' '}
-              <Card
-                style={{ marginTop: '8px', width: '130px' }}
-                onClick={() => showModal({
-                  headerTitle: 'Mutante 5',
-                  content: () => (
-                    <div>
-                      <Row justify="center">
-                        <div style={{ textAlign: 'center' }}>
-                          No Mutante 5,
-                        </div>
-                      </Row>
-                    </div>
-                  ),
-                })}
-              >
-                Mutante 5:
-              </Card>
-              {' '}
-              <Card
-                style={{ marginTop: '8px', width: '130px' }}
-                onClick={() => showModal({
-                  headerTitle: 'Mutante 6',
-                  content: () => (
-                    <div>
-                      <Row justify="center">
-                        <div style={{ textAlign: 'center' }}>
-                          No Mutante 6,
-                        </div>
-                      </Row>
-                    </div>
-                  ),
-                })}
-              >
-                Mutante 6:
-              </Card> */}
-              {/* <Collapse accordion>
-                <Panel header="Mutante 1" key="1">
-                  <p className="ow">
-                    No Mutante 1, o número
-                    {' '}
-                    <i style={{ color: 'red' }}>3</i>
-                    {' '}
-                    da linha 2 do Código original
-                    foi alterado pelo número
-                    {' '}
-                    <i style={{ color: 'red' }}>5</i>
-                    .
-                  </p>
-                </Panel>
-                <Panel header="Mutante 2" key="2">
-                  <p className="ow">
-                    No Mutante 1, o número
-                    {' '}
-                    <i style={{ color: 'red' }}>3</i>
-                    {' '}
-                    da linha 2 do Código original
-                    foi alterado pelo número
-                    {' '}
-                    <i style={{ color: 'red' }}>5</i>
-                    .
-                  </p>
-                </Panel>
-                <Panel header="Mutante 3" key="3">
-                  <p className="ow">
-                    No Mutante 1, o número
-                    {' '}
-                    <i style={{ color: 'red' }}>3</i>
-                    {' '}
-                    da linha 2 do Código original
-                    foi alterado pelo número
-                    {' '}
-                    <i style={{ color: 'red' }}>5</i>
-                    .
-                  </p>
-                </Panel>
-                <Panel header="Mutante 4" key="4">
-                  <p className="ow">
-                    No Mutante 1, o número
-                    {' '}
-                    <i style={{ color: 'red' }}>3</i>
-                    {' '}
-                    da linha 2 do Código original
-                    foi alterado pelo número
-                    {' '}
-                    <i style={{ color: 'red' }}>5</i>
-                    .
-                  </p>
-                </Panel>
-                <Panel header="Mutante 5" key="5">
-                  <p className="ow">
-                    No Mutante 1, o número
-                    {' '}
-                    <i style={{ color: 'red' }}>3</i>
-                    {' '}
-                    da linha 2 do Código original
-                    foi alterado pelo número
-                    {' '}
-                    <i style={{ color: 'red' }}>5</i>
-                    .
-                  </p>
-                </Panel>
-                <Panel header="Mutante 6" key="6">
-                  <p className="ow">
-                    No Mutante 1, o número
-                    {' '}
-                    <i style={{ color: 'red' }}>3</i>
-                    {' '}
-                    da linha 2 do Código original
-                    foi alterado pelo número
-                    {' '}
-                    <i style={{ color: 'red' }}>5</i>
-                    .
-                  </p>
-                </Panel>
-              </Collapse> */}
             </Col>
           </Row>
         </div>
         <div>
-          O QUE É UM MUTANTE - PROGRAMA ORIGINAL, MUTANTE
-          SURGE BASEADO QUE PROGRAMADORES SÃO COMPETENTES, PROGRAMAS COM BOA QUALIDADE
-          O TESTE DE MUTACAO ASSUME QUE VOCE TEM UM PROGRAMA LIVRE DE DEFEITOS, E PARA TESTAR,
-          CRIAMOS PROGRAMAS QUE POSSUEM DEFEITOS.
-        </div>
-        <div>
-          comentar sobre as criações dos mutantes
-          classes de modelos baseados em uma linguagem (principais erros)
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Operadores de Mutação
+            </Col>
+          </Row>
+          <Row style={{ height: '400px' }}>
+            <Col span={12} className="text" style={{ alignSelf: 'center' }}>
+              Como explicado anteriormente, os Operadores de Mutação são um dos
+              pilares do Teste de Mutação. É com a lógica deles que os Mutantes serão
+              gerados.
+              <br />
+              <br />
+              Por esse motivo, eles serão abordados no próximo tópico, para
+              serem explicados de maneira mais aprofundada, dado a importância desse conceito.
+              <br />
+              <br />
+              Agora, será possível seguir para o tópico voltado
+              aos Operadores de Mutação, ou aprofundar o conhecimento adquirido até aqui
+              com os Exercícios Propostos.
+            </Col>
+            <Col offset={2} span={8} style={{ alignSelf: 'center' }}>
+              <Button
+                onClick={() => {
+                  slider.current.next();
+                }}
+              >
+                Exercícios propostos
+                <CaretRightOutlined style={{ fontSize: '20px' }} />
+              </Button>
+              <Button
+                onClick={() => props.history.push('/operadores')}
+              >
+                Operadores de Mutação
+                <CaretDownOutlined style={{ fontSize: '20px' }} />
+              </Button>
+            </Col>
+          </Row>
         </div>
         <div>
           <div className="quizz-question">
