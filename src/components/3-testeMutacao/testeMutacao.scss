@@ -55,9 +55,6 @@
     font-weight: bold;
     margin-bottom: 14px;
   }
-  .cards1 {
-    width: 500px;
-  }
   .title {
     font-weight: bold;
     font-size: 18px;
@@ -99,5 +96,19 @@
     margin-top: 20px;
     height: 60px;
     vertical-align: middle;
+  }
+  .ant-radio-wrapper-disabled {
+    span {
+      color: black !important;
+    }
+  }
+  .ant-radio-group {
+    width: 100%;
+  }
+  .ant-space {
+    width: 100%;
+  }
+  .cards1 {
+    width: 100%;
   }
 }

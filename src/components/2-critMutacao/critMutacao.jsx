@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
-  Carousel, Row, Col, Button,
+  Carousel, Row, Col, Button, Radio, Card, Space,
 } from 'antd';
 
 import { CaretRightOutlined, CaretDownOutlined } from '@ant-design/icons';
@@ -10,6 +10,16 @@ import errorSeeding from '../../generics/codes/errorSeeding.png';
 import './critMutacao.scss';
 
 function critMutacao(props) {
+  const [value1, setValue1] = useState(-1);
+  const [color1, setColor1] = useState(['#fdd872', '#fdd872', '#fdd872', '#fdd872']);
+  const [disabled1, setDisabled1] = useState(false);
+
+  function checarResposta1() {
+    if (value1 !== -1) {
+      setColor1(['#F96462', '#F96462', '#A1C181', '#F96462']);
+      setDisabled1(true);
+    }
+  }
   const slider = useRef();
   return (
     <div className="critMutacao">
@@ -135,6 +145,39 @@ function critMutacao(props) {
               Exercícios propostos
             </Col>
           </Row>
+          <div>
+            <div className="quizz-question">
+              Dentre as alternativas a seguir, quais os critérios que não
+              derivam os requisitos de teste a partir dos defeitos mais
+              frequentes cometidos pelos desenvolvedores durante o
+              desenvolvimento do software
+            </div>
+            <div>
+              <Radio.Group
+                onChange={(e) => setValue1(e.target.value)}
+                value={value1}
+                disabled={disabled1}
+              >
+                <Space direction="vertical">
+                  <Card className="cards1" style={{ backgroundColor: color1[0], textAlignLast: 'left' }}>
+                    <Radio value={1}>Todos Nós</Radio>
+                  </Card>
+                  <Card className="cards1" style={{ backgroundColor: color1[1], textAlignLast: 'left' }}>
+                    <Radio value={2}>Potenciais Usos</Radio>
+                  </Card>
+                  <Card className="cards1" style={{ backgroundColor: color1[2], textAlignLast: 'left' }}>
+                    <Radio value={3}>Semeadura de defeitos</Radio>
+                  </Card>
+                  <Card className="cards1" style={{ backgroundColor: color1[3], textAlignLast: 'left' }}>
+                    <Radio value={4}>Todos Usos</Radio>
+                  </Card>
+                </Space>
+              </Radio.Group>
+            </div>
+            <Button onClick={() => checarResposta1(value1)}>
+              Conferir
+            </Button>
+          </div>
         </div>
       </Carousel>
     </div>

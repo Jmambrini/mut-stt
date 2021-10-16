@@ -9,6 +9,8 @@ import vivo from '../../generics/tiposMut/vivo.png';
 import morto from '../../generics/tiposMut/morto.png';
 import incompetente from '../../generics/tiposMut/incompetente.png';
 import timeout from '../../generics/tiposMut/timeout.png';
+import equi from '../../generics/tiposMut/equi.png';
+import escore from '../../generics/tiposMut/escore.png';
 
 function mutantes() {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -246,7 +248,7 @@ function mutantes() {
                           . Utilizando o caso de teste escrito em
                           {' '}
                           <i style={{ color: 'red' }}>unittest</i>
-                          , o caso não possui parâmetros de entrada, e espera um retorno igual a
+                          , que não possui parâmetros de entrada, e espera um retorno igual a
                           {' '}
                           <i style={{ color: 'red' }}>10</i>
                           .
@@ -281,15 +283,51 @@ function mutantes() {
               <Card
                 style={{ width: '400px' }}
                 onClick={() => showModal({
-                  headerTitle: 'Efeito de Acoplamento',
+                  headerTitle: 'Mutante Equivalente',
                   content: () => (
                     <div>
                       <Row>
                         <div>
-                          O Efeito de Acoplamento diz que casos de testes
-                          capazes de detectar erros simples, também possuem uma
-                          alta porcentagem de detecção de erros complexos.
+                          O Mutante Equivalente é um mutante que possui o mesmo comportamento
+                          do Programa Original, e que não é possível encontrar um Caso
+                          de Teste que consiga matá-lo. Esse tipo de mutante é um dos
+                          obstáculos do Teste de Mutação devido a dificuldade das ferramentas
+                          de apoio em identificá-los dentro do código.
+                          <br />
+                          No exemplo abaixo, escolhido devido a simplicidade e a facilidade de
+                          encontrar o Mutante Equivalente,
+                          o Programa Original sofreu uma mutação, e teve seu
+                          {' '}
+                          <i style={{ color: 'red' }}>operador aritmético +</i>
+                          {' '}
+                          alterado pelo
+                          {' '}
+                          <i style={{ color: 'red' }}>operador aritmético *</i>
+                          . Utilizando o caso de teste escrito em
+                          {' '}
+                          <i style={{ color: 'red' }}>unittest</i>
+                          , que não possui parâmetros de entrada, e espera um retorno igual a
+                          {' '}
+                          <i style={{ color: 'red' }}>4</i>
+                          , e analisando o código, tanto
+                          {' '}
+                          <i style={{ color: 'red' }}>(2 + 2)</i>
+                          , quanto
+                          {' '}
+                          <i style={{ color: 'red' }}>(2 * 2)</i>
+                          {' '}
+                          retornarão o valor
+                          {' '}
+                          <i style={{ color: 'red' }}>4</i>
+                          , esperado pelo Caso de Teste. Como a operação matemática depende
+                          de duas variáveis fixas,
+                          esse mutante sempre retornará o mesmo resultado, e por causa disso,
+                          a ferramenta considera o mesmo como Mutante Vivo, por não conseguir
+                          identificar que ele é na verdade um Mutante Equivalente.
                         </div>
+                      </Row>
+                      <Row justify="center">
+                        <img src={equi} alt="equi" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -301,13 +339,71 @@ function mutantes() {
           </Row>
         </div>
         <div>
-          mutantes extras caso queira aprofundar na matéria
-        </div>
-        <div>
-          Explicação com exemplos
-        </div>
-        <div>
-          aaaa
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Escore de Mutação
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} className="text">
+              O Escore de Mutação um método utilizado para avaliar a eficiência
+              e o nível de confianca dos Casos de Teste desenvolvidos pelo usuário.
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} className="text">
+              Ele possui um intervalo entre 0% e 100%, sendo que quanto maior o resultado,
+              maior é a efetividade do Caso de Teste em detectar erros do código.
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} className="text">
+              O Escore de Mutação é obtido utilizando a equação abaixo:
+            </Col>
+          </Row>
+          <Row justify="center">
+            <img src={escore} alt="escore" style={{ marginTop: '20px', marginBottom: '20px' }} />
+          </Row>
+          <Row>
+            <Col span={24} className="text">
+              Sendo que:
+              <ul>
+                <li>
+                  <b>Mutante mortos(P,T):</b>
+                  {' '}
+                  total de mutantes do programa
+                  {' '}
+                  <i style={{ color: 'red' }}>P</i>
+                  , que foram mortos pelos Casos de Teste
+                  {' '}
+                  <i style={{ color: 'red' }}>T</i>
+                  ;
+                </li>
+                <li>
+                  <b>Mutantes gerados(P):</b>
+                  {' '}
+                  total de mutantes gerados a partir do programa
+                  {' '}
+                  <i style={{ color: 'red' }}>P</i>
+                  ;
+                </li>
+                <li>
+                  <b>Mutantes equivalentes(P):</b>
+                  {' '}
+                  total de mutantes equivalentes ao programa
+                  {' '}
+                  <i style={{ color: 'red' }}>P</i>
+                  .
+                </li>
+              </ul>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} className="text">
+              Nesse caso, os mutantes que sofrem timeout também podem ser considerados
+              como mortos.
+            </Col>
+          </Row>
         </div>
       </Carousel>
     </div>

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
-  Carousel, Row, Col, Card, Modal, Tooltip,
+  Carousel, Row, Col, Card, Modal, Tooltip, Button, Radio, Space,
 } from 'antd';
 
-import ImageMapper from 'react-image-mapper';
+import { CaretRightOutlined, CaretDownOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 
-import { ExclamationCircleOutlined } from '@ant-design/icons';
+import ImageMapper from 'react-image-mapper';
 
 import './operadores.scss';
 
@@ -34,10 +34,50 @@ import exMutStep from '../../generics/mutExample/mutExStep.png';
 import mutEx from '../../generics/mutExample/mutEx.png';
 import mutations from '../../generics/mutExample/mutations.png';
 
-function operadores() {
+import oper1 from '../../generics/exercicios/oper1.png';
+import oper2 from '../../generics/exercicios/oper2.png';
+import oper3 from '../../generics/exercicios/oper3.png';
+import oper4 from '../../generics/exercicios/oper4.png';
+
+function operadores(props) {
+  const slider = useRef();
+
+  const [value1, setValue1] = useState(-1);
+  const [color1, setColor1] = useState(['#fdd872', '#fdd872', '#fdd872']);
+  const [disabled1, setDisabled1] = useState(false);
+
+  const [value2, setValue2] = useState(-1);
+  const [color2, setColor2] = useState(['#fdd872', '#fdd872']);
+  const [disabled2, setDisabled2] = useState(false);
+
+  const [value3, setValue3] = useState(-1);
+  const [color3, setColor3] = useState(['#fdd872', '#fdd872', '#fdd872', '#fdd872']);
+  const [disabled3, setDisabled3] = useState(false);
+
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalHeaderTitle, setModalHeaderTitle] = useState();
   const [modalContent, setModalContent] = useState();
+
+  function checarResposta1() {
+    if (value1 !== -1) {
+      setColor1(['#F96462', '#F96462', '#A1C181']);
+      setDisabled1(true);
+    }
+  }
+
+  function checarResposta2() {
+    if (value2 !== -1) {
+      setColor2(['#F96462', '#A1C181']);
+      setDisabled2(true);
+    }
+  }
+
+  function checarResposta3() {
+    if (value3 !== -1) {
+      setColor3(['#F96462', '#F96462', '#F96462', '#A1C181']);
+      setDisabled3(true);
+    }
+  }
 
   const showModal = ({ headerTitle, content }) => {
     setModalHeaderTitle(headerTitle);
@@ -116,6 +156,9 @@ function operadores() {
         dotPosition="bottom"
         arrows
         infinite={false}
+        ref={(ref) => {
+          slider.current = ref;
+        }}
       >
         <div>
           <Row>
@@ -1216,6 +1259,216 @@ function operadores() {
               </Col>
             </Row>
           </div>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Tipos de Mutantes
+            </Col>
+          </Row>
+          <Row style={{ height: '400px' }}>
+            <Col span={12} className="text" style={{ alignSelf: 'center' }}>
+              Agora, será possível seguir para o tópico voltado
+              aos Tipos de Mutates, ou aprofundar o conhecimento adquirido até aqui
+              com os Exercícios Propostos.
+            </Col>
+            <Col offset={2} span={8} style={{ alignSelf: 'center' }}>
+              <Button
+                onClick={() => {
+                  slider.current.next();
+                }}
+              >
+                Exercícios propostos
+                <CaretRightOutlined style={{ fontSize: '20px' }} />
+              </Button>
+              <Button
+                onClick={() => props.history.push('/mutantes')}
+              >
+                Tipos de Mutantes
+                <CaretDownOutlined style={{ fontSize: '20px' }} />
+              </Button>
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Exercícios propostos
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className="quizz-question">
+                Analizando o Programa Original, qual das alternativas sofreu
+                uma inserção de operador condicional?
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={12}>
+              <div>
+                <Radio.Group
+                  onChange={(e) => setValue1(e.target.value)}
+                  value={value1}
+                  disabled={disabled1}
+                >
+                  <Space direction="vertical">
+                    <Card className="cards1" style={{ backgroundColor: color1[0], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={1}>
+                        <img src={oper2} alt="oper2" />
+                      </Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color1[1], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={2}>
+                        <img src={oper3} alt="oper3" />
+                      </Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color1[2], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={3}>
+                        <img src={oper4} alt="oper4" />
+                      </Radio>
+                    </Card>
+                  </Space>
+                </Radio.Group>
+              </div>
+              <Button onClick={() => checarResposta1(value1)}>
+                Conferir
+              </Button>
+            </Col>
+            <Col offset={1} span={11} className="text">
+              <img src={oper1} alt="oper1" style={{ marginBottom: '14px' }} />
+              {disabled1
+                ? (
+                  <div>
+                    O código com a inserção de operador condicional é o terceiro.
+                    <br />
+                    <br />
+                    O primeiro apresenta uma alteração de operador relacional.
+                    <br />
+                    <br />
+                    O segundo apresenta uma alteração de operador aritmético.
+                  </div>
+                ) : null}
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Exercícios propostos
+            </Col>
+          </Row>
+          <div className="quizz-question">
+            Uma ferramenta hipotética de apoio ao Teste de Mutação possui cem operadores diferentes.
+            <br />
+            Ao utilizá-la em um código, todos os Operadores de Mutação disponíveis realizarão alguma
+            modificação no Código Original.
+            <br />
+            <br />
+            Essa afirmação está:
+          </div>
+          <Row>
+            <Col span={12}>
+              <div>
+                <Radio.Group
+                  onChange={(e) => setValue2(e.target.value)}
+                  value={value2}
+                  disabled={disabled2}
+                >
+                  <Space direction="vertical">
+                    <Card className="cards1" style={{ backgroundColor: color2[0], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={1}>Correta</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color2[1], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={2}>Errada</Radio>
+                    </Card>
+                  </Space>
+                </Radio.Group>
+              </div>
+              <Button onClick={() => checarResposta2(value2)}>
+                Conferir
+              </Button>
+            </Col>
+            <Col offset={1} span={11} className="text">
+              {disabled2
+                ? (
+                  <div>
+                    Pela teoria explicada anteriormente, a afirmação está
+                    incorreta pois, como os Operadores de Mutação possuem regras
+                    para realizar a mutação, somente os Operadores compatíveis
+                    com o código que serão utilizados. Por exemplo, um Operador
+                    de Mutação que altera um operador aritmético não ser usado em
+                    um código que não realiza operações aritméticas.
+                  </div>
+                ) : null}
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Exercícios propostos
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className="quizz-question">
+                Analisando o Programa Original e o Programa Mutante gerado, o desenvolvedor
+                conseguiu identificar
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={12}>
+              <div>
+                <Radio.Group
+                  onChange={(e) => setValue3(e.target.value)}
+                  value={value3}
+                  disabled={disabled3}
+                >
+                  <Space direction="vertical">
+                    <Card className="cards1" style={{ backgroundColor: color3[0], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={1}>
+                        asdasdasdasdas
+                      </Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color3[1], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={2}>
+                        asdasdasdasdas
+                      </Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color3[2], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={3}>
+                        asdasdasdasdas
+                      </Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color3[3], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={4}>
+                        asdasdasdasdas
+                      </Radio>
+                    </Card>
+                  </Space>
+                </Radio.Group>
+              </div>
+              <Button onClick={() => checarResposta3(value3)}>
+                Conferir
+              </Button>
+            </Col>
+            <Col offset={1} span={11} className="text">
+              {disabled3
+                ? (
+                  <div>
+                    O código com a inserção de operador condicional é o terceiro.
+                    <br />
+                    <br />
+                    O primeiro apresenta uma alteração de operador relacional.
+                    <br />
+                    <br />
+                    O segundo apresenta uma alteração de operador aritmético.
+                  </div>
+                ) : null}
+            </Col>
+          </Row>
         </div>
       </Carousel>
     </div>

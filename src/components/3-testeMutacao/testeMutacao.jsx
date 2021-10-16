@@ -7,6 +7,7 @@ import ImageMapper from 'react-image-mapper';
 import { CaretRightOutlined, CaretDownOutlined } from '@ant-design/icons';
 
 import mutEx from '../../generics/mutExample/mutEx.png';
+import teste1 from '../../generics/exercicios/teste1.png';
 
 import './testeMutacao.scss';
 
@@ -14,7 +15,13 @@ function testeMutacao(props) {
   const slider = useRef();
 
   const [value1, setValue1] = useState(-1);
-  const [color1, setColor1] = useState(['#fdd872', '#fdd872', '#fdd872']);
+  const [color1, setColor1] = useState(['#fdd872', '#fdd872']);
+  const [disabled1, setDisabled1] = useState(false);
+
+  const [value2, setValue2] = useState(-2);
+  const [color2, setColor2] = useState(['#fdd872', '#fdd872', '#fdd872', '#fdd872']);
+  const [disabled2, setDisabled2] = useState(false);
+
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalHeaderTitle, setModalHeaderTitle] = useState();
   const [modalContent, setModalContent] = useState();
@@ -30,7 +37,17 @@ function testeMutacao(props) {
   };
 
   function checarResposta1() {
-    setColor1(['#F96462', '#F96462', '#A1C181']);
+    if (value1 !== -1) {
+      setColor1(['#A1C181', '#F96462']);
+      setDisabled1(true);
+    }
+  }
+
+  function checarResposta2() {
+    if (value2 !== -1) {
+      setColor2(['#F96462', '#F96462', '#A1C181', '#F96462']);
+      setDisabled2(true);
+    }
   }
 
   const AREAS_MAP = {
@@ -416,25 +433,109 @@ function testeMutacao(props) {
           </Row>
         </div>
         <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Exercícios propostos
+            </Col>
+          </Row>
           <div className="quizz-question">
-            O que é um teste de mutação?
+            Sobre a hipótese do programador competente: programadores experientes
+            escrevem programas corretos, ou muito próximos do correto.
+            <br />
+            <br />
+            Essa afirmação está:
           </div>
-          <div>
-            <Radio.Group onChange={(e) => setValue1(e.target.value)} value={value1}>
-              <Space direction="vertical">
-                <Card className="cards1" style={{ backgroundColor: color1[0] }}>
-                  <Radio value={1}>Um teste</Radio>
-                </Card>
-                <Card className="cards1" style={{ backgroundColor: color1[1] }}>
-                  <Radio value={2}>Uma mutação</Radio>
-                </Card>
-                <Card className="cards1" style={{ backgroundColor: color1[2] }}>
-                  <Radio value={3}>Um teste de mutação</Radio>
-                </Card>
-              </Space>
-            </Radio.Group>
-          </div>
+          <Row>
+            <Col span={12}>
+              <div>
+                <Radio.Group
+                  onChange={(e) => setValue1(e.target.value)}
+                  value={value1}
+                  disabled={disabled1}
+                >
+                  <Space direction="vertical">
+                    <Card className="cards1" style={{ backgroundColor: color1[0], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={1}>Correta</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color1[1], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={2}>Errada</Radio>
+                    </Card>
+                  </Space>
+                </Radio.Group>
+              </div>
+            </Col>
+            <Col offset={1} span={11} className="text">
+              {disabled1
+                ? (
+                  <div>
+                    Pela teoria explicada anteriormente, a afirmação está
+                    correta pois, pela Hipótese do Programador Competente, programadores experientes
+                    escrevem programas corretos, ou muito próximos do correto.
+                  </div>
+                ) : null}
+            </Col>
+          </Row>
           <Button onClick={() => checarResposta1(value1)}>
+            Conferir
+          </Button>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Exercícios propostos
+            </Col>
+          </Row>
+          <div className="quizz-question">
+            Analizando o código abaixo, qual foi a mutação que ocorreu?
+          </div>
+          <Row>
+            <img src={teste1} alt="teste1" style={{ marginBottom: '14px' }} />
+          </Row>
+          <Row>
+            <Col span={12}>
+              <div>
+                <Radio.Group
+                  onChange={(e) => setValue2(e.target.value)}
+                  value={value2}
+                  disabled={disabled2}
+                >
+                  <Space direction="vertical">
+                    <Card className="cards1" style={{ backgroundColor: color2[0], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={1}>Um operador de atribuição foi alterado</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color2[1], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={2}>Um operador condicional foi alterado</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color2[2], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={3}>Um operador aritmético foi alterado</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color2[3], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={4}>Um operador lógico foi alterado</Radio>
+                    </Card>
+                  </Space>
+                </Radio.Group>
+              </div>
+            </Col>
+            <Col offset={1} span={11} className="text">
+              {disabled2
+                ? (
+                  <div>
+                    A mutação que ocorreu foi uma alteração de operador aritmético,
+                    que pode ser observada na mudança do
+                    <div style={{ textAlignLast: 'center' }}>
+                      <div style={{ color: 'red' }}>
+                        print(a + b)
+                      </div>
+                      por
+                      <div style={{ color: 'red' }}>
+                        print(a - b)
+                      </div>
+                    </div>
+                  </div>
+                ) : null}
+            </Col>
+          </Row>
+          <Button onClick={() => checarResposta2(value2)}>
             Conferir
           </Button>
         </div>
