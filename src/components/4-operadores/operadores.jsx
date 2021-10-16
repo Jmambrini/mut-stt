@@ -360,18 +360,6 @@ function operadores() {
           </Row>
         </div>
         <div>
-          <Row>
-            <Col span={24} justify="center" align="middle" className="title">
-              Introdução da Mut.py
-            </Col>
-          </Row>
-          <Row>
-            <Col span={24} className="text">
-              asdasd
-            </Col>
-          </Row>
-        </div>
-        <div>
           <div>
             <Row>
               <Col span={24} justify="center" align="middle" className="title">
@@ -381,6 +369,16 @@ function operadores() {
                   {' '}
                   <ExclamationCircleOutlined />
                 </Tooltip>
+              </Col>
+            </Row>
+            <Row>
+              <Col className="text">
+                Nesse REA, foi utilizada a ferramenta de apoio Mut.py para ajudar no entendimento
+                dos conceitos, e também para introduzir um pouco de como essas ferramentas
+                funcionam na prática.
+                Existe um tópico dedicado a explicação dela, porém como o
+                tópico atual é sobre os Operadores de Mutação, abaixo estão todos os que a
+                ferramenta utiliza.
               </Col>
             </Row>
             <Row justify="center">

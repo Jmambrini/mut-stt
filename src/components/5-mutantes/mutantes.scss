@@ -50,4 +50,30 @@
     height: 5px;
     background: #df5a01;
   }
+  .title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  .text {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .ant-card-body {
+    padding: 16px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .ant-card-bordered {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 4px 4px rgb(145, 145, 145);
+  }
+  .ant-card-bordered:hover {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 4px 4px rgb(80, 77, 77);
+    cursor: pointer;
+  }
 }

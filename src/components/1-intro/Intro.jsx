@@ -23,7 +23,17 @@ function Intro() {
           <Row>
             <Col span={24} justify="center" className="text">
               O MUT-STT é um Recurso Educacional Aberto (REA) que foi desenvolvido para
-              apoiar o ensino de Teste de Mutação, com foco em alunos de graduação.
+              apoiar o ensino introdutório de Teste de Mutação.
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} justify="center" className="text">
+              Nesse REA, foram utilizados exemplos de código da linguagem Python,
+              linguagem escolhida devido à sua popularidade, sendo a linguagem mais
+              utilizada no ano de 2021. (Fonte:
+              {' '}
+              <a href="https://spectrum.ieee.org/top-programming-languages-2021" target="_blank" rel="noreferrer">ieee.org</a>
+              )
             </Col>
           </Row>
           <Row>
