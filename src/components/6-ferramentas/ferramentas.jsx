@@ -12,7 +12,7 @@ import {
   mdiLanguageC,
 } from '@mdi/js';
 
-import cpp from '../../generics/languages/c++.png';
+import cpp from '../../generics/languages/cpp.png';
 import infection from '../../generics/languages/infection.png';
 import muter from '../../generics/languages/muter.png';
 import pitest from '../../generics/languages/pitest.png';
@@ -263,7 +263,7 @@ function ferramentas(props) {
               </div>
             </Col>
             <Col offset={1} span={11} style={{ textAlign: '-webkit-center' }}>
-              <img src={infection} alt="cpp" style={{ width: '200px' }} />
+              <img src={infection} alt="infection" style={{ width: '200px' }} />
             </Col>
           </Row>
           <Collapse accordion>
