@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
-  Carousel, Row, Col, Modal, Card,
+  Carousel, Row, Col, Modal, Card, Button, Radio, Space,
 } from 'antd';
+
+import { CaretRightOutlined, CaretDownOutlined } from '@ant-design/icons';
 
 import './mutantes.scss';
 
@@ -12,10 +14,37 @@ import timeout from '../../generics/tiposMut/timeout.png';
 import equi from '../../generics/tiposMut/equi.png';
 import escore from '../../generics/tiposMut/escore.png';
 
-function mutantes() {
+import tipos1 from '../../generics/exercicios/tipos1.png';
+import tipos2 from '../../generics/exercicios/tipos2.png';
+
+function mutantes(props) {
+  const slider = useRef();
+
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalHeaderTitle, setModalHeaderTitle] = useState();
   const [modalContent, setModalContent] = useState();
+
+  const [value1, setValue1] = useState(-1);
+  const [color1, setColor1] = useState(['#fdd872', '#fdd872', '#fdd872', '#fdd872']);
+  const [disabled1, setDisabled1] = useState(false);
+
+  const [value2, setValue2] = useState(-1);
+  const [color2, setColor2] = useState(['#fdd872', '#fdd872', '#fdd872', '#fdd872']);
+  const [disabled2, setDisabled2] = useState(false);
+
+  function checarResposta1() {
+    if (value1 !== -1) {
+      setColor1(['#F96462', '#F96462', '#A1C181', '#F96462']);
+      setDisabled1(true);
+    }
+  }
+
+  function checarResposta2() {
+    if (value2 !== -1) {
+      setColor2(['#F96462', '#A1C181', '#F96462', '#F96462']);
+      setDisabled2(true);
+    }
+  }
 
   const showModal = ({ headerTitle, content }) => {
     setModalHeaderTitle(headerTitle);
@@ -45,6 +74,9 @@ function mutantes() {
         dotPosition="bottom"
         arrows
         infinite={false}
+        ref={(ref) => {
+          slider.current = ref;
+        }}
       >
         <div>
           <Row>
@@ -402,6 +434,173 @@ function mutantes() {
             <Col span={24} className="text">
               Nesse caso, os mutantes que sofrem timeout também podem ser considerados
               como mortos.
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Tipos de Mutantes
+            </Col>
+          </Row>
+          <Row style={{ height: '400px' }}>
+            <Col span={12} className="text" style={{ alignSelf: 'center' }}>
+              Agora, será possível seguir para o tópico voltado
+              às ferramentas de apoio ao Teste de Mutação, ou
+              aprofundar o conhecimento adquirido até aqui
+              com os Exercícios Propostos.
+            </Col>
+            <Col offset={2} span={8} style={{ alignSelf: 'center' }}>
+              <Button
+                onClick={() => {
+                  slider.current.next();
+                }}
+              >
+                Exercícios propostos
+                <CaretRightOutlined style={{ fontSize: '20px' }} />
+              </Button>
+              <Button
+                onClick={() => props.history.push('/mutantes')}
+              >
+                Ferramentas
+                <CaretDownOutlined style={{ fontSize: '20px' }} />
+              </Button>
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Exercício 1
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className="quizz-question">
+                Analizando o Programa Original e Programa Mutante, indique qual o tipo
+                do mutante gerado.
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={10}>
+              <div>
+                <Radio.Group
+                  onChange={(e) => setValue1(e.target.value)}
+                  value={value1}
+                  disabled={disabled1}
+                >
+                  <Space direction="vertical">
+                    <Card className="cards1" style={{ backgroundColor: color1[0], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={1}>
+                        O programa mutante é um mutante incompetente
+                      </Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color1[1], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={2}>
+                        O programa mutante é um mutante morto
+                      </Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color1[2], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={3}>
+                        O programa mutante é um mutante equivalente
+                      </Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color1[3], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={4}>
+                        O programa mutante é um mutante vivo
+                      </Radio>
+                    </Card>
+                  </Space>
+                </Radio.Group>
+              </div>
+              <Button onClick={() => checarResposta1(value1)}>
+                Conferir
+              </Button>
+            </Col>
+            <Col offset={1} span={13} className="text" style={{ textAlign: '-webkit-center' }}>
+              <img src={tipos1} alt="tipos1" style={{ marginBottom: '14px' }} />
+              {disabled1
+                ? (
+                  <div>
+                    O mutante gerado é um Mutante Equivalente pois, mesmo com a mudança,
+                    o resultado do Programa Mutante será o mesmo do Programa Original,
+                    independente do valor de
+                    {' '}
+                    <i style={{ color: 'red' }}>a</i>
+                    .
+                  </div>
+                ) : null}
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Exercício 2
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className="quizz-question">
+                Para um Programa Mutante ser considerado vivo, seu resultado deve ser o mesmo
+                que o Mutante Original para um determinado valor.
+                Analizando amobs, indique qual o valor de
+                {' '}
+                <i style={{ color: 'red' }}>n</i>
+                {' '}
+                para que o Programa Mutante seja um Mutante Vivo.
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={10}>
+              <div>
+                <Radio.Group
+                  onChange={(e) => setValue2(e.target.value)}
+                  value={value2}
+                  disabled={disabled2}
+                >
+                  <Space direction="vertical">
+                    <Card className="cards1" style={{ backgroundColor: color2[0], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={1}>
+                        2
+                      </Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color2[1], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={2}>
+                        3
+                      </Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color2[2], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={3}>
+                        4
+                      </Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color2[3], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={4}>
+                        5
+                      </Radio>
+                    </Card>
+                  </Space>
+                </Radio.Group>
+              </div>
+              <Button onClick={() => checarResposta2(value2)}>
+                Conferir
+              </Button>
+            </Col>
+            <Col offset={1} span={13} className="text" style={{ textAlign: '-webkit-center' }}>
+              <img src={tipos2} alt="tipos2" style={{ marginBottom: '14px' }} />
+              {disabled2
+                ? (
+                  <div>
+                    Dos valores ao lado, o único que fará com que ambos mutantes retornem
+                    o mesmo resultado é o número
+                    {' '}
+                    <i style={{ color: 'red' }}>3</i>
+                    .
+                  </div>
+                ) : null}
             </Col>
           </Row>
         </div>

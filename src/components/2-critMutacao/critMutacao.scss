@@ -59,9 +59,6 @@
     font-size: 16px;
     margin-bottom: 10px;
   }
-  .ant-row {
-    margin-bottom: 6px;
-  }
   .ant-card-body {
     padding: 16px;
     text-align: center;
@@ -77,19 +74,7 @@
     border: 1px solid #000000;
     border-radius: 5px;
     box-shadow: 4px 4px rgb(80, 77, 77);
-  }
-
-  .ant-row {
-    margin-bottom: 6px;
-  }
-  .simple-card {
-    padding: 16px;
-    text-align: center;
-    font-size: 16px;
-    border: solid 2px black;
-    border-radius: 5px;
-    width: 90%;
-    font-style: italic;
+    cursor: pointer;
   }
   .ant-btn {
     background-color: #df5a01;
@@ -99,17 +84,23 @@
     height: 60px;
     vertical-align: middle;
   }
-  .quizz-question {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 14px;
-  }
-  .cards1 {
-    width: 500px;
-  }
   .ant-radio-wrapper-disabled {
     span {
       color: black !important;
     }
+  }
+  .ant-radio-group {
+    width: 100%;
+  }
+  .ant-space {
+    width: 100%;
+  }
+  .cards1 {
+    width: 100%;
+  }
+  .quizz-question {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 14px;
   }
 }

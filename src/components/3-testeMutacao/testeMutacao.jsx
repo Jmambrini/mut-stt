@@ -8,6 +8,8 @@ import { CaretRightOutlined, CaretDownOutlined } from '@ant-design/icons';
 
 import mutEx from '../../generics/mutExample/mutEx.png';
 import teste1 from '../../generics/exercicios/teste1.png';
+import teste2 from '../../generics/exercicios/teste2.png';
+import teste3 from '../../generics/exercicios/teste3.png';
 
 import './testeMutacao.scss';
 
@@ -18,9 +20,17 @@ function testeMutacao(props) {
   const [color1, setColor1] = useState(['#fdd872', '#fdd872']);
   const [disabled1, setDisabled1] = useState(false);
 
-  const [value2, setValue2] = useState(-2);
+  const [value2, setValue2] = useState(-1);
   const [color2, setColor2] = useState(['#fdd872', '#fdd872', '#fdd872', '#fdd872']);
   const [disabled2, setDisabled2] = useState(false);
+
+  const [value3, setValue3] = useState(-1);
+  const [color3, setColor3] = useState(['#fdd872', '#fdd872', '#fdd872', '#fdd872']);
+  const [disabled3, setDisabled3] = useState(false);
+
+  const [value4, setValue4] = useState(-1);
+  const [color4, setColor4] = useState(['#fdd872', '#fdd872', '#fdd872', '#fdd872']);
+  const [disabled4, setDisabled4] = useState(false);
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalHeaderTitle, setModalHeaderTitle] = useState();
@@ -47,6 +57,20 @@ function testeMutacao(props) {
     if (value2 !== -1) {
       setColor2(['#F96462', '#F96462', '#A1C181', '#F96462']);
       setDisabled2(true);
+    }
+  }
+
+  function checarResposta3() {
+    if (value3 !== -1) {
+      setColor3(['#F96462', '#F96462', '#F96462', '#A1C181']);
+      setDisabled3(true);
+    }
+  }
+
+  function checarResposta4() {
+    if (value4 !== -1) {
+      setColor4(['#A1C181', '#F96462', '#F96462', '#F96462']);
+      setDisabled4(true);
     }
   }
 
@@ -435,7 +459,7 @@ function testeMutacao(props) {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Exercícios propostos
+              Exercício 1
             </Col>
           </Row>
           <div className="quizz-question">
@@ -446,7 +470,7 @@ function testeMutacao(props) {
             Essa afirmação está:
           </div>
           <Row>
-            <Col span={12}>
+            <Col span={10}>
               <div>
                 <Radio.Group
                   onChange={(e) => setValue1(e.target.value)}
@@ -464,10 +488,10 @@ function testeMutacao(props) {
                 </Radio.Group>
               </div>
             </Col>
-            <Col offset={1} span={11} className="text">
+            <Col offset={1} span={13} className="text" style={{ textAlign: '-webkit-center' }}>
               {disabled1
                 ? (
-                  <div>
+                  <div style={{ width: '80%', textAlign: 'center' }}>
                     Pela teoria explicada anteriormente, a afirmação está
                     correta pois, pela Hipótese do Programador Competente, programadores experientes
                     escrevem programas corretos, ou muito próximos do correto.
@@ -482,17 +506,14 @@ function testeMutacao(props) {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Exercícios propostos
+              Exercício 2
             </Col>
           </Row>
           <div className="quizz-question">
-            Analizando o código abaixo, qual foi a mutação que ocorreu?
+            Analizando o código ao lado, qual foi a mutação que ocorreu?
           </div>
           <Row>
-            <img src={teste1} alt="teste1" style={{ marginBottom: '14px' }} />
-          </Row>
-          <Row>
-            <Col span={12}>
+            <Col span={10}>
               <div>
                 <Radio.Group
                   onChange={(e) => setValue2(e.target.value)}
@@ -514,12 +535,16 @@ function testeMutacao(props) {
                     </Card>
                   </Space>
                 </Radio.Group>
+                <Button onClick={() => checarResposta2(value2)}>
+                  Conferir
+                </Button>
               </div>
             </Col>
-            <Col offset={1} span={11} className="text">
+            <Col offset={1} span={13} className="text" style={{ textAlign: '-webkit-center' }}>
+              <img src={teste1} alt="teste1" style={{ marginBottom: '14px', width: '-webkit-fill-available' }} />
               {disabled2
                 ? (
-                  <div>
+                  <div style={{ width: '80%', textAlign: 'center' }}>
                     A mutação que ocorreu foi uma alteração de operador aritmético,
                     que pode ser observada na mudança do
                     <div style={{ textAlignLast: 'center' }}>
@@ -535,9 +560,122 @@ function testeMutacao(props) {
                 ) : null}
             </Col>
           </Row>
-          <Button onClick={() => checarResposta2(value2)}>
-            Conferir
-          </Button>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Exercício 3
+            </Col>
+          </Row>
+          <div className="quizz-question">
+            Analizando o código ao lado, qual foi a mutação que ocorreu?
+          </div>
+          <Row>
+            <Col span={10}>
+              <div>
+                <Radio.Group
+                  onChange={(e) => setValue3(e.target.value)}
+                  value={value3}
+                  disabled={disabled3}
+                >
+                  <Space direction="vertical">
+                    <Card className="cards1" style={{ backgroundColor: color3[0], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={1}>Um operador de atribuição foi alterado</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color3[1], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={2}>Um operador condicional foi alterado</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color3[2], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={3}>Um operador aritmético foi alterado</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color3[3], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={4}>Um operador lógico foi alterado</Radio>
+                    </Card>
+                  </Space>
+                </Radio.Group>
+              </div>
+              <Button onClick={() => checarResposta3(value3)}>
+                Conferir
+              </Button>
+            </Col>
+            <Col offset={1} span={13} className="text" style={{ textAlign: '-webkit-center' }}>
+              <img src={teste2} alt="teste2" style={{ marginBottom: '14px', width: '-webkit-fill-available' }} />
+              {disabled3
+                ? (
+                  <div style={{ width: '80%', textAlign: 'center' }}>
+                    A mutação que ocorreu foi uma alteração de operador lógico,
+                    que pode ser observada na mudança do
+                    <div style={{ textAlignLast: 'center' }}>
+                      <div style={{ color: 'red' }}>
+                        (a &gt; b and a &lt; j )
+                      </div>
+                      por
+                      <div style={{ color: 'red' }}>
+                        (a &gt; b or a &lt; j )
+                      </div>
+                    </div>
+                  </div>
+                ) : null}
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Exercício 4
+            </Col>
+          </Row>
+          <div className="quizz-question">
+            Analizando o código ao lado, qual foi a mutação que ocorreu?
+          </div>
+          <Row>
+            <Col span={10}>
+              <div>
+                <Radio.Group
+                  onChange={(e) => setValue4(e.target.value)}
+                  value={value4}
+                  disabled={disabled4}
+                >
+                  <Space direction="vertical">
+                    <Card className="cards1" style={{ backgroundColor: color4[0], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={1}>Um operador de atribuição foi alterado</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color4[1], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={2}>Um operador condicional foi alterado</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color4[2], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={3}>Um operador aritmético foi alterado</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color4[3], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={4}>Um operador lógico foi alterado</Radio>
+                    </Card>
+                  </Space>
+                </Radio.Group>
+              </div>
+              <Button onClick={() => checarResposta4(value4)}>
+                Conferir
+              </Button>
+            </Col>
+            <Col offset={1} span={13} className="text" style={{ textAlign: '-webkit-center' }}>
+              <img src={teste3} alt="teste3" style={{ marginBottom: '14px', width: '-webkit-fill-available' }} />
+              {disabled4
+                ? (
+                  <div style={{ width: '80%', textAlign: 'center' }}>
+                    A mutação que ocorreu foi uma alteração de operador de atribuição,
+                    que pode ser observada na mudança do
+                    <div style={{ textAlignLast: 'center' }}>
+                      <div style={{ color: 'red' }}>
+                        j += 2
+                      </div>
+                      por
+                      <div style={{ color: 'red' }}>
+                        j -= 2
+                      </div>
+                    </div>
+                  </div>
+                ) : null}
+            </Col>
+          </Row>
         </div>
       </Carousel>
     </div>

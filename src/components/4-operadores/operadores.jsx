@@ -50,10 +50,6 @@ function operadores(props) {
   const [color2, setColor2] = useState(['#fdd872', '#fdd872']);
   const [disabled2, setDisabled2] = useState(false);
 
-  const [value3, setValue3] = useState(-1);
-  const [color3, setColor3] = useState(['#fdd872', '#fdd872', '#fdd872', '#fdd872']);
-  const [disabled3, setDisabled3] = useState(false);
-
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalHeaderTitle, setModalHeaderTitle] = useState();
   const [modalContent, setModalContent] = useState();
@@ -69,13 +65,6 @@ function operadores(props) {
     if (value2 !== -1) {
       setColor2(['#F96462', '#A1C181']);
       setDisabled2(true);
-    }
-  }
-
-  function checarResposta3() {
-    if (value3 !== -1) {
-      setColor3(['#F96462', '#F96462', '#F96462', '#A1C181']);
-      setDisabled3(true);
     }
   }
 
@@ -1269,7 +1258,7 @@ function operadores(props) {
           <Row style={{ height: '400px' }}>
             <Col span={12} className="text" style={{ alignSelf: 'center' }}>
               Agora, será possível seguir para o tópico voltado
-              aos Tipos de Mutates, ou aprofundar o conhecimento adquirido até aqui
+              aos Tipos de Mutantes, ou aprofundar o conhecimento adquirido até aqui
               com os Exercícios Propostos.
             </Col>
             <Col offset={2} span={8} style={{ alignSelf: 'center' }}>
@@ -1293,7 +1282,7 @@ function operadores(props) {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Exercícios propostos
+              Exercício 1
             </Col>
           </Row>
           <Row>
@@ -1305,7 +1294,7 @@ function operadores(props) {
             </Col>
           </Row>
           <Row>
-            <Col span={12}>
+            <Col span={10}>
               <div>
                 <Radio.Group
                   onChange={(e) => setValue1(e.target.value)}
@@ -1315,17 +1304,17 @@ function operadores(props) {
                   <Space direction="vertical">
                     <Card className="cards1" style={{ backgroundColor: color1[0], textAlignLast: 'left', cursor: 'default' }}>
                       <Radio value={1}>
-                        <img src={oper2} alt="oper2" />
+                        <img src={oper2} alt="oper2" style={{ height: '60px' }} />
                       </Radio>
                     </Card>
                     <Card className="cards1" style={{ backgroundColor: color1[1], textAlignLast: 'left', cursor: 'default' }}>
                       <Radio value={2}>
-                        <img src={oper3} alt="oper3" />
+                        <img src={oper3} alt="oper3" style={{ height: '60px' }} />
                       </Radio>
                     </Card>
                     <Card className="cards1" style={{ backgroundColor: color1[2], textAlignLast: 'left', cursor: 'default' }}>
                       <Radio value={3}>
-                        <img src={oper4} alt="oper4" />
+                        <img src={oper4} alt="oper4" style={{ height: '60px' }} />
                       </Radio>
                     </Card>
                   </Space>
@@ -1335,7 +1324,7 @@ function operadores(props) {
                 Conferir
               </Button>
             </Col>
-            <Col offset={1} span={11} className="text">
+            <Col offset={1} span={13} className="text" style={{ textAlign: '-webkit-center' }}>
               <img src={oper1} alt="oper1" style={{ marginBottom: '14px' }} />
               {disabled1
                 ? (
@@ -1355,7 +1344,7 @@ function operadores(props) {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Exercícios propostos
+              Exercício 2
             </Col>
           </Row>
           <div className="quizz-question">
@@ -1368,7 +1357,7 @@ function operadores(props) {
             Essa afirmação está:
           </div>
           <Row>
-            <Col span={12}>
+            <Col span={10}>
               <div>
                 <Radio.Group
                   onChange={(e) => setValue2(e.target.value)}
@@ -1389,7 +1378,7 @@ function operadores(props) {
                 Conferir
               </Button>
             </Col>
-            <Col offset={1} span={11} className="text">
+            <Col offset={1} span={13} className="text" style={{ textAlign: '-webkit-center' }}>
               {disabled2
                 ? (
                   <div>
@@ -1399,72 +1388,6 @@ function operadores(props) {
                     com o código que serão utilizados. Por exemplo, um Operador
                     de Mutação que altera um operador aritmético não ser usado em
                     um código que não realiza operações aritméticas.
-                  </div>
-                ) : null}
-            </Col>
-          </Row>
-        </div>
-        <div>
-          <Row>
-            <Col span={24} justify="center" align="middle" className="title">
-              Exercícios propostos
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <div className="quizz-question">
-                Analisando o Programa Original e o Programa Mutante gerado, o desenvolvedor
-                conseguiu identificar
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={12}>
-              <div>
-                <Radio.Group
-                  onChange={(e) => setValue3(e.target.value)}
-                  value={value3}
-                  disabled={disabled3}
-                >
-                  <Space direction="vertical">
-                    <Card className="cards1" style={{ backgroundColor: color3[0], textAlignLast: 'left', cursor: 'default' }}>
-                      <Radio value={1}>
-                        asdasdasdasdas
-                      </Radio>
-                    </Card>
-                    <Card className="cards1" style={{ backgroundColor: color3[1], textAlignLast: 'left', cursor: 'default' }}>
-                      <Radio value={2}>
-                        asdasdasdasdas
-                      </Radio>
-                    </Card>
-                    <Card className="cards1" style={{ backgroundColor: color3[2], textAlignLast: 'left', cursor: 'default' }}>
-                      <Radio value={3}>
-                        asdasdasdasdas
-                      </Radio>
-                    </Card>
-                    <Card className="cards1" style={{ backgroundColor: color3[3], textAlignLast: 'left', cursor: 'default' }}>
-                      <Radio value={4}>
-                        asdasdasdasdas
-                      </Radio>
-                    </Card>
-                  </Space>
-                </Radio.Group>
-              </div>
-              <Button onClick={() => checarResposta3(value3)}>
-                Conferir
-              </Button>
-            </Col>
-            <Col offset={1} span={11} className="text">
-              {disabled3
-                ? (
-                  <div>
-                    O código com a inserção de operador condicional é o terceiro.
-                    <br />
-                    <br />
-                    O primeiro apresenta uma alteração de operador relacional.
-                    <br />
-                    <br />
-                    O segundo apresenta uma alteração de operador aritmético.
                   </div>
                 ) : null}
             </Col>

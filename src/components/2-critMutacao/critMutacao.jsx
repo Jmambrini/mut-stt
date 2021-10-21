@@ -6,6 +6,8 @@ import {
 import { CaretRightOutlined, CaretDownOutlined } from '@ant-design/icons';
 
 import errorSeeding from '../../generics/codes/errorSeeding.png';
+import a1 from '../../generics/exercicios/a1.png';
+import a2 from '../../generics/exercicios/a2.png';
 
 import './critMutacao.scss';
 
@@ -14,12 +16,24 @@ function critMutacao(props) {
   const [color1, setColor1] = useState(['#fdd872', '#fdd872', '#fdd872', '#fdd872']);
   const [disabled1, setDisabled1] = useState(false);
 
+  const [value2, setValue2] = useState(-1);
+  const [color2, setColor2] = useState(['#fdd872', '#fdd872', '#fdd872', '#fdd872']);
+  const [disabled2, setDisabled2] = useState(false);
+
   function checarResposta1() {
     if (value1 !== -1) {
       setColor1(['#F96462', '#F96462', '#A1C181', '#F96462']);
       setDisabled1(true);
     }
   }
+
+  function checarResposta2() {
+    if (value2 !== -1) {
+      setColor2(['#F96462', '#F96462', '#A1C181', '#F96462']);
+      setDisabled2(true);
+    }
+  }
+
   const slider = useRef();
   return (
     <div className="critMutacao">
@@ -142,42 +156,97 @@ function critMutacao(props) {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Exercícios propostos
+              Exercício 1
             </Col>
           </Row>
           <div>
             <div className="quizz-question">
-              Dentre as alternativas a seguir, quais os critérios que não
-              derivam os requisitos de teste a partir dos defeitos mais
-              frequentes cometidos pelos desenvolvedores durante o
-              desenvolvimento do software
+              Dentre as alternativas a seguir, qual o critério que o desenvolvedor
+              insere diversos erros no seu próprio código para checar a efetividade
+              dos seus casos de teste?
             </div>
-            <div>
-              <Radio.Group
-                onChange={(e) => setValue1(e.target.value)}
-                value={value1}
-                disabled={disabled1}
-              >
-                <Space direction="vertical">
-                  <Card className="cards1" style={{ backgroundColor: color1[0], textAlignLast: 'left' }}>
-                    <Radio value={1}>Todos Nós</Radio>
-                  </Card>
-                  <Card className="cards1" style={{ backgroundColor: color1[1], textAlignLast: 'left' }}>
-                    <Radio value={2}>Potenciais Usos</Radio>
-                  </Card>
-                  <Card className="cards1" style={{ backgroundColor: color1[2], textAlignLast: 'left' }}>
-                    <Radio value={3}>Semeadura de defeitos</Radio>
-                  </Card>
-                  <Card className="cards1" style={{ backgroundColor: color1[3], textAlignLast: 'left' }}>
-                    <Radio value={4}>Todos Usos</Radio>
-                  </Card>
-                </Space>
-              </Radio.Group>
-            </div>
-            <Button onClick={() => checarResposta1(value1)}>
-              Conferir
-            </Button>
+            <Row>
+              <Col span={10}>
+                <div>
+                  <Radio.Group
+                    onChange={(e) => setValue1(e.target.value)}
+                    value={value1}
+                    disabled={disabled1}
+                  >
+                    <Space direction="vertical">
+                      <Card className="cards1" style={{ backgroundColor: color1[0], textAlignLast: 'left' }}>
+                        <Radio value={1}>Todos Nós</Radio>
+                      </Card>
+                      <Card className="cards1" style={{ backgroundColor: color1[1], textAlignLast: 'left' }}>
+                        <Radio value={2}>Potenciais Usos</Radio>
+                      </Card>
+                      <Card className="cards1" style={{ backgroundColor: color1[2], textAlignLast: 'left' }}>
+                        <Radio value={3}>Semeadura de defeitos</Radio>
+                      </Card>
+                      <Card className="cards1" style={{ backgroundColor: color1[3], textAlignLast: 'left' }}>
+                        <Radio value={4}>Todos Usos</Radio>
+                      </Card>
+                    </Space>
+                  </Radio.Group>
+                </div>
+                <Button onClick={() => checarResposta1(value1)}>
+                  Conferir
+                </Button>
+              </Col>
+            </Row>
           </div>
+        </div>
+        <div>
+          <Row>
+            <Col span={24} justify="center" align="middle" className="title">
+              Exercício 2
+            </Col>
+          </Row>
+          <div className="quizz-question">
+            Analizando os códigos ao lado, quantos erros foram inseridos no Programa com Erros?
+          </div>
+          <Row>
+            <Col span={10}>
+              <div>
+                <Radio.Group
+                  onChange={(e) => setValue2(e.target.value)}
+                  value={value2}
+                  disabled={disabled2}
+                >
+                  <Space direction="vertical">
+                    <Card className="cards1" style={{ backgroundColor: color2[0], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={1}>1</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color2[1], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={2}>2</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color2[2], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={3}>3</Radio>
+                    </Card>
+                    <Card className="cards1" style={{ backgroundColor: color2[3], textAlignLast: 'left', cursor: 'default' }}>
+                      <Radio value={4}>4</Radio>
+                    </Card>
+                  </Space>
+                </Radio.Group>
+                <Button onClick={() => checarResposta2(value2)}>
+                  Conferir
+                </Button>
+              </div>
+            </Col>
+            <Col offset={1} span={13} className="text" style={{ textAlign: '-webkit-center' }}>
+              {disabled2
+                ? (
+                  <div style={{ width: '80%', textAlign: 'center' }}>
+                    <img src={a2} alt="a2" style={{ marginBottom: '14px', width: '360px' }} />
+                  </div>
+                )
+                : (
+                  <div style={{ width: '80%', textAlign: 'center' }}>
+                    <img src={a1} alt="a1" style={{ marginBottom: '14px', width: '360px' }} />
+                  </div>
+                )}
+            </Col>
+          </Row>
         </div>
       </Carousel>
     </div>

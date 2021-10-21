@@ -76,4 +76,31 @@
     box-shadow: 4px 4px rgb(80, 77, 77);
     cursor: pointer;
   }
+  .ant-btn {
+    background-color: #df5a01;
+    color: #fff;
+    width: 250px;
+    margin-top: 20px;
+    height: 60px;
+    vertical-align: middle;
+  }
+  .ant-radio-wrapper-disabled {
+    span {
+      color: black !important;
+    }
+  }
+  .ant-radio-group {
+    width: 100%;
+  }
+  .ant-space {
+    width: 100%;
+  }
+  .cards1 {
+    width: 100%;
+  }
+  .quizz-question {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
 }
