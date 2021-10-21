@@ -229,7 +229,7 @@ function operadores(props) {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Operadores de Mutação x Mutantes
+              Geração de Mutantes
             </Col>
           </Row>
           <Row>

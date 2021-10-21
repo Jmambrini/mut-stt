@@ -95,6 +95,15 @@ function Intro() {
               sobre o conteúdo apresentado, a fim de aprofundar o conhecimento obtido.
             </Col>
           </Row>
+          <div style={{ textAlign: '-webkit-right' }}>
+            <a rel="license noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+              <img alt="Licença Creative Commons" style={{ borderWidth: '0' }} src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+            </a>
+            <br />
+            Esta obra está licenciada com uma Licença
+            {' '}
+            <a rel="license noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>
+          </div>
         </div>
       </Carousel>
     </div>
