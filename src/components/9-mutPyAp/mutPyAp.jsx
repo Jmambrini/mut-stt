@@ -126,16 +126,16 @@ function mutPyAp() {
             <Col span={24} justify="center" className="text">
               *Uma observação: utilizei o
               {' '}
-              <i style={{ color: 'red' }}>PowerShell</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>PowerShell</i>
               {' '}
               e o
               {' '}
-              <i style={{ color: 'red' }}>Git Bash</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Git Bash</i>
               {' '}
               em alguns testes, e ambos apresentaram erros.
               Depois disso, segui só com o
               {' '}
-              <i style={{ color: 'red' }}>Prompt de Comando</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Prompt de Comando</i>
               {' '}
               e não tive mais problemas.
             </Col>
@@ -302,15 +302,15 @@ function mutPyAp() {
             <Col>
               Devido a tag
               {' '}
-              <i style={{ color: 'red' }}>--report-html</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>--report-html</i>
               , teremos uma página html para mostrar os resultados
               do processo executado pela Mut.py. Essa página estará
               dentro da pasta
               {' '}
-              <i style={{ color: 'red' }}>resultados</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>resultados</i>
               , nome inserido depois da tag
               {' '}
-              <i style={{ color: 'red' }}>--report-html</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>--report-html</i>
               . Abaixo, temos a parte inicial da página de resultados:
             </Col>
           </Row>
@@ -426,38 +426,38 @@ function mutPyAp() {
             <Col span={12} style={{ marginTop: '24px' }}>
               Na primeira parte do resultado, temos o tópico
               {' '}
-              <i style={{ color: 'red' }}>Details</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Details</i>
               , que possui os mesmos campos explicados na tela anterior.
               Seguindo, temos o tópico
               {' '}
-              <i style={{ color: 'red' }}>Exception traceback</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Exception traceback</i>
               .
               <br />
               <br />
               No
               {' '}
-              <i style={{ color: 'red' }}>Exception traceback</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Exception traceback</i>
               , temos o retorno da ferramenta sobre qual dos nossos casos de teste
               matou o mutante (esse tópico aparece somente quando o mutante é morto). No exemplo,
               temos que nosso mutante foi morto por um caso da função
               {' '}
-              <i style={{ color: 'red' }}>test_func</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>test_func</i>
               , sendo este o caso de teste
               <br />
               {' '}
-              <i style={{ color: 'red' }}>self.assertEqual(codigo.func(1,2,3), True)</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>self.assertEqual(codigo.func(1,2,3), True)</i>
               .
               <br />
               <br />
               O teste esperava as entradas
               {' '}
-              <i style={{ color: 'red' }}>(1,2,3)</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>(1,2,3)</i>
               , e um retorno
               {' '}
-              <i style={{ color: 'red' }}>True</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>True</i>
               . Porém, devido a mutação, o retorno do caso de teste foi
               {' '}
-              <i style={{ color: 'red' }}>False</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>False</i>
               .
             </Col>
           </Row>
@@ -481,36 +481,36 @@ function mutPyAp() {
             <Col span={12} style={{ marginTop: '80px' }}>
               Na primeira parte, temos o tópico
               {' '}
-              <i style={{ color: 'red' }}>Mutations</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Mutations</i>
               . Nele, podemos analisar o operador de mutação que foi utilizado
               na geração do mutante, e a linha do código que foi modificada.
               No mutante escolhido, a ferramenta utilizou o operador
               {' '}
-              <i style={{ color: 'red' }}>AOR</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>AOR</i>
               , e a mutação ocorreu na
               {' '}
-              <i style={{ color: 'red' }}>linha 4</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>linha 4</i>
               .
               <br />
               <br />
               O próximo tópico dessa parte é o
               {' '}
-              <i style={{ color: 'red' }}>Mutant</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Mutant</i>
               . Nesse tópico a ferramenta nos mostra o mutante que foi
               gerado à partir do código original.
               <br />
               Como falado no tópico anterior, a mutação ocorreu na linha 4, com o
               operador AOR. Observando a linha 4, podemos ver que o
               {' '}
-              <i style={{ color: 'red' }}>+</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>+</i>
               {' '}
               foi alterado por um
               {' '}
-              <i style={{ color: 'red' }}>-</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>-</i>
               {' '}
               no trecho
               {' '}
-              <i style={{ color: 'red' }}>(a - b &gt;= c)</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>(a - b &gt;= c)</i>
               .
             </Col>
           </Row>

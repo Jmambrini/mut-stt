@@ -160,11 +160,16 @@ function operadores(props) {
               Um Operador de Mutação é um conjunto de regras que irão definir
               qual alteração será feita no código original, o qual o usuário possui
               casos de teste criados e deseja testar a efetividade desses.
-              <br />
-              <br />
+            </Col>
+          </Row>
+          <Row justify="center">
+            <img src={exMutStep} alt="exMutStep" style={{ marginTop: '14px' }} />
+          </Row>
+          <Row>
+            <Col span={24} className="text">
               Por exemplo, um determinado Operador de Mutação possui regras desenvolvidas
               para modificar um operador aritmético por outro. Então ao utilizar esse
-              operador em um código que realiza uma simples soma de dois números, o mutante
+              operador em um código que realiza uma soma de dois números, o mutante
               trocará essa soma por uma subtração, e tentará utilizar os casos de teste para
               verificar se essa mudança será testada por eles.
               <br />
@@ -172,16 +177,13 @@ function operadores(props) {
               Seguindo o exemplo acima, o pequeno trecho de código abaixo sofreu uma mutação
               por um operador, e gerou um mutante, que possui o
               {' '}
-              <i style={{ color: 'red' }}>operador +</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>operador de adição</i>
               {' '}
               alterado pelo
               {' '}
-              <i style={{ color: 'red' }}>operador -</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>operador de subtração</i>
               .
             </Col>
-          </Row>
-          <Row justify="center">
-            <img src={exMutStep} alt="exMutStep" style={{ marginTop: '14px' }} />
           </Row>
         </div>
         <div>
@@ -198,8 +200,8 @@ function operadores(props) {
           </Row>
           <Row>
             <Col span={24} className="text">
-              Com um código inicial, o Teste de Mutação utiliza dos seus Operadores
-              de Mutação para gerar vários Mutantes do mesmo código.
+              Com um código inicial, são utilizados operadores de mutação
+              para gerar vários Mutantes do mesmo código.
               <br />
               Utilizando as regras de cada Operador, o código inicial é analisado,
               e verifica-se quais dos Operadores poderão ser utilizados.
@@ -218,7 +220,7 @@ function operadores(props) {
               outros mutantes, representados pelos &quot;Mutantes x&quot;.
               <br />
               <br />
-              E o Teste de Mutação segue dessa maneira, até gerar todos os mutantes
+              E a geração de mutantes segue dessa maneira, até gerar todos os
               possíveis para o código original, dado seu conjunto limitado de Operadores.
             </Col>
             <Col offset={1}>
@@ -256,81 +258,81 @@ function operadores(props) {
                       case '1':
                         return (
                           <div>
-                            No Mutante 1, foi utilizado um Operador de Mutação
+                            No Programa Mutante 1, foi utilizado um Operador de Mutação
                             que altera uma constante por outra constante.
                             <br />
                             <br />
                             Nesse caso, o
                             {' '}
-                            <i style={{ color: 'red' }}>número 3</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>número 3</i>
                             {' '}
                             da linha 2 do Código Original foi alterado pelo
                             {' '}
-                            <i style={{ color: 'red' }}>número 5</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>número 5</i>
                             .
                           </div>
                         );
                       case '2':
                         return (
                           <div>
-                            No Mutante 2, foi utilizado um Operador de Mutação
+                            No Programa Mutante 2, foi utilizado um Operador de Mutação
                             que altera um operador relacional por outro operador relacional.
                             <br />
                             <br />
                             Nesse caso, o
                             {' '}
-                            <i style={{ color: 'red' }}>operador &gt;</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador &gt;</i>
                             {' '}
                             da linha 2 do Código Original foi alterado pelo
                             {' '}
-                            <i style={{ color: 'red' }}>operador &lt;</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador &lt;</i>
                             .
                           </div>
                         );
                       case '3':
                         return (
                           <div>
-                            No Mutante 3, foi utilizado um Operador de Mutação
+                            No Programa Mutante 3, foi utilizado um Operador de Mutação
                             que altera um operador aritmético por outro operador aritmético.
                             <br />
                             <br />
                             Nesse caso, o
                             {' '}
-                            <i style={{ color: 'red' }}>operador *</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador *</i>
                             {' '}
                             da linha 6 do Código Original foi alterado pelo
                             {' '}
-                            <i style={{ color: 'red' }}>operador /</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador /</i>
                             .
                           </div>
                         );
                       case '4':
                         return (
                           <div>
-                            No Mutante 4, foi utilizado um Operador de Mutação
+                            No Programa Mutante 4, foi utilizado um Operador de Mutação
                             que altera um operador de comparação por outro operador de comparação.
                             <br />
                             <br />
                             Nesse caso, o
                             {' '}
-                            <i style={{ color: 'red' }}>operador ==</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador ==</i>
                             {' '}
                             da linha 5 do Código Original foi alterado pelo
                             {' '}
-                            <i style={{ color: 'red' }}>operador !=</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador !=</i>
                             .
                           </div>
                         );
                       case '5':
                         return (
                           <div>
-                            No Mutante 5, foi utilizado um Operador de Mutação
+                            No Programa Mutante 5, foi utilizado um Operador de Mutação
                             que insere um operador de comparação no código original.
                             <br />
                             <br />
                             Nesse caso, o
                             {' '}
-                            <i style={{ color: 'red' }}>operador not</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador not</i>
                             {' '}
                             foi inserido na linha 2 do Código Original
                             .
@@ -339,17 +341,17 @@ function operadores(props) {
                       case '6':
                         return (
                           <div>
-                            No Mutante 6, foi utilizado um Operador de Mutação
+                            No Programa Mutante 6, foi utilizado um Operador de Mutação
                             que altera um operador aritmético por outro operador aritmético.
                             <br />
                             <br />
                             Nesse caso, o
                             {' '}
-                            <i style={{ color: 'red' }}>operador +</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador +</i>
                             {' '}
                             da linha 3 do Código Original foi alterado pelo
                             {' '}
-                            <i style={{ color: 'red' }}>operador -</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador -</i>
                             .
                           </div>
                         );
@@ -363,11 +365,11 @@ function operadores(props) {
                             <br />
                             {' '}
                             <div style={{ textAlignLast: 'center' }}>
-                              <div style={{ color: 'red' }}>
+                              <div style={{ color: 'red', fontWeight: 'bold' }}>
                                 if (4 &gt; 3)
                               </div>
                               e
-                              <div style={{ color: 'red' }}>
+                              <div style={{ color: 'red', fontWeight: 'bold' }}>
                                 if (1 + 1 == 2)
                               </div>
                             </div>
@@ -379,7 +381,7 @@ function operadores(props) {
                             de teste desenvolvido também será simples. Ele apenas verifica se
                             o retorno do programa será
                             {' '}
-                            <div style={{ color: 'red', textAlignLast: 'center' }}>( 7 e 12 )</div>
+                            <div style={{ color: 'red', fontWeight: 'bold', textAlignLast: 'center' }}>( 7 e 12 )</div>
                           </div>
                         );
                       default:
@@ -405,12 +407,9 @@ function operadores(props) {
             </Row>
             <Row>
               <Col className="text">
-                Nesse REA, foi utilizada a ferramenta de apoio Mut.py para ajudar no entendimento
-                dos conceitos, e também para introduzir um pouco de como essas ferramentas
-                funcionam na prática.
-                Existe um tópico dedicado a explicação dela, porém como o
-                tópico atual é sobre os Operadores de Mutação, abaixo estão todos os que a
-                ferramenta utiliza.
+                Nesse REA são utilizados operadores de mutação da linguagem Python, em específico
+                os da ferramenta MutPy.
+                Abaixo estão todos os operadores que a ferramenta possui.
               </Col>
             </Row>
             <Row justify="center">
@@ -422,24 +421,22 @@ function operadores(props) {
                       <div>
                         <Row justify="center">
                           <div>
-                            O operador AOD é utilizado pela ferramenta para criar um mutante do
-                            código
-                            original, no qual esse mutante possui um operador aritmético removido
-                            do código original.
-                          </div>
-                        </Row>
-                        <Row>
-                          <div>
-                            <br />
-                            No exemplo abaixo, o operador
-                            {' '}
-                            <i style={{ color: 'red' }}>-</i>
-                            {' '}
-                            foi removido:
+                            O operador AOD cria um programa mutante à partir do código original
+                            removendo um operador aritmético.
                           </div>
                         </Row>
                         <Row justify="center">
                           <img src={AOD} alt="AOD" style={{ marginTop: '14px' }} />
+                        </Row>
+                        <Row>
+                          <div>
+                            <br />
+                            No exemplo acima, o operador aritmético
+                            {' '}
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; - &quot;</i>
+                            {' '}
+                            foi removido.
+                          </div>
                         </Row>
                       </div>
                     ),
@@ -455,26 +452,24 @@ function operadores(props) {
                     content: () => (
                       <div>
                         <Row justify="center">
-                          O operador AOR é utilizado pela ferramenta para criar um mutante do código
-                          original, no qual esse mutante possui um operador aritmético alterado
-                          por outro operador aritmético.
+                          O operador AOR cria um programa mutante à partir do código original
+                          alterando um operador aritmético por outro.
+                        </Row>
+                        <Row justify="center">
+                          <img src={AOR} alt="AOR" style={{ marginTop: '14px' }} />
                         </Row>
                         <Row>
                           <div>
                             <br />
-                            No exemplo abaixo, o operador
+                            No exemplo acima, o operador aritmético
                             {' '}
-                            <i style={{ color: 'red' }}>+</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; + &quot;</i>
                             {' '}
-                            foi alterado para o
+                            foi alterado pelo operador aritmético
                             {' '}
-                            <i style={{ color: 'red' }}>-</i>
-                            {' '}
-                            :
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; - &quot;</i>
+                            .
                           </div>
-                        </Row>
-                        <Row justify="center">
-                          <img src={AOR} alt="AOR" style={{ marginTop: '14px' }} />
                         </Row>
                       </div>
                     ),
@@ -490,26 +485,24 @@ function operadores(props) {
                     content: () => (
                       <div>
                         <Row>
-                          O operador ASR é utilizado pela ferramenta para criar um mutante do código
-                          original, no qual esse mutante possui um operador de atribuição alterado
-                          por outro operador de atribuição.
+                          O operador ASR cria um programa mutante à partir do código original
+                          alterando um operador de atribuição por outro.
+                        </Row>
+                        <Row justify="center">
+                          <img src={ASR} alt="ASR" style={{ marginTop: '14px' }} />
                         </Row>
                         <Row>
                           <div>
                             <br />
-                            No exemplo abaixo, o operador
+                            No exemplo acima, o operador de atribuição
                             {' '}
-                            <i style={{ color: 'red' }}>+=</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; += &quot;</i>
                             {' '}
-                            foi alterado para o
+                            foi alterado pelo operador de atribuição
                             {' '}
-                            <i style={{ color: 'red' }}>-=</i>
-                            {' '}
-                            :
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; -= &quot;</i>
+                            .
                           </div>
-                        </Row>
-                        <Row justify="center">
-                          <img src={ASR} alt="ASR" style={{ marginTop: '14px' }} />
                         </Row>
                       </div>
                     ),
@@ -526,35 +519,33 @@ function operadores(props) {
                       <div>
                         <Row justify="center">
                           <div>
-                            O operador BCR é utilizado pela ferramenta para criar um mutante
-                            do código
-                            original, no qual esse mutante possui um operador
+                            O operador BCR cria um programa mutante à partir do código original
+                            alterando o comando
                             {' '}
-                            <i style={{ color: 'red' }}>break</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>break</i>
                             {' '}
-                            alterado por um operador
+                            pelo comando
                             {' '}
-                            <i style={{ color: 'red' }}>continue</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>continue</i>
                             {' '}
                             . O inverso também pode ocorrer.
                           </div>
                         </Row>
+                        <Row justify="center">
+                          <img src={BCR} alt="BCR" style={{ marginTop: '14px' }} />
+                        </Row>
                         <Row>
                           <div>
                             <br />
-                            No exemplo abaixo, o
+                            No exemplo acima, o comando
                             {' '}
-                            <i style={{ color: 'red' }}>break</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>break</i>
                             {' '}
-                            foi alterado para o
+                            foi alterado para o comando
                             {' '}
-                            <i style={{ color: 'red' }}>continue</i>
-                            {' '}
-                            :
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>continue</i>
+                            .
                           </div>
-                        </Row>
-                        <Row justify="center">
-                          <img src={BCR} alt="BCR" style={{ marginTop: '14px' }} />
                         </Row>
                       </div>
                     ),
@@ -572,22 +563,21 @@ function operadores(props) {
                     content: () => (
                       <div>
                         <Row>
-                          O operador COD é utilizado pela ferramenta para criar um mutante do código
-                          original, no qual esse mutante possui um operador condicional removido
-                          do código original.
+                          O operador COD cria um programa mutante à partir do código
+                          original removendo um operador condicional.
+                        </Row>
+                        <Row justify="center">
+                          <img src={COD} alt="COD" style={{ marginTop: '14px' }} />
                         </Row>
                         <Row>
                           <div>
                             <br />
-                            No exemplo abaixo, o operador
+                            No exemplo acima, o operador
                             {' '}
-                            <i style={{ color: 'red' }}>not</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>not</i>
                             {' '}
-                            foi removido no código:
+                            foi removido no código.
                           </div>
-                        </Row>
-                        <Row justify="center">
-                          <img src={COD} alt="COD" style={{ marginTop: '14px' }} />
                         </Row>
                       </div>
                     ),
@@ -603,22 +593,21 @@ function operadores(props) {
                     content: () => (
                       <div>
                         <Row>
-                          O operador COI é utilizado pela ferramenta para criar um mutante do código
-                          original, no qual esse mutante possui um operador condicional inserido
-                          no código original.
+                          O operador COI cria um programa mutante à partir do código
+                          original inserindo um operador condicional.
+                        </Row>
+                        <Row justify="center">
+                          <img src={COI} alt="COI" style={{ marginTop: '14px' }} />
                         </Row>
                         <Row>
                           <div>
                             <br />
-                            No exemplo abaixo, o operador
+                            No exemplo acima, o operador
                             {' '}
-                            <i style={{ color: 'red' }}>not</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>not</i>
                             {' '}
-                            foi inserido no código:
+                            foi inserido no código.
                           </div>
-                        </Row>
-                        <Row justify="center">
-                          <img src={COI} alt="COI" style={{ marginTop: '14px' }} />
                         </Row>
                       </div>
                     ),
@@ -634,27 +623,25 @@ function operadores(props) {
                     content: () => (
                       <div>
                         <Row>
-                          O operador CRP é utilizado pela ferramenta para criar um mutante do código
-                          original, no qual esse mutante possui uma contante  do código original
-                          alterada por outra contante.
+                          O operador CRP cria um programa mutante à partir do código original
+                          alterando uma contante por outra.
                           {' '}
+                        </Row>
+                        <Row justify="center">
+                          <img src={CRP} alt="CRP" style={{ marginTop: '14px' }} />
                         </Row>
                         <Row>
                           <div>
                             <br />
-                            No exemplo abaixo, a constante
+                            No exemplo acima, a constante
                             {' '}
-                            <i style={{ color: 'red' }}>0</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; 0 &quot;</i>
                             {' '}
                             foi alterada no código pela constante
                             {' '}
-                            <i style={{ color: 'red' }}>1</i>
-                            {' '}
-                            :
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; 1 &quot;</i>
+                            .
                           </div>
-                        </Row>
-                        <Row justify="center">
-                          <img src={CRP} alt="CRP" style={{ marginTop: '14px' }} />
                         </Row>
                       </div>
                     ),
@@ -671,33 +658,31 @@ function operadores(props) {
                       <div>
                         <Row>
                           <div>
-                            O operador DDL trabalha com decoradores de Python.
-                            Um decorador precisa ser definido com
+                            O operador DDL cria um programa mutante à partir do código
+                            original removendo um decorador. Na linguagem Python,
+                            um decorador precisa ser definido com
                             {' '}
-                            <i style={{ color: 'red' }}>@staticmethod</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>@staticmethod</i>
                             {' '}
                             ou
                             {' '}
-                            <i style={{ color: 'red' }}>@classmethod</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>@classmethod</i>
                             {' '}
                             .
-                            Então, o que esse operador faz é utilizar a ferramenta para criar
-                            um mutante do código original, removendo um dos parâmetros
-                            citados anteriormente.
-                          </div>
-                        </Row>
-                        <Row>
-                          <div>
-                            <br />
-                            No exemplo abaixo, o
-                            {' '}
-                            <i style={{ color: 'red' }}>@staticmethod</i>
-                            {' '}
-                            é removido:
                           </div>
                         </Row>
                         <Row justify="center">
                           <img src={DDL} alt="DDL" style={{ marginTop: '14px' }} />
+                        </Row>
+                        <Row>
+                          <div>
+                            <br />
+                            No exemplo acima, o
+                            {' '}
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>@staticmethod</i>
+                            {' '}
+                            foi removido.
+                          </div>
                         </Row>
                       </div>
                     ),
@@ -716,28 +701,30 @@ function operadores(props) {
                       <div>
                         <Row>
                           <div>
-                            O operador EHD é utilizado pela ferramenta para criar um mutante
-                            do código
-                            original, no qual esse mutante remove a função que trataria
-                            o erro da exceção, e insere uma função raise no lugar, que
-                            retornará o erro novamente.
-                          </div>
-                        </Row>
-                        <Row>
-                          <br />
-                          <div>
-                            No exemplo abaixo, o
+                            O operador EHD cria um programa mutante à partir do código original
+                            removendo um método que trataria um erro da exceção, inserindo
+                            o comando
                             {' '}
-                            <i style={{ color: 'red' }}>return 1</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>raise</i>
                             {' '}
-                            foi alterado para o
-                            {' '}
-                            <i style={{ color: 'red' }}>raise</i>
-                            :
+                            no lugar, que retornará o erro novamente.
                           </div>
                         </Row>
                         <Row justify="center">
                           <img src={EHD} alt="EHD" style={{ marginTop: '14px' }} />
+                        </Row>
+                        <Row>
+                          <div>
+                            <br />
+                            No exemplo acima, o
+                            {' '}
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>return 1</i>
+                            {' '}
+                            foi alterado para o
+                            {' '}
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>raise</i>
+                            .
+                          </div>
                         </Row>
                       </div>
                     ),
@@ -754,31 +741,28 @@ function operadores(props) {
                       <div>
                         <Row>
                           <div>
-                            O operador EXS é utilizado pela ferramenta para criar um
-                            mutante do código
-                            original, no qual esse mutante causa uma
-                            &quot;swallowing exception&quot;. Explicando,
+                            O operador EXS cria um programa mutante à partir do código original
+                            causando uma &quot;swallowing exception&quot;. Explicando,
                             é a prática de detectar um erro ou exceção e, em seguida,
                             continuar sem registrar, processar ou relatar o erro a outras
                             partes do software.
                           </div>
                         </Row>
+                        <Row justify="center">
+                          <img src={EXS} alt="EXS" style={{ marginTop: '14px' }} />
+                        </Row>
                         <Row>
                           <div>
                             <br />
-                            No exemplo abaixo, o
+                            No exemplo acima, o
                             {' '}
-                            <i style={{ color: 'red' }}>return 1</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>return 1</i>
                             {' '}
                             foi alterado para o
                             {' '}
-                            <i style={{ color: 'red' }}>pass</i>
-                            {' '}
-                            :
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>pass</i>
+                            .
                           </div>
-                        </Row>
-                        <Row justify="center">
-                          <img src={EXS} alt="EXS" style={{ marginTop: '14px' }} />
                         </Row>
                       </div>
                     ),
@@ -795,51 +779,32 @@ function operadores(props) {
                       <div>
                         <Row>
                           <div>
-                            Quando utilizamos a lógica de orientação a objetos, temos que
-                            uma classe pode ser criada a partir de outra. No nosso caso,
-                            temos a classe Base como pai, e a classe Teste como filho, e
-                            também temos a variável
+                            O operador IHD cria um programa mutante à partir do código original
+                            removendo a declaração do
                             {' '}
-                            <i style={{ color: 'red' }}>X</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; X &quot;</i>
                             {' '}
-                            sendo declarada em ambos, porém
-                            com valores diferentes. Nos nossos testes, utilizamos o
+                            na classe filho. Assim, quando uma validação for
+                            executada, ela retornará o valor de
                             {' '}
-                            <i style={{ color: 'red' }}>X</i>
-                            {' '}
-                            da classe filho para fazer uma validação.
-                          </div>
-                        </Row>
-                        <Row>
-                          <div>
-                            O operador IHD é utilizado pela ferramenta para criar um
-                            mutante do código
-                            original, no qual esse mutante remove
-                            a declaração do
-                            {' '}
-                            <i style={{ color: 'red' }}>X</i>
-                            {' '}
-                            na classe filho, assim, quando fizermos nossa
-                            validação, ela retornará o valor de
-                            {' '}
-                            <i style={{ color: 'red' }}>X</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; X &quot;</i>
                             {' '}
                             declarado na classe pai, causando
                             um retorno de erro do nosso caso de teste.
                           </div>
                         </Row>
+                        <Row justify="center">
+                          <img src={IHD} alt="IHD" style={{ marginTop: '14px' }} />
+                        </Row>
                         <Row>
                           <div>
                             <br />
-                            No exemplo abaixo, a variável
+                            No exemplo acima, a variável
                             {' '}
-                            <i style={{ color: 'red' }}>X</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; X &quot;</i>
                             {' '}
-                            da classe Teste foi removida:
+                            da classe Teste foi removida.
                           </div>
-                        </Row>
-                        <Row justify="center">
-                          <img src={IHD} alt="IHD" style={{ marginTop: '14px' }} />
                         </Row>
                       </div>
                     ),
@@ -856,37 +821,23 @@ function operadores(props) {
                       <div>
                         <Row>
                           <div>
-                            Quando utilizamos a lógica de orientação a objetos, temos que uma classe
-                            pode ser criada a partir de outra. No nosso caso, temos a classe Base
-                            como pai, e a classe Teste como filho, e também podemos observar
-                            que ambas possuem a função
-                            {' '}
-                            <i style={{ color: 'red' }}>foo()</i>
-                            {' '}
-                            . Quando chamamos uma função da classe filho,
-                            ela irá sobrescrever a função já existente da classe pai.
-                          </div>
-                        </Row>
-                        <Row>
-                          <div>
-                            O operator IOD é utilizado pela ferramenta para criar um mutante
-                            do código
-                            original, no qual esse mutante remove a função da classe filho que
-                            sobrescreve a pré-existente na classe pai.
-                          </div>
-                        </Row>
-                        <Row>
-                          <div>
-                            <br />
-                            No exemplo abaixo, a função
-                            {' '}
-                            <i style={{ color: 'red' }}>foo()</i>
-                            {' '}
-                            da classe Teste foi removida:
+                            O operator IOD cria um programa mutante à partir do código original
+                            removendo um método da classe filho que
+                            sobrescreve um pré-existente na classe pai.
                           </div>
                         </Row>
                         <Row justify="center">
                           <img src={IOD} alt="IOD" style={{ marginTop: '14px' }} />
+                        </Row>
+                        <Row>
+                          <div>
+                            <br />
+                            No exemplo acima, o método
+                            {' '}
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>foo()</i>
+                            {' '}
+                            da classe Teste foi removido.
+                          </div>
                         </Row>
                       </div>
                     ),
@@ -905,41 +856,25 @@ function operadores(props) {
                       <div>
                         <Row>
                           <div>
-                            Quando utilizamos a lógica de orientação a objetos, temos que uma classe
-                            pode ser criada a partir de outra. No nosso caso, temos a classe
-                            Base como
-                            pai, e a classe Teste como filho. No código inicial, utilizamos o
-                            {' '}
-                            <i style={{ color: 'red' }}>super().bar()</i>
-                            {' '}
-                            na classe Teste para chamar a função
-                            {' '}
-                            <i style={{ color: 'red' }}>bar()</i>
-                            {' '}
-                            da classe Base, e depois utilizamos o
-                            {' '}
-                            <i style={{ color: 'red' }}>x</i>
-                            {' '}
-                            que retornou.
-                          </div>
-                        </Row>
-                        <Row>
-                          <div>
-                            O operador IOP é utilizado pela ferramenta para criar um mutante
-                            do código
-                            original, no qual esse mutante muda a ordem das funções dentro da classe
-                            filho, para que
-                            ela tente usar a variável antes dela ser chamada da classe pai,
+                            O operador IOP cria um programa mutante à partir do código original
+                            mudando a ordem dos métodos dentro da classe filho, para que
+                            ele tente usar a variável antes dela ser chamada da classe pai,
                             retornando um erro.
                           </div>
                         </Row>
-                        <Row>
-                          <br />
-                          No exemplo abaixo, as duas linhas da função bar presente da classe
-                          Teste, foram trocadas de posição:
-                        </Row>
                         <Row justify="center">
                           <img src={IOP} alt="IOP" style={{ marginTop: '14px' }} />
+                        </Row>
+                        <Row>
+                          <div>
+                            <br />
+                            No exemplo acima, as duas linhas do método
+                            {' '}
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>bar()</i>
+                            {' '}
+                            presente na classe
+                            Teste foram trocadas de posição.
+                          </div>
                         </Row>
                       </div>
                     ),
@@ -955,26 +890,24 @@ function operadores(props) {
                     content: () => (
                       <div>
                         <Row>
-                          O operador LCR é utilizado pela ferramenta para criar um mutante do código
-                          original, no qual esse mutante possui um conector lógico alterado
-                          por outro conector lógico.
+                          O operador LCR cria um programa mutante à partir do código
+                          original alterando um conector lógico por outro.
+                        </Row>
+                        <Row justify="center">
+                          <img src={LCR} alt="LCR" style={{ marginTop: '14px' }} />
                         </Row>
                         <Row>
                           <div>
                             <br />
-                            No exemplo abaixo, o conector
+                            No exemplo acima, o conector
                             {' '}
-                            <i style={{ color: 'red' }}>or</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>or</i>
                             {' '}
                             foi alterado no código pelo conector
                             {' '}
-                            <i style={{ color: 'red' }}>and</i>
-                            {' '}
-                            :
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>and</i>
+                            .
                           </div>
-                        </Row>
-                        <Row justify="center">
-                          <img src={LCR} alt="LCR" style={{ marginTop: '14px' }} />
                         </Row>
                       </div>
                     ),
@@ -990,22 +923,21 @@ function operadores(props) {
                     content: () => (
                       <div>
                         <Row>
-                          O operador LOD é utilizado pela ferramenta para criar um mutante do código
-                          original, no qual esse mutante possui um operador lógico removido
-                          do código original.
+                          O operador LOD cria um programa mutante à partir do código
+                          original removendo um operador lógico.
+                        </Row>
+                        <Row justify="center">
+                          <img src={LOD} alt="LOD" style={{ marginTop: '14px' }} />
                         </Row>
                         <Row>
                           <div>
                             <br />
-                            No exemplo abaixo, o operador
+                            No exemplo acima, o operador
                             {' '}
-                            <i style={{ color: 'red' }}>~</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; ~ &quot;</i>
                             {' '}
-                            foi removido:
+                            foi removido.
                           </div>
-                        </Row>
-                        <Row justify="center">
-                          <img src={LOD} alt="LOD" style={{ marginTop: '14px' }} />
                         </Row>
                       </div>
                     ),
@@ -1021,26 +953,24 @@ function operadores(props) {
                     content: () => (
                       <div>
                         <Row>
-                          O operador LOR é utilizado pela ferramenta para criar um mutante do código
-                          original, no qual esse mutante possui um operador lógico alterado
-                          por outro operador lógico.
+                          O operador LOR cria um programa mutante à partir do código
+                          original alterando um operador lógico por outro.
+                        </Row>
+                        <Row justify="center">
+                          <img src={LOR} alt="LOR" style={{ marginTop: '14px' }} />
                         </Row>
                         <Row>
                           <div>
                             <br />
-                            No exemplo abaixo, o operador
+                            No exemplo acima, o operador
                             {' '}
-                            <i style={{ color: 'red' }}>|</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; | &quot;</i>
                             {' '}
                             foi alterado para o
                             {' '}
-                            <i style={{ color: 'red' }}>&</i>
-                            {' '}
-                            :
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; & &quot;</i>
+                            .
                           </div>
-                        </Row>
-                        <Row justify="center">
-                          <img src={LOR} alt="LOR" style={{ marginTop: '14px' }} />
                         </Row>
                       </div>
                     ),
@@ -1058,27 +988,24 @@ function operadores(props) {
                     content: () => (
                       <div>
                         <Row>
-                          O operador ROR  é utilizado pela ferramenta para criar um mutante
-                          do código
-                          original, no qual esse mutante possui um operador relacional alterado
-                          por outro operador relacional.
+                          O operador ROR cria um programa mutante à partir do código
+                          original alterando um operador relacional por outro.
+                        </Row>
+                        <Row justify="center">
+                          <img src={ROR} alt="ROR" style={{ marginTop: '14px' }} />
                         </Row>
                         <Row>
                           <div>
                             <br />
-                            No exemplo abaixo, o operador
+                            No exemplo acima, o operador
                             {' '}
-                            <i style={{ color: 'red' }}>&gt;</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; &gt; &quot;</i>
                             {' '}
                             foi alterado no código pelo operador
                             {' '}
-                            <i style={{ color: 'red' }}>&lt;</i>
-                            {' '}
-                            :
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; &lt; &quot;</i>
+                            .
                           </div>
-                        </Row>
-                        <Row justify="center">
-                          <img src={ROR} alt="ROR" style={{ marginTop: '14px' }} />
                         </Row>
                       </div>
                     ),
@@ -1095,44 +1022,32 @@ function operadores(props) {
                       <div>
                         <Row>
                           <div>
-                            Quando utilizamos a lógica de orientação a objetos, temos que uma classe
-                            pode ser criada a partir de outra. No nosso caso, temos a classe
-                            Base como pai, e a classe Teste como filho. Quando desejamos utilizar
-                            uma função daclasse pai, utilizamos o
+                            O operador SCD cria um programa mutante à partir do código
+                            original removendo um chamado
                             {' '}
-                            <i style={{ color: 'red' }}>super</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>super</i>
                             {' '}
-                            .
-                          </div>
-                        </Row>
-                        <Row>
-                          <div>
-                            O operador SCD é utilizado pela ferramenta para criar um
-                            mutante do código original, no qual esse mutante remove um chamado
-                            {' '}
-                            <i style={{ color: 'red' }}>super</i>
-                            {' '}
-                            em uma função já existente na classe filho, reescrita
+                            de um metódo já existente na classe filho, reescrita
                             da classe pai. Assim, ao remover, ela passará a utilizar
-                            sua própria lógica, ao invés da lógica escrita na função pai.
-                          </div>
-                        </Row>
-                        <Row>
-                          <div>
-                            <br />
-                            No exemplo abaixo, o
-                            {' '}
-                            <i style={{ color: 'red' }}>super.bar()</i>
-                            {' '}
-                            foi trocado pelo
-                            {' '}
-                            <i style={{ color: 'red' }}>pass</i>
-                            {' '}
-                            na função da classe filho:
+                            sua própria lógica, ao invés da lógica escrita na classe pai.
                           </div>
                         </Row>
                         <Row justify="center">
                           <img src={SCD} alt="SCD" style={{ marginTop: '14px' }} />
+                        </Row>
+                        <Row>
+                          <div>
+                            <br />
+                            No exemplo acima, o
+                            {' '}
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>super.bar()</i>
+                            {' '}
+                            foi trocado pelo
+                            {' '}
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>pass</i>
+                            {' '}
+                            no método da classe filho.
+                          </div>
                         </Row>
                       </div>
                     ),
@@ -1149,45 +1064,32 @@ function operadores(props) {
                       <div>
                         <Row>
                           <div>
-                            Quando utilizamos a lógica de orientação a objetos, temos que uma classe
-                            pode ser criada a partir de outra. No nosso caso, temos a classe
-                            Base como pai, e a classe Teste como filho. Quando desejamos
-                            utilizar uma função da classe pai, utilizamos o
+                            O operador cria um programa mutante à partir do código
+                            original inserindo um chamado
                             {' '}
-                            <i style={{ color: 'red' }}>super</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>super</i>
                             {' '}
-                            .
-                          </div>
-                        </Row>
-                        <Row>
-                          <div>
-                            O operador SCI é utilizado pela ferramenta para criar um mutante
-                            do código
-                            original, no qual esse mutante insere um chamado
+                            em um método já existente na classe filho, reescrito
+                            da classe pai. Assim, mesmo sendo reescrito, ele utilizará as
+                            informações da classe pai, no nosso caso, o método
                             {' '}
-                            <i style={{ color: 'red' }}>super</i>
-                            {' '}
-                            em uma função já existente na classe filho, reescrita
-                            da classe pai. Assim, mesmo sendo reescrita, ela utilizará as
-                            informações da classe pai, no nosso caso, a função
-                            {' '}
-                            <i style={{ color: 'red' }}>foo()</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>foo()</i>
                             {' '}
                             .
-                          </div>
-                        </Row>
-                        <Row>
-                          <div>
-                            <br />
-                            No exemplo abaixo, foi inserido o
-                            {' '}
-                            <i style={{ color: 'red' }}>super.foo()</i>
-                            {' '}
-                            na função da classe filho:
                           </div>
                         </Row>
                         <Row justify="center">
                           <img src={SCI} alt="SCI" style={{ marginTop: '14px' }} />
+                        </Row>
+                        <Row>
+                          <div>
+                            <br />
+                            No exemplo acima, foi inserido o
+                            {' '}
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>super.foo()</i>
+                            {' '}
+                            no método da classe filho.
+                          </div>
                         </Row>
                       </div>
                     ),
@@ -1203,41 +1105,24 @@ function operadores(props) {
                     content: () => (
                       <div>
                         <Row>
-                          <div>
-                            Um elemento de um vetor pode ser referenciado usando o
-                            operador de acesso
-                            {' '}
-                            <i style={{ color: 'red' }}>[ ]</i>
-                            {' '}
-                            . Também é possível usar o mesmo operador para obter
-                            um subconjunto desse vetor. Para isso, podemos utilizar a seguinte
-                            sintaxe:
-                            {' '}
-                            <i style={{ color: 'red' }}>vetor[início:fim:intervalo]</i>
-                            , onde início determina a posição do primeiro item do subconjunto,
-                            fim determina o último item do subconjunto,
-                            e o invervalo determina a distancia entre dois intens consecutivos.
-                          </div>
+                          O operator SIR cria um programa mutante à partir do código
+                          original modificando a lógica de acesso à vetores de um subconjunto.
                         </Row>
-                        <Row>
-                          O operator SIR é utilizado pela ferramenta para criar um mutante do código
-                          original, no qual esse mutante modifica essa lógica do subconjunto.
+                        <Row justify="center">
+                          <img src={SIR} alt="SIR" style={{ marginTop: '14px' }} />
                         </Row>
                         <Row>
                           <div>
                             <br />
-                            No exemplo abaixo, o operador
+                            No exemplo acima, o operador
                             {' '}
-                            <i style={{ color: 'red' }}>x[2:]</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>x[2:]</i>
                             , que retornaria somente os itens a partir da segunda posição
                             foi alterado para o
                             {' '}
-                            <i style={{ color: 'red' }}>x[:]</i>
-                            , que retorna todos os itens do vetor:
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>x[:]</i>
+                            , que retorna todos os itens do vetor.
                           </div>
-                        </Row>
-                        <Row justify="center">
-                          <img src={SIR} alt="SIR" style={{ marginTop: '14px' }} />
                         </Row>
                       </div>
                     ),
@@ -1330,12 +1215,6 @@ function operadores(props) {
                 ? (
                   <div>
                     O código com a inserção de operador condicional é o terceiro.
-                    <br />
-                    <br />
-                    O primeiro apresenta uma alteração de operador relacional.
-                    <br />
-                    <br />
-                    O segundo apresenta uma alteração de operador aritmético.
                   </div>
                 ) : null}
             </Col>
@@ -1348,7 +1227,8 @@ function operadores(props) {
             </Col>
           </Row>
           <div className="quizz-question">
-            Uma ferramenta hipotética de apoio ao Teste de Mutação possui cem operadores diferentes.
+            Uma ferramenta hipotética de apoio ao Teste de Mutação suporta cem
+            operadores de mutação.
             <br />
             Ao utilizá-la em um código, todos os Operadores de Mutação disponíveis realizarão alguma
             modificação no Código Original.

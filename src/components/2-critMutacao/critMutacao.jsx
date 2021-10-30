@@ -161,8 +161,8 @@ function critMutacao(props) {
           </Row>
           <div>
             <div className="quizz-question">
-              Dentre as alternativas a seguir, qual o critério que o desenvolvedor
-              insere diversos erros no seu próprio código para checar a efetividade
+              Dentre as alternativas a seguir, qual o critério que o testador
+              insere diversos defeitos no seu próprio código para checar a efetividade
               dos seus casos de teste?
             </div>
             <Row>

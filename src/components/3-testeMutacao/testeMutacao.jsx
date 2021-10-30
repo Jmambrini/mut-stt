@@ -262,18 +262,18 @@ function testeMutacao(props) {
                           <div>
                             No Mutante 1, o
                             {' '}
-                            <i style={{ color: 'red' }}>número 3</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>número 3</i>
                             {' '}
                             da linha 2 do Código Original foi alterado pelo
                             {' '}
-                            <i style={{ color: 'red' }}>número 5</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>número 5</i>
                             .
                             <br />
                             <br />
                             Dessa maneira, a comparação realizada na linha 2 nunca
                             será verdadeira, e o retorno do programa será somente
                             {' '}
-                            <i style={{ color: 'red' }}>( 12 )</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>( 12 )</i>
                             {' '}
                             , gerando uma falha no caso de teste criado.
                           </div>
@@ -283,18 +283,18 @@ function testeMutacao(props) {
                           <div>
                             No Mutante 2, o
                             {' '}
-                            <i style={{ color: 'red' }}>operador &gt;</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador &gt;</i>
                             {' '}
                             da linha 2 do Código Original foi alterado pelo
                             {' '}
-                            <i style={{ color: 'red' }}>operador &lt;</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador &lt;</i>
                             .
                             <br />
                             <br />
                             Dessa maneira, a comparação realizada na linha 2 não
                             será verdadeira, e o retorno do programa será somente
                             {' '}
-                            <i style={{ color: 'red' }}>( 12 )</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>( 12 )</i>
                             {' '}
                             , gerando uma falha no caso de teste criado.
                           </div>
@@ -304,17 +304,17 @@ function testeMutacao(props) {
                           <div>
                             No Mutante 3, o
                             {' '}
-                            <i style={{ color: 'red' }}>operador *</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador *</i>
                             {' '}
                             da linha 6 do Código Original foi alterado pelo
                             {' '}
-                            <i style={{ color: 'red' }}>operador /</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador /</i>
                             .
                             <br />
                             <br />
                             Dessa maneira, o retorno do programa será
                             <br />
-                            <i style={{ color: 'red' }}>( 7 e 0.75 )</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>( 7 e 0.75 )</i>
                             {' '}
                             , gerando uma falha no caso de teste criado.
                           </div>
@@ -324,18 +324,18 @@ function testeMutacao(props) {
                           <div>
                             No Mutante 4, o
                             {' '}
-                            <i style={{ color: 'red' }}>operador ==</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador ==</i>
                             {' '}
                             da linha 5 do Código Original foi alterado pelo
                             {' '}
-                            <i style={{ color: 'red' }}>operador !=</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador !=</i>
                             .
                             <br />
                             <br />
                             Dessa maneira, a comparação realizada na linha 5 não
                             será verdadeira, e o retorno do programa será somente
                             {' '}
-                            <i style={{ color: 'red' }}>( 7 )</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>( 7 )</i>
                             {' '}
                             , gerando uma falha no caso de teste criado.
                           </div>
@@ -345,7 +345,7 @@ function testeMutacao(props) {
                           <div>
                             No Mutante 5, foi inserido um
                             {' '}
-                            <i style={{ color: 'red' }}>operador not</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador not</i>
                             {' '}
                             na linha 2 do Código Original
                             .
@@ -354,7 +354,7 @@ function testeMutacao(props) {
                             Dessa maneira, a comparação realizada na linha 2 não
                             será verdadeira, e o retorno do programa será somente
                             {' '}
-                            <i style={{ color: 'red' }}>( 12 )</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>( 12 )</i>
                             {' '}
                             , gerando uma falha no caso de teste criado.
                           </div>
@@ -364,17 +364,17 @@ function testeMutacao(props) {
                           <div>
                             No Mutante 6, o
                             {' '}
-                            <i style={{ color: 'red' }}>operador +</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador +</i>
                             {' '}
                             da linha 3 do Código Original foi alterado pelo
                             {' '}
-                            <i style={{ color: 'red' }}>operador -</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador -</i>
                             .
                             <br />
                             <br />
                             Dessa maneira, o retorno do programa será
                             <br />
-                            <i style={{ color: 'red' }}>( -1 e 12 )</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>( -1 e 12 )</i>
                             {' '}
                             , gerando uma falha no caso de teste criado.
                           </div>
@@ -492,8 +492,8 @@ function testeMutacao(props) {
               {disabled1
                 ? (
                   <div style={{ width: '80%', textAlign: 'center' }}>
-                    Pela teoria explicada anteriormente, a afirmação está
-                    correta pois, pela Hipótese do Programador Competente, programadores experientes
+                    A afirmação está correta pois, conforme a Hipótese do Programador
+                    Competente, programadores experientes
                     escrevem programas corretos, ou muito próximos do correto.
                   </div>
                 ) : null}

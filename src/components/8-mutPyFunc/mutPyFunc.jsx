@@ -75,11 +75,11 @@ function mutPyFunc(props) {
                 Por exemplo, temos o mutante abaixo, que foi gerado com o operador
                 AOR, e trocou o
                 {' '}
-                <i style={{ color: 'red' }}>+</i>
+                <i style={{ color: 'red', fontWeight: 'bold' }}>+</i>
                 {' '}
                 pelo
                 {' '}
-                <i style={{ color: 'red' }}>-</i>
+                <i style={{ color: 'red', fontWeight: 'bold' }}>-</i>
                 {' '}
                 na linha 4, na primeira condição do nosso if:
               </div>
@@ -106,7 +106,7 @@ function mutPyFunc(props) {
                 com o caso de teste mostrado abaixo. Podemos analisar que
                 com esse caso escolhido o mutante será morto, pois a condição
                 {' '}
-                <i style={{ color: 'red' }}>(1 - 2 &gt;= 3)</i>
+                <i style={{ color: 'red', fontWeight: 'bold' }}>(1 - 2 &gt;= 3)</i>
                 {' '}
                 é falsa, e o caso de teste espera um retorno verdadeiro.
               </div>

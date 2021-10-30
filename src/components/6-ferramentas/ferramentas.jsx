@@ -12,11 +12,13 @@ import {
   mdiLanguageC,
 } from '@mdi/js';
 
-import cpp from '../../generics/languages/cpp.png';
 import infection from '../../generics/languages/infection.png';
-import muter from '../../generics/languages/muter.png';
 import pitest from '../../generics/languages/pitest.png';
 import stryker from '../../generics/languages/stryker.png';
+
+import prot from '../../generics/ferramentas/prot.png';
+import muterEx from '../../generics/ferramentas/muter.png';
+import muterEx2 from '../../generics/ferramentas/muter2.png';
 
 import './ferramentas.scss';
 
@@ -42,21 +44,15 @@ function ferramentas(props) {
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
-              Existem diversas ferramentas que podem apoiar o teste de mutação.
-              https://spectrum.ieee.org/top-programming-languages-2021
+              Existem diversas ferramentas.
+              A seguir são apresentadas um conjunto de ferramentas para teste de mutação.
             </Col>
           </Row>
-          <Row>
+          <Row style={{ marginBottom: '16px' }}>
             <Col span={24} justify="center" className="text">
               As linguagens foram selecionadas baseando-se nas mais usadas em 2021,
-              de acordo com o ranking da IEEE:
-              {' '}
-              <a href="https://spectrum.ieee.org/top-programming-languages-2021" target="_blank" rel="noreferrer">ieee.org</a>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={24} justify="center" className="text">
-              As linguagens e ferramentas selecionadas foram:
+              de acordo com o ranking da IEEE.
+              <sup><a href="https://spectrum.ieee.org/top-programming-languages-2021" target="_blank" rel="noreferrer">[Link]</a></sup>
             </Col>
           </Row>
           <Row justify="center">
@@ -133,36 +129,39 @@ function ferramentas(props) {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Proteum - C
+              Proteum
             </Col>
           </Row>
           <Row>
-            <Col span={24} justify="center" className="text">
+            <Col span={8} justify="center" className="text" style={{ marginTop: '16px' }}>
               A primeira ferramenta que abordaremos é a
               {' '}
-              <i style={{ color: 'red' }}>Proteum</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Proteum</i>
               {' '}
               .
-            </Col>
-          </Row>
-          <Row>
-            <Col span={12} justify="center" className="text" style={{ marginTop: '16px' }}>
-              &quot;A
-              {' '}
-              <i style={{ color: 'red' }}>Proteum</i>
-              {' '}
-              é uma ferramenta de teste de mutação que consiste em módulos
-              funcionais independentes (programas) que permitem
-              usuários experientes apliquem testes por meio de scripts de shell, reduzindo
-              a quantidade de interação entre o usuário e Proteum e economizando tempo.&quot;
-              <a href="https://github.com/magsilva/proteum/raw/master/doc/manual-proteumim.pdf">[M. E. Delamaro e J. C. Maldonado, Proteum User&lsquo;s Guide]</a>
               <br />
               <br />
+              A
+              {' '}
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Proteum</i>
+              {' '}
+              é uma ferramenta de teste de mutação implementada para a linguagem
+              de programação
+              {' '}
+              <i style={{ color: 'red', fontWeight: 'bold' }}>C</i>
+              .
               Essa ferramenta possui uma interface gráfica implementada, mas também pode ser
               utilizada via terminal, utilizando os comandos citados na documentação.
             </Col>
-            <Col span={12} style={{ textAlign: '-webkit-center' }}>
-              <img src={cpp} alt="cpp" style={{ width: '200px' }} />
+            <Col span={16} style={{ textAlign: '-webkit-center' }}>
+              <img src={prot} alt="prot" style={{ width: '70%' }} />
+              <sup>
+                Interface da Proteum
+                -
+                Fonte:
+                {' '}
+                <a href="https://www.inf.ufpr.br/silvia/testesw/protmanual.pdf" target="_blank" rel="noreferrer">https://www.inf.ufpr.br/silvia/testesw/protmanual.pdf</a>
+              </sup>
             </Col>
           </Row>
           <Collapse accordion>
@@ -176,44 +175,61 @@ function ferramentas(props) {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Muter - Swift
+              Muter
             </Col>
           </Row>
           <Row>
-            <Col span={12} justify="center" className="text">
+            <Col span={24} className="text">
               <div>
                 A
                 {' '}
-                <i style={{ color: 'red' }}>Muter</i>
+                <i style={{ color: 'red', fontWeight: 'bold' }}>Muter</i>
                 {' '}
                 é uma ferramenta de apoio ao teste de mutação para a linguagem de progração
                 {' '}
-                <i style={{ color: 'red' }}>Swift</i>
+                <i style={{ color: 'red', fontWeight: 'bold' }}>Swift</i>
                 , linguagem desenvolvida pela Apple para ser utilizada nos seus produtos
                 (iOS, macOS, watchOS, tvOS).
                 <br />
-                <br />
-                &quot;Com o
-                {' '}
-                <i style={{ color: 'red' }}>Muter</i>
-                , você pode garantir que seu conjunto de testes atenda a todos
-                os seus requisitos, falhe de forma significativa e clara e permaneça estável
-                diante de alterações de código inesperadas ou acidentais.&quot;
               </div>
             </Col>
           </Row>
           <Row>
-            <Col span={12} justify="center" className="text">
-              <div style={{ textAlignLast: 'center' }}>
-                Os operadores suportados pela ferramenta estão disponíveis no link:
-                <br />
-                <a className="operators" href="https://github.com/muter-mutation-testing/muter/blob/master/Docs/mutation_operators.md" target="_blank" rel="noreferrer">
-                  Operadores de mutação da Muter
-                </a>
+            <Col span={24} className="text">
+              <div>
+                Alguns dos operadores suportados pela ferramenta:
+                <ul>
+                  <li>
+                    Negação de operadores condicionais: esse operador inverte um
+                    operador condicional;
+                  </li>
+                  <li>
+                    Alteração de operador lógico: esse operador invert um
+                    operador lógico;
+                  </li>
+                </ul>
               </div>
             </Col>
-            <Col offset={1} span={7}>
-              <img src={muter} alt="muter" style={{ width: '350px', textAlign: '-webkit-right' }} />
+          </Row>
+          <Row>
+            <Col span={12} style={{ textAlign: '-webkit-center' }}>
+              <img src={muterEx} alt="muterEx" />
+              <sup>
+                Negação de operador condicional
+              </sup>
+            </Col>
+            <Col span={12} style={{ textAlign: '-webkit-center' }}>
+              <img src={muterEx2} alt="muterEx2" />
+              <sup>
+                Alteração de operador lógico
+              </sup>
+              <br />
+              <br />
+              <sub>
+                Fonte das tabelas:
+                {' '}
+                <a href="https://github.com/muter-mutation-testing/muter/blob/master/Docs/mutation_operators.md" target="_blank" rel="noreferrer">https://github.com/muter-mutation-testing/muter/blob/master/Docs/mutation_operators.md</a>
+              </sub>
             </Col>
           </Row>
           <Collapse accordion>
@@ -235,23 +251,14 @@ function ferramentas(props) {
               <div>
                 A
                 {' '}
-                <i style={{ color: 'red' }}>Infection</i>
+                <i style={{ color: 'red', fontWeight: 'bold' }}>Infection</i>
                 {' '}
                 é uma ferramenta de apoio ao teste de mutação para a linguagem de progração
                 {' '}
-                <i style={{ color: 'red' }}>PHP</i>
+                <i style={{ color: 'red', fontWeight: 'bold' }}>PHP</i>
                 , linguagem utilizada prioritariamente para o desenvolvimento de aplicações
                 Web e sites.
                 <br />
-                <br />
-                A
-                {' '}
-                <i style={{ color: 'red' }}>Infection</i>
-                {' '}
-                é baseada em
-                mutações AST (Abstract Syntax Tree). Ela funciona como uma ferramenta CLI
-                (command-line interface)
-                e pode ser executado a partir da raiz do seu projeto.
               </div>
               <div style={{ textAlignLast: 'center' }}>
                 <br />
@@ -284,37 +291,37 @@ function ferramentas(props) {
             <Col span={14} justify="center" className="text">
               A
               {' '}
-              <i style={{ color: 'red' }}>Stryker</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Stryker</i>
               {' '}
               é uma ferramenta de apoio ao teste de mutação para a linguagem de progração
               {' '}
-              <i style={{ color: 'red' }}>JavaScript</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>JavaScript</i>
               , linguagem utilizada prioritariamente para o desenvolvimento de aplicações
               Web e sites. Além disso, a ferramenta também suporta integração com bibliotecas como
               {' '}
-              <i style={{ color: 'red' }}>React</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>React</i>
               ,
               {' '}
-              <i style={{ color: 'red' }}>VueJS</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>VueJS</i>
               ,
               {' '}
-              <i style={{ color: 'red' }}>Angular</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Angular</i>
               {' '}
               e
               {' '}
-              <i style={{ color: 'red' }}>NodeJS</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>NodeJS</i>
               .
               <br />
               <br />
               Uma ferramenta muito interessante disponível no
               {' '}
-              <i style={{ color: 'red' }}>StrykerJS</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>StrykerJS</i>
               {' '}
               é a disponibilidade de um Dashboard online que mostra os resultados do teste de
               mutação. Só é necessário se cadastrar na plataforma, e sincronizar
               com o GitHub de um projeto já configurado com o
               {' '}
-              <i style={{ color: 'red' }}>StrykerJS</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>StrykerJS</i>
               .
               <br />
               <br />
@@ -348,21 +355,21 @@ function ferramentas(props) {
             <Col span={12} justify="center" className="text">
               A
               {' '}
-              <i style={{ color: 'red' }}>PITest</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>PITest</i>
               {' '}
               é uma ferramenta de apoio ao teste de mutação para a linguagem de progração
               {' '}
-              <i style={{ color: 'red' }}>Java</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Java</i>
               .
               <br />
               <br />
               A ferramenta oferece suporte integrado para as ferramentas
               {' '}
-              <i style={{ color: 'red' }}>Maven</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Maven</i>
               {' '}
               e
               {' '}
-              <i style={{ color: 'red' }}>Ant</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>Ant</i>
               , ambas utilizadas para compilação e organização das dependencias de um projeto.
               Além disso, a ferramenta também suporta que o usuário utilize o terminal de comando
               para executar o teste de mutação.

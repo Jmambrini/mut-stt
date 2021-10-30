@@ -7,11 +7,19 @@ import { CaretRightOutlined, CaretDownOutlined } from '@ant-design/icons';
 
 import './mutantes.scss';
 
-import vivo from '../../generics/tiposMut/vivo.png';
-import morto from '../../generics/tiposMut/morto.png';
-import incompetente from '../../generics/tiposMut/incompetente.png';
+import vivo1 from '../../generics/tiposMut/vivo1.png';
+import vivo2 from '../../generics/tiposMut/vivo2.png';
+import vivo3 from '../../generics/tiposMut/vivo3.png';
+import morto1 from '../../generics/tiposMut/morto1.png';
+import morto2 from '../../generics/tiposMut/morto2.png';
+import morto3 from '../../generics/tiposMut/morto3.png';
+import incompetente1 from '../../generics/tiposMut/incompetente1.png';
+import incompetente2 from '../../generics/tiposMut/incompetente2.png';
+import incompetente3 from '../../generics/tiposMut/incompetente3.png';
 import timeout from '../../generics/tiposMut/timeout.png';
+import timeout2 from '../../generics/tiposMut/timeout2.png';
 import equi from '../../generics/tiposMut/equi.png';
+import equi2 from '../../generics/tiposMut/equi2.png';
 import escore from '../../generics/tiposMut/escore.png';
 
 import tipos1 from '../../generics/exercicios/tipos1.png';
@@ -65,7 +73,7 @@ function mutantes(props) {
         onCancel={handleCancel}
         width="fit-content"
         bodyStyle={{ fontSize: '16px' }}
-        style={{ maxWidth: '800px' }}
+        style={{ maxWidth: '900px' }}
         centered
       >
         {modalContent}
@@ -86,15 +94,16 @@ function mutantes(props) {
           </Row>
           <Row>
             <Col span={24} className="text">
-              Para finalizar a introdução teórica sobre Teste de Mutação, será abordado nesse
-              tópico os diferentes tipos de Mutantes.
+              Para finalizar a introdução teórica sobre teste de mutação, será abordado nesse
+              tópico os diferentes tipos de programas mutantes.
             </Col>
           </Row>
           <Row>
             <Col span={24} className="text">
-              Como explicado anteriormente, os Mutantes são criados para que o desenvolvedor
-              consiga testar os seus casos de teste. Após o Mutante ser avaliado pelos casos
-              criados, ele poderá se enquadrar nos seguintes tipos:
+              Como explicado anteriormente, os programas mutantes são criados para que o testador
+              consiga avaliar os seus casos de teste, e expor defeitos do programa. Após o
+              programa mutante ser avaliado pelos casos criados, ele poderá se enquadrar
+              nos seguintes tipos:
             </Col>
           </Row>
           <Row style={{ marginTop: '18px' }}>
@@ -107,40 +116,45 @@ function mutantes(props) {
                     <div>
                       <Row>
                         <div>
-                          O Mutante Vivo é um mutante que sobreviveu aos casos de testes criados.
+                          O mutante vivo é um mutante que sobreviveu à execução dos casos de testes.
                           <br />
                           No exemplo abaixo, o programa original sofreu uma mutação, e teve seu
+                          operador aritmético
                           {' '}
-                          <i style={{ color: 'red' }}>operador aritmético +</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; + &quot;</i>
                           {' '}
-                          alterado pelo
+                          alterado pelo operador aritmético
                           {' '}
-                          <i style={{ color: 'red' }}>operador aritmético *</i>
-                          . Utilizando o caso de teste escrito em
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; * &quot;</i>
+                          .
+                          <Row justify="center">
+                            <img src={vivo1} alt="vivo1" />
+                          </Row>
+                          Utilizando o caso de teste, os parâmetros
                           {' '}
-                          <i style={{ color: 'red' }}>unittest</i>
-                          , os parâmetros
-                          {' '}
-                          <i style={{ color: 'red' }}>a, b, c</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>a, b, c</i>
                           {' '}
                           recebem os valores
                           {' '}
-                          <i style={{ color: 'red' }}>2, 2, 1</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>2, 2, 1</i>
                           , respectivamente, e o caso espera um retorno igual a
                           {' '}
-                          <i style={{ color: 'red' }}>True</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>True</i>
                           .
+                          <Row justify="center">
+                            <img src={vivo2} alt="vivo2" />
+                          </Row>
                           <br />
                           Porém, com a substituição dos valores mostrados nos dois códigos
-                          da parte inferior, é possível verificar que, independente da mudança
-                          feita pelo Operador de Mutação, o retorno do teste será
+                          abaixo, é possível verificar que independente da mudança
+                          feita pelo operador de mutação, o retorno do teste será
                           {' '}
-                          <i style={{ color: 'red' }}>True</i>
-                          , e portanto, o mutante não foi morto pelo Caso de Teste.
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>True</i>
+                          , e portanto, o mutante não foi morto pelo caso de teste.
+                          <Row justify="center">
+                            <img src={vivo3} alt="vivo3" />
+                          </Row>
                         </div>
-                      </Row>
-                      <Row justify="center">
-                        <img src={vivo} alt="vivo" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -158,42 +172,46 @@ function mutantes(props) {
                     <div>
                       <Row>
                         <div>
-                          O Mutante Morto é um mutante que não sobreviveu aos casos de testes
-                          criados.
+                          O mutante morto é um mutante que não sobreviveu à execução
+                          dos casos de testes.
                           <br />
                           No exemplo abaixo, o programa original sofreu uma mutação, e teve seu
+                          operador aritmético
                           {' '}
-                          <i style={{ color: 'red' }}>operador aritmético *</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; * &quot;</i>
                           {' '}
-                          alterado pelo
+                          alterado pelo operador aritmético
                           {' '}
-                          <i style={{ color: 'red' }}>operador aritmético +</i>
-                          . Utilizando o caso de teste escrito em
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; + &quot;</i>
+                          .
+                          <Row justify="center">
+                            <img src={morto1} alt="morto1" />
+                          </Row>
+                          Utilizando o caso de teste, os parâmetros
                           {' '}
-                          <i style={{ color: 'red' }}>unittest</i>
-                          , os parâmetros
-                          {' '}
-                          <i style={{ color: 'red' }}>a, b, c</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>a, b, c</i>
                           {' '}
                           recebem os valores
                           {' '}
-                          <i style={{ color: 'red' }}>9, 9, 50</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>9, 9, 50</i>
                           , respectivamente, e o caso espera um retorno igual a
                           {' '}
-                          <i style={{ color: 'red' }}>True</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>True</i>
                           .
-                          <br />
+                          <Row justify="center">
+                            <img src={morto2} alt="morto2" />
+                          </Row>
                           Porém, com a substituição dos valores mostrados nos dois códigos
-                          da parte inferior, é possível verificar que, com a mudança
-                          feita pelo Operador de Mutação, o retorno do teste realizado
+                          aaixo, é possível verificar que, com a mudança
+                          feita pelo operador de mutação, o retorno do teste realizado
                           no programa mutante não será
                           {' '}
-                          <i style={{ color: 'red' }}>True</i>
-                          , e portanto, o mutante foi morto pelo Caso de Teste.
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>True</i>
+                          , e portanto, o mutante foi morto pelo caso de teste.
+                          <Row justify="center">
+                            <img src={morto3} alt="morto3" />
+                          </Row>
                         </div>
-                      </Row>
-                      <Row justify="center">
-                        <img src={morto} alt="morto" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -213,42 +231,47 @@ function mutantes(props) {
                     <div>
                       <Row>
                         <div>
-                          O Mutante Incompetente é um mutante que gera um erro antes mesmo
+                          O mutante incompetente é um mutante que gera um erro antes mesmo
                           de ser verificado pelo caso de teste, e por isso, ele pode ser
                           considerado como morto.
                           <br />
-                          No exemplo abaixo, o Programa Original sofreu uma mutação, e teve seu
+                          No exemplo abaixo, o programa original sofreu uma mutação, e teve seu
+                          operador aritmético
                           {' '}
-                          <i style={{ color: 'red' }}>operador aritmético +</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; + &quot;</i>
                           {' '}
-                          alterado pelo
+                          alterado pelo operador aritmético
                           {' '}
-                          <i style={{ color: 'red' }}>operador aritmético -</i>
-                          . Utilizando o caso de teste escrito em
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; - &quot;</i>
+                          .
+                          <Row justify="center">
+                            <img src={incompetente1} alt="incompetente1" />
+                          </Row>
+                          <br />
+                          Utilizando o caso de teste, o parâmetro
                           {' '}
-                          <i style={{ color: 'red' }}>unittest</i>
-                          , o parâmetro
-                          {' '}
-                          <i style={{ color: 'red' }}>a</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>a</i>
                           {' '}
                           recebeu a string
                           {' '}
-                          <i style={{ color: 'red' }}>&quot;-STT&quot;</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>&quot;-STT&quot;</i>
                           , e o caso espera um retorno igual a
                           {' '}
-                          <i style={{ color: 'red' }}>&quot;MUT-STT&quot;</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>&quot;MUT-STT&quot;</i>
                           .
-                          <br />
-                          Com a alteração feita pelo Operador, o compilador retornará um
-                          erro antes mesmo do código ser verificado pelo Caso de Teste. Isso
-                          ocorre pois, no Programa Original é desejado &quot;somar&quot; duas
+                          <Row justify="center">
+                            <img src={incompetente2} alt="incompetente1" />
+                          </Row>
+                          Com a alteração feita pelo operador, o compilador retornará um
+                          erro antes mesmo do código ser verificado pelo caso de teste. Isso
+                          ocorre pois, no programa original é desejado &quot;somar&quot; duas
                           strings, o que é interpretado como uma concatenação. Quando o operador
-                          aritmético é alterado, o Programa Mutante tenta &quot;subtrair&quot;
+                          aritmético é alterado, o programa mutante tenta &quot;subtrair&quot;
                           duas strings, o que não faz sentido.
+                          <Row justify="center">
+                            <img src={incompetente3} alt="incompetente3" />
+                          </Row>
                         </div>
-                      </Row>
-                      <Row justify="center">
-                        <img src={incompetente} alt="incompetente" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -266,41 +289,42 @@ function mutantes(props) {
                     <div>
                       <Row>
                         <div>
-                          O Mutante que sofreu timeout é um mutante que a verificação realizada
-                          pelo Caso de Teste levou um tempo maior do que o determinado pela
+                          O mutante que sofreu timeout é um mutante que a verificação realizada
+                          pelo caso de teste levou um tempo maior do que o determinado pela
                           ferramenta de apoio.
-                          <br />
-                          No exemplo abaixo, o Programa Original sofreu uma mutação, e teve seu
+                          No exemplo abaixo, o programa original sofreu uma mutação, e teve seu
+                          operador de atribuição
                           {' '}
-                          <i style={{ color: 'red' }}>operador de atribuição +=</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; += &quot;</i>
                           {' '}
-                          alterado pelo
+                          alterado pelo operador de atribuição
                           {' '}
-                          <i style={{ color: 'red' }}>operador de atribuição -=</i>
-                          . Utilizando o caso de teste escrito em
-                          {' '}
-                          <i style={{ color: 'red' }}>unittest</i>
-                          , que não possui parâmetros de entrada, e espera um retorno igual a
-                          {' '}
-                          <i style={{ color: 'red' }}>10</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; -= &quot;</i>
                           .
-                          <br />
-                          Com a alteração feita pelo Operador, a variável
+                          <Row justify="center">
+                            <img src={timeout} alt="timeout" />
+                          </Row>
+                          Utilizando o caso de teste, que não possui parâmetros de entrada,
+                          e espera um retorno igual a
                           {' '}
-                          <i style={{ color: 'red' }}>i</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>10</i>
+                          .
+                          <Row justify="center">
+                            <img src={timeout2} alt="timeout2" />
+                          </Row>
+                          Com a alteração feita pelo operador, a variável
                           {' '}
-                          do Programa Mutante diminuirá a cada iteração do
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; i &quot;</i>
                           {' '}
-                          <i style={{ color: 'red' }}>while</i>
+                          do programa mutante diminuirá a cada iteração do
+                          {' '}
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>while</i>
                           , e nunca chegará ao valor
                           {' '}
-                          <i style={{ color: 'red' }}>10</i>
-                          , que determina a parada do laço. Assim, o Programa Mutante ficará em
-                          execução até o tempo limite de execução do Caso de Teste.
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>10</i>
+                          , que determina a parada do laço. Assim, o programa mutante ficará em
+                          execução até o tempo limite de execução do caso de teste.
                         </div>
-                      </Row>
-                      <Row justify="center">
-                        <img src={timeout} alt="timeout" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -320,46 +344,49 @@ function mutantes(props) {
                     <div>
                       <Row>
                         <div>
-                          O Mutante Equivalente é um mutante que possui o mesmo comportamento
-                          do Programa Original, e que não é possível encontrar um Caso
-                          de Teste que consiga matá-lo. Esse tipo de mutante é um dos
-                          obstáculos do Teste de Mutação devido a dificuldade das ferramentas
+                          O mutante equivalente é um mutante que possui o mesmo comportamento
+                          do programa original, e que não é possível encontrar um caso
+                          de teste que consiga matá-lo. Esse tipo de mutante é um dos
+                          obstáculos do teste de mutação devido a dificuldade das ferramentas
                           de apoio em identificá-los dentro do código.
                           <br />
                           No exemplo abaixo, escolhido devido a simplicidade e a facilidade de
-                          encontrar o Mutante Equivalente,
-                          o Programa Original sofreu uma mutação, e teve seu
+                          encontrar o mutante equivalente,
+                          o programa original sofreu uma mutação, e teve seu operador aritmético
                           {' '}
-                          <i style={{ color: 'red' }}>operador aritmético +</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; + &quot;</i>
                           {' '}
-                          alterado pelo
+                          alterado pelo operador aritmético
                           {' '}
-                          <i style={{ color: 'red' }}>operador aritmético *</i>
-                          . Utilizando o caso de teste escrito em
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; * &quot;</i>
+                          .
+                          <Row justify="center">
+                            <img src={equi} alt="equi" />
+                          </Row>
+                          Utilizando o caso de teste, que não possui parâmetros de entrada,
+                          e espera um retorno igual a
                           {' '}
-                          <i style={{ color: 'red' }}>unittest</i>
-                          , que não possui parâmetros de entrada, e espera um retorno igual a
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>4</i>
+                          .
+                          <Row justify="center">
+                            <img src={equi2} alt="equi2" />
+                          </Row>
+                          Analisando o código, tanto
                           {' '}
-                          <i style={{ color: 'red' }}>4</i>
-                          , e analisando o código, tanto
-                          {' '}
-                          <i style={{ color: 'red' }}>(2 + 2)</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>(2 + 2)</i>
                           , quanto
                           {' '}
-                          <i style={{ color: 'red' }}>(2 * 2)</i>
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>(2 * 2)</i>
                           {' '}
                           retornarão o valor
                           {' '}
-                          <i style={{ color: 'red' }}>4</i>
-                          , esperado pelo Caso de Teste. Como a operação matemática depende
+                          <i style={{ color: 'red', fontWeight: 'bold' }}>4</i>
+                          , esperado pelo caso de teste. Como a operação matemática depende
                           de duas variáveis fixas,
                           esse mutante sempre retornará o mesmo resultado, e por causa disso,
-                          a ferramenta considera o mesmo como Mutante Vivo, por não conseguir
-                          identificar que ele é na verdade um Mutante Equivalente.
+                          a ferramenta considera o mesmo como mutante vivo, por não conseguir
+                          identificar que ele é na verdade um mutante equivalente.
                         </div>
-                      </Row>
-                      <Row justify="center">
-                        <img src={equi} alt="equi" style={{ marginTop: '14px' }} />
                       </Row>
                     </div>
                   ),
@@ -405,10 +432,10 @@ function mutantes(props) {
                   {' '}
                   total de mutantes do programa
                   {' '}
-                  <i style={{ color: 'red' }}>P</i>
+                  <i style={{ color: 'red', fontWeight: 'bold' }}>P</i>
                   , que foram mortos pelos Casos de Teste
                   {' '}
-                  <i style={{ color: 'red' }}>T</i>
+                  <i style={{ color: 'red', fontWeight: 'bold' }}>T</i>
                   ;
                 </li>
                 <li>
@@ -416,7 +443,7 @@ function mutantes(props) {
                   {' '}
                   total de mutantes gerados a partir do programa
                   {' '}
-                  <i style={{ color: 'red' }}>P</i>
+                  <i style={{ color: 'red', fontWeight: 'bold' }}>P</i>
                   ;
                 </li>
                 <li>
@@ -424,7 +451,7 @@ function mutantes(props) {
                   {' '}
                   total de mutantes equivalentes ao programa
                   {' '}
-                  <i style={{ color: 'red' }}>P</i>
+                  <i style={{ color: 'red', fontWeight: 'bold' }}>P</i>
                   .
                 </li>
               </ul>
@@ -527,7 +554,7 @@ function mutantes(props) {
                     o resultado do Programa Mutante será o mesmo do Programa Original,
                     independente do valor de
                     {' '}
-                    <i style={{ color: 'red' }}>a</i>
+                    <i style={{ color: 'red', fontWeight: 'bold' }}>a</i>
                     .
                   </div>
                 ) : null}
@@ -543,13 +570,18 @@ function mutantes(props) {
           <Row>
             <Col>
               <div className="quizz-question">
-                Para um Programa Mutante ser considerado vivo, seu resultado deve ser o mesmo
-                que o Mutante Original para um determinado valor.
-                Analizando amobs, indique qual o valor de
+                Para um programa mutante ser considerado vivo, seu resultado deve ser o mesmo
+                que o mutante original para um determinado valor.
+                Analizando ambos e assumindo a notação
                 {' '}
-                <i style={{ color: 'red' }}>n</i>
+                <i style={{ color: 'red', fontWeight: 'bold' }}>( entrada, saída )</i>
                 {' '}
-                para que o Programa Mutante seja um Mutante Vivo.
+                para o caso de teste
+                , indique qual o valor de
+                {' '}
+                <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; n &quot;</i>
+                {' '}
+                para que o programa mutante seja um mutante vivo.
               </div>
             </Col>
           </Row>
@@ -564,22 +596,22 @@ function mutantes(props) {
                   <Space direction="vertical">
                     <Card className="cards1" style={{ backgroundColor: color2[0], textAlignLast: 'left', cursor: 'default' }}>
                       <Radio value={1}>
-                        2
+                        (2, 2)
                       </Radio>
                     </Card>
                     <Card className="cards1" style={{ backgroundColor: color2[1], textAlignLast: 'left', cursor: 'default' }}>
                       <Radio value={2}>
-                        3
+                        (3, 6)
                       </Radio>
                     </Card>
                     <Card className="cards1" style={{ backgroundColor: color2[2], textAlignLast: 'left', cursor: 'default' }}>
                       <Radio value={3}>
-                        4
+                        (4, 24)
                       </Radio>
                     </Card>
                     <Card className="cards1" style={{ backgroundColor: color2[3], textAlignLast: 'left', cursor: 'default' }}>
                       <Radio value={4}>
-                        5
+                        (5, 120)
                       </Radio>
                     </Card>
                   </Space>
@@ -597,7 +629,7 @@ function mutantes(props) {
                     Dos valores ao lado, o único que fará com que ambos mutantes retornem
                     o mesmo resultado é o número
                     {' '}
-                    <i style={{ color: 'red' }}>3</i>
+                    <i style={{ color: 'red', fontWeight: 'bold' }}>3</i>
                     .
                   </div>
                 ) : null}
