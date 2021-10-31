@@ -27,10 +27,10 @@ function mutPyFunc(props) {
                 Código Inicial
               </Col>
             </Row>
-            <Row>
+            <Row className="text">
               O Mut.py funciona da seguinte maneira:
             </Row>
-            <Row>
+            <Row className="text">
               Inicialmente, temos um código que desejamos testar. Por
               exemplo, um código para validar triângulos, mostrado abaixo:
             </Row>
@@ -46,12 +46,13 @@ function mutPyFunc(props) {
                 Casos de teste
               </Col>
             </Row>
-            <Row>
-              Com o nosso código inicial, precisamos criar casos de teste
-              para validar e testar nosso código.
+            <Row className="text">
+              Com o código inicial, é necessário criar casos de teste
+              para testar o código.
             </Row>
-            <Row>
-              Abaixo temos a classe Tests, com casos escritos em unittest:
+            <Row className="text">
+              Abaixo é apresentado um conjunto de caoses de teste
+              escritos em unittest:
             </Row>
             <Row justify="center">
               <img src={mutpyStep2} alt="mutpyStep2" style={{ marginTop: '14px' }} />
@@ -65,23 +66,25 @@ function mutPyFunc(props) {
                 Criação do mutante
               </Col>
             </Row>
-            <Row>
-              Com o código e os casos de teste, a Mut.py modifica nosso código
-              com os operadores citados anteriormente (somente os que encaixam no
-              contexto do nosso código).
+            <Row className="text">
+              Com o código e os casos de teste, a Mut.py modifica o código inicial
+              com os operadores de mutação suportados pela ferramenta.
             </Row>
-            <Row>
+            <Row className="text">
               <div>
-                Por exemplo, temos o mutante abaixo, que foi gerado com o operador
+                Por exemplo, o mutante abaixo foi gerado com o operador
                 AOR, e trocou o
                 {' '}
-                <i style={{ color: 'red', fontWeight: 'bold' }}>+</i>
+                <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; + &quot;</i>
                 {' '}
                 pelo
                 {' '}
-                <i style={{ color: 'red', fontWeight: 'bold' }}>-</i>
+                <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; - &quot;</i>
                 {' '}
-                na linha 4, na primeira condição do nosso if:
+                na linha 4, na primeira condição do
+                {' '}
+                <i style={{ color: 'red', fontWeight: 'bold' }}>if</i>
+                :
               </div>
             </Row>
             <Row justify="center">
@@ -96,11 +99,12 @@ function mutPyFunc(props) {
                 Teste do mutante
               </Col>
             </Row>
-            <Row>
-              Com o mutante, a Mut.py utiliza os casos de teste para verificar
-              se o mesmo vai ser morto.
+            <Row className="text">
+              Com o programa mutante, a Mut.py vai executar o conjunto de casos de
+              teste nos mutantes. Se eles identificarem um defeito, o programa mutante
+              será morto.
             </Row>
-            <Row>
+            <Row className="text">
               <div>
                 Por exemplo, temos o mutante do passo anterior sendo testado
                 com o caso de teste mostrado abaixo. Podemos analisar que
@@ -123,16 +127,16 @@ function mutPyFunc(props) {
                 Resumo
               </Col>
             </Row>
-            <Row align="middle">
+            <Row align="middle" className="text">
               <Col span={16}>
                 Com isso, concluímos a explicação do fluxo básico
                 da Mut.py
                 <ul>
                   <li className="list">
-                    Desenvolvemos nosso código e nossos casos testes;
+                    Foi desenvolvido código e um conjunto de casos de testes;
                   </li>
                   <li className="list">
-                    Rodamos a Mut.py, que criará diversos mutantes;
+                    A ferramenta Mut.py foi executada, criando diversos mutantes;
                   </li>
                   <li className="list">
                     Com os mutantes, a ferramenta testará cada um deles

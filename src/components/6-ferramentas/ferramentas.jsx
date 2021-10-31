@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
-  Carousel, Row, Col, Card, Collapse,
+  Carousel, Row, Col, Card, Collapse, Modal,
 } from 'antd';
 import Icon from '@mdi/react';
 import {
@@ -12,13 +12,16 @@ import {
   mdiLanguageC,
 } from '@mdi/js';
 
-import infection from '../../generics/languages/infection.png';
 import pitest from '../../generics/languages/pitest.png';
-import stryker from '../../generics/languages/stryker.png';
+import muter from '../../generics/languages/muter.png';
 
+import stryker from '../../generics/ferramentas/stryker.png';
+import muter1 from '../../generics/ferramentas/muter.png';
+import muter2 from '../../generics/ferramentas/muter2.png';
+import pit1 from '../../generics/ferramentas/pit1.png';
+import pit2 from '../../generics/ferramentas/pit2.png';
+import infection from '../../generics/ferramentas/infection.png';
 import prot from '../../generics/ferramentas/prot.png';
-import muterEx from '../../generics/ferramentas/muter.png';
-import muterEx2 from '../../generics/ferramentas/muter2.png';
 
 import './ferramentas.scss';
 
@@ -26,8 +29,35 @@ function ferramentas(props) {
   const slider = useRef();
   const { Panel } = Collapse;
 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [modalHeaderTitle, setModalHeaderTitle] = useState();
+  const [modalContent, setModalContent] = useState();
+
+  const showModal = ({ headerTitle, content }) => {
+    setModalHeaderTitle(headerTitle);
+    setModalContent(content);
+    setIsModalVisible(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <div className="ferramentas">
+      <Modal
+        title={modalHeaderTitle}
+        visible={isModalVisible}
+        footer={false}
+        closable
+        onCancel={handleCancel}
+        width="fit-content"
+        bodyStyle={{ fontSize: '16px' }}
+        style={{ maxWidth: '800px' }}
+        centered
+      >
+        {modalContent}
+      </Modal>
       <Carousel
         dotPosition="bottom"
         arrows
@@ -132,26 +162,18 @@ function ferramentas(props) {
               Proteum
             </Col>
           </Row>
-          <Row>
+          <Row align="middle">
             <Col span={8} justify="center" className="text" style={{ marginTop: '16px' }}>
-              A primeira ferramenta que abordaremos é a
-              {' '}
-              <i style={{ color: 'red', fontWeight: 'bold' }}>Proteum</i>
-              {' '}
-              .
-              <br />
-              <br />
               A
               {' '}
               <i style={{ color: 'red', fontWeight: 'bold' }}>Proteum</i>
               {' '}
-              é uma ferramenta de teste de mutação implementada para a linguagem
+              é uma ferramenta de apoio ao teste de mutação implementada para a linguagem
               de programação
               {' '}
               <i style={{ color: 'red', fontWeight: 'bold' }}>C</i>
-              .
-              Essa ferramenta possui uma interface gráfica implementada, mas também pode ser
-              utilizada via terminal, utilizando os comandos citados na documentação.
+              . Ela possui uma interface gráfica implementada, mas também pode ser
+              utilizada via terminal, com os comandos citados na documentação.
             </Col>
             <Col span={16} style={{ textAlign: '-webkit-center' }}>
               <img src={prot} alt="prot" style={{ width: '70%' }} />
@@ -185,51 +207,131 @@ function ferramentas(props) {
                 {' '}
                 <i style={{ color: 'red', fontWeight: 'bold' }}>Muter</i>
                 {' '}
-                é uma ferramenta de apoio ao teste de mutação para a linguagem de progração
+                é uma ferramenta de apoio ao teste de mutação para a linguagem de programação
                 {' '}
                 <i style={{ color: 'red', fontWeight: 'bold' }}>Swift</i>
                 , linguagem desenvolvida pela Apple para ser utilizada nos seus produtos
                 (iOS, macOS, watchOS, tvOS).
                 <br />
+                <br />
+                Abaixo estão alguns dos operadores de mutação suportados pela ferramenta:
               </div>
             </Col>
           </Row>
-          <Row>
-            <Col span={24} className="text">
-              <div>
-                Alguns dos operadores suportados pela ferramenta:
-                <ul>
-                  <li>
-                    Negação de operadores condicionais: esse operador inverte um
-                    operador condicional;
-                  </li>
-                  <li>
-                    Alteração de operador lógico: esse operador invert um
-                    operador lógico;
-                  </li>
-                </ul>
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={12} style={{ textAlign: '-webkit-center' }}>
-              <img src={muterEx} alt="muterEx" />
-              <sup>
-                Negação de operador condicional
-              </sup>
-            </Col>
-            <Col span={12} style={{ textAlign: '-webkit-center' }}>
-              <img src={muterEx2} alt="muterEx2" />
-              <sup>
+          <Row align="middle" style={{ textAlign: '-webkit-center' }}>
+            <Col span={14} className="text">
+              <Card
+                style={{ width: '400px' }}
+                onClick={() => showModal({
+                  headerTitle: 'Alteração de operador lógico',
+                  content: () => (
+                    <div>
+                      <Row>
+                        <div>
+                          Esse operador altera um operador lógico do programa original
+                          para outro, no programa mutante.
+                          <br />
+                          Por exemplo:
+                          <ul>
+                            <li>
+                              O operador lógico
+                              {' '}
+                              <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; && &quot;</i>
+                              {' '}
+                              é alterado para o operador
+                              {' '}
+                              <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; || &quot;</i>
+                              {' '}
+                              no programa mutante;
+                            </li>
+                          </ul>
+                          <Row style={{ textAlign: '-webkit-center' }}>
+                            <Col span={24}>
+                              <img src={muter2} alt="muter2" style={{ width: '80%' }} />
+                              <br />
+                              <sup>
+                                Exemplo da mutação
+                                -
+                                Fonte:
+                                {' '}
+                                <a href="https://github.com/muter-mutation-testing/muter/blob/master/Docs/mutation_operators.md" target="_blank" rel="noreferrer">https://github.com/muter-mutation-testing/muter/blob/master/Docs/mutation_operators.md</a>
+                              </sup>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Row>
+                    </div>
+                  ),
+                })}
+              >
                 Alteração de operador lógico
-              </sup>
+              </Card>
               <br />
+              <Card
+                style={{ width: '400px' }}
+                onClick={() => showModal({
+                  headerTitle: 'Alteração de operadores condicionais',
+                  content: () => (
+                    <div>
+                      <Row>
+                        <div>
+                          Esse operador altera um operador condicional do programa original
+                          para outro, no programa mutante.
+                          <br />
+                          Por exemplo:
+                          <ul>
+                            <li>
+                              O operador condicional
+                              {' '}
+                              <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; == &quot;</i>
+                              {' '}
+                              é alterado para o operador
+                              {' '}
+                              <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; != &quot;</i>
+                              {' '}
+                              no programa mutante;
+                            </li>
+                          </ul>
+                          <Row style={{ textAlign: '-webkit-center' }}>
+                            <Col span={24}>
+                              <img src={muter1} alt="muter1" style={{ width: '100%' }} />
+                              <br />
+                              <sup>
+                                Exemplo da mutação
+                                -
+                                Fonte:
+                                {' '}
+                                <a href="https://github.com/muter-mutation-testing/muter/blob/master/Docs/mutation_operators.md" target="_blank" rel="noreferrer">https://github.com/muter-mutation-testing/muter/blob/master/Docs/mutation_operators.md</a>
+                              </sup>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Row>
+                    </div>
+                  ),
+                })}
+              >
+                Alteração de operador condicional
+              </Card>
               <br />
-              <sub>
-                Fonte das tabelas:
+              <a
+                style={{ fontWeight: 'bold', textDecoration: 'underline' }}
+                href="https://github.com/muter-mutation-testing/muter/blob/master/Docs/mutation_operators.md"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Lista completa dos operadores da Muter
+              </a>
+            </Col>
+            <Col offset={2} span={7} style={{ textAlign: '-webkit-center' }}>
+              <img src={muter} alt="muter" style={{ width: '-webkit-fill-available' }} />
+              <sup>
+                Logo da Muter
+                -
+                Fonte:
                 {' '}
-                <a href="https://github.com/muter-mutation-testing/muter/blob/master/Docs/mutation_operators.md" target="_blank" rel="noreferrer">https://github.com/muter-mutation-testing/muter/blob/master/Docs/mutation_operators.md</a>
-              </sub>
+                <a href="https://github.com/muter-mutation-testing/muter" target="_blank" rel="noreferrer">https://github.com/muter-mutation-testing/muter</a>
+              </sup>
             </Col>
           </Row>
           <Collapse accordion>
@@ -243,34 +345,36 @@ function ferramentas(props) {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              Infection - PHP
+              Infection
             </Col>
           </Row>
           <Row>
-            <Col span={12} justify="center" className="text">
+            <Col span={24} justify="center" className="text">
               <div>
                 A
                 {' '}
                 <i style={{ color: 'red', fontWeight: 'bold' }}>Infection</i>
                 {' '}
-                é uma ferramenta de apoio ao teste de mutação para a linguagem de progração
+                é uma ferramenta de apoio ao teste de mutação para a linguagem de programação
                 {' '}
                 <i style={{ color: 'red', fontWeight: 'bold' }}>PHP</i>
                 , linguagem utilizada prioritariamente para o desenvolvimento de aplicações
                 Web e sites.
-                <br />
-              </div>
-              <div style={{ textAlignLast: 'center' }}>
-                <br />
-                Os operadores suportados pela ferramenta estão disponíveis no link:
-                <br />
-                <a className="operators" href="https://infection.github.io/guide/mutators.html" target="_blank" rel="noreferrer">
-                  Operadores de mutação da Infection
-                </a>
+                Ela dispõe de um ambiente de playground para que o usuário possa testar
+                a ferramenta antes de utilizar localmente em seus projetos.
               </div>
             </Col>
-            <Col offset={1} span={11} style={{ textAlign: '-webkit-center' }}>
-              <img src={infection} alt="infection" style={{ width: '200px' }} />
+          </Row>
+          <Row>
+            <Col offset={3} span={17} style={{ textAlign: '-webkit-center' }}>
+              <img src={infection} alt="infection" style={{ width: '-webkit-fill-available' }} />
+              <sup>
+                Playground da Infection
+                -
+                Fonte:
+                {' '}
+                <a href="https://infection-php.dev/" target="_blank" rel="noreferrer">https://infection-php.dev/</a>
+              </sup>
             </Col>
           </Row>
           <Collapse accordion>
@@ -284,57 +388,33 @@ function ferramentas(props) {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              StrykerJS - JavaScript
+              StrykerJS
             </Col>
           </Row>
           <Row>
-            <Col span={14} justify="center" className="text">
+            <Col span={24} justify="center" className="text">
               A
               {' '}
-              <i style={{ color: 'red', fontWeight: 'bold' }}>Stryker</i>
+              <i style={{ color: 'red', fontWeight: 'bold' }}>StrykerJS</i>
               {' '}
-              é uma ferramenta de apoio ao teste de mutação para a linguagem de progração
+              é uma ferramenta de apoio ao teste de mutação para a linguagem de programação
               {' '}
               <i style={{ color: 'red', fontWeight: 'bold' }}>JavaScript</i>
               , linguagem utilizada prioritariamente para o desenvolvimento de aplicações
-              Web e sites. Além disso, a ferramenta também suporta integração com bibliotecas como
-              {' '}
-              <i style={{ color: 'red', fontWeight: 'bold' }}>React</i>
-              ,
-              {' '}
-              <i style={{ color: 'red', fontWeight: 'bold' }}>VueJS</i>
-              ,
-              {' '}
-              <i style={{ color: 'red', fontWeight: 'bold' }}>Angular</i>
-              {' '}
-              e
-              {' '}
-              <i style={{ color: 'red', fontWeight: 'bold' }}>NodeJS</i>
-              .
-              <br />
-              <br />
-              Uma ferramenta muito interessante disponível no
-              {' '}
-              <i style={{ color: 'red', fontWeight: 'bold' }}>StrykerJS</i>
-              {' '}
-              é a disponibilidade de um Dashboard online que mostra os resultados do teste de
-              mutação. Só é necessário se cadastrar na plataforma, e sincronizar
-              com o GitHub de um projeto já configurado com o
-              {' '}
-              <i style={{ color: 'red', fontWeight: 'bold' }}>StrykerJS</i>
-              .
-              <br />
-              <br />
-              <div style={{ textAlignLast: 'center' }}>
-                Os operadores suportados pela ferramenta estão disponíveis no link:
-                <br />
-                <a className="operators" href="https://stryker-mutator.io/docs/mutation-testing-elements/supported-mutators" target="_blank" rel="noreferrer">
-                  Operadores de mutação da StrykerJS
-                </a>
-              </div>
+              Web e sites. Um componente auxiliar que essa ferramenta oferece é um dashboard
+              online, que mostrará os resultados dos testes executados.
             </Col>
-            <Col offset={1} span={9} style={{ textAlign: '-webkit-center' }}>
-              <img src={stryker} alt="stryker" style={{ width: '200px' }} />
+          </Row>
+          <Row>
+            <Col offset={6} span={13} style={{ textAlign: '-webkit-center' }}>
+              <img src={stryker} alt="stryker" style={{ width: '-webkit-fill-available' }} />
+              <sup>
+                Dashboard da StrykerJS
+                -
+                Fonte:
+                {' '}
+                <a href="https://dashboard.stryker-mutator.io/reports/github.com/stryker-mutator/robobar-example/master#mutant" target="_blank" rel="noreferrer">https://dashboard.stryker-mutator.io/reports/github.com/stryker-mutator/robobar-example/master#mutant</a>
+              </sup>
             </Col>
           </Row>
           <Collapse accordion>
@@ -348,11 +428,11 @@ function ferramentas(props) {
         <div>
           <Row>
             <Col span={24} justify="center" align="middle" className="title">
-              PITest - Java
+              PITest
             </Col>
           </Row>
           <Row>
-            <Col span={12} justify="center" className="text">
+            <Col span={24} justify="center" className="text">
               A
               {' '}
               <i style={{ color: 'red', fontWeight: 'bold' }}>PITest</i>
@@ -363,28 +443,123 @@ function ferramentas(props) {
               .
               <br />
               <br />
-              A ferramenta oferece suporte integrado para as ferramentas
-              {' '}
-              <i style={{ color: 'red', fontWeight: 'bold' }}>Maven</i>
-              {' '}
-              e
-              {' '}
-              <i style={{ color: 'red', fontWeight: 'bold' }}>Ant</i>
-              , ambas utilizadas para compilação e organização das dependencias de um projeto.
-              Além disso, a ferramenta também suporta que o usuário utilize o terminal de comando
-              para executar o teste de mutação.
-              <br />
-              <br />
-              <div style={{ textAlignLast: 'center' }}>
-                Os operadores suportados pela ferramenta estão disponíveis no link:
-                <br />
-                <a className="operators" href="http://pitest.org/quickstart/mutators/" target="_blank" rel="noreferrer">
-                  Operadores de mutação da PITest
-                </a>
-              </div>
+              Abaixo estão alguns dos operadores de mutação suportados pela ferramenta:
             </Col>
-            <Col offset={1} span={9} style={{ textAlign: '-webkit-center' }}>
-              <img src={pitest} alt="pitest" style={{ marginTop: '60px' }} />
+          </Row>
+          <Row align="middle" style={{ textAlign: '-webkit-center' }}>
+            <Col span={14} className="text">
+              <Card
+                style={{ width: '400px' }}
+                onClick={() => showModal({
+                  headerTitle: 'Alteração de operador aritmético',
+                  content: () => (
+                    <div>
+                      <Row>
+                        <div>
+                          Esse operador altera um operador aritmético do programa original
+                          para outro, no programa mutante.
+                          <br />
+                          Por exemplo:
+                          <ul>
+                            <li>
+                              O operador aritmético
+                              {' '}
+                              <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; + &quot;</i>
+                              {' '}
+                              é alterado para o operador
+                              {' '}
+                              <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; - &quot;</i>
+                              {' '}
+                              no programa mutante;
+                            </li>
+                          </ul>
+                          <Row style={{ textAlign: '-webkit-center' }}>
+                            <Col span={24}>
+                              <img src={pit2} alt="pit2" style={{ width: '60%' }} />
+                              <br />
+                              <sup>
+                                Exemplo da mutação
+                                -
+                                Fonte:
+                                {' '}
+                                <a href="http://pitest.org/quickstart/mutators/" target="_blank" rel="noreferrer">http://pitest.org/quickstart/mutators/</a>
+                              </sup>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Row>
+                    </div>
+                  ),
+                })}
+              >
+                Alteração de operador aritmético
+              </Card>
+              <br />
+              <Card
+                style={{ width: '400px' }}
+                onClick={() => showModal({
+                  headerTitle: 'Alteração de operador condicional',
+                  content: () => (
+                    <div>
+                      <Row>
+                        <div>
+                          Esse operador altera um operador condicional do programa original
+                          para outro, no programa mutante.
+                          <br />
+                          Por exemplo:
+                          <ul>
+                            <li>
+                              O operador condicional
+                              {' '}
+                              <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; &lt; &quot;</i>
+                              {' '}
+                              é alterado para o operador
+                              {' '}
+                              <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; &lt;= &quot;</i>
+                              {' '}
+                              no programa mutante;
+                            </li>
+                          </ul>
+                          <Row style={{ textAlign: '-webkit-center' }}>
+                            <Col span={24}>
+                              <img src={pit1} alt="pit1" style={{ width: '60%' }} />
+                              <br />
+                              <sup>
+                                Exemplo da mutação
+                                -
+                                Fonte:
+                                {' '}
+                                <a href="http://pitest.org/quickstart/mutators/" target="_blank" rel="noreferrer">http://pitest.org/quickstart/mutators/</a>
+                              </sup>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Row>
+                    </div>
+                  ),
+                })}
+              >
+                Alteração de operador condicional
+              </Card>
+              <br />
+              <a
+                style={{ fontWeight: 'bold', textDecoration: 'underline' }}
+                href="http://pitest.org/quickstart/mutators/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Lista completa dos operadores da PITest
+              </a>
+            </Col>
+            <Col offset={2} span={7} style={{ textAlign: '-webkit-center' }}>
+              <img src={pitest} alt="pitest" style={{ width: '-webkit-fill-available' }} />
+              <sup>
+                Logo da PITest
+                -
+                Fonte:
+                {' '}
+                <a href="http://pitest.org/" target="_blank" rel="noreferrer">http://pitest.org/</a>
+              </sup>
             </Col>
           </Row>
           <Collapse accordion>

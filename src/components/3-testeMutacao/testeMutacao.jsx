@@ -425,15 +425,6 @@ function testeMutacao(props) {
           </Row>
           <Row style={{ height: '400px' }}>
             <Col span={12} className="text" style={{ alignSelf: 'center' }}>
-              Como explicado anteriormente, os Operadores de Mutação são um dos
-              pilares do Teste de Mutação. É com a lógica deles que os Mutantes serão
-              gerados.
-              <br />
-              <br />
-              Por esse motivo, eles serão abordados no próximo tópico, para
-              serem explicados de maneira mais aprofundada, dado a importância desse conceito.
-              <br />
-              <br />
               Agora, será possível seguir para o tópico voltado
               aos Operadores de Mutação, ou aprofundar o conhecimento adquirido até aqui
               com os Exercícios Propostos.
