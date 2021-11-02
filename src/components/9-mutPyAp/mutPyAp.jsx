@@ -42,8 +42,8 @@ function mutPyAp() {
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
-              Nesse tópico, vamos colocar a mão na massa e fazer a Mut.py rodar com o
-              nosso código.
+              Nesse tópico, teremos a execução da Mut.py em um código já desenvolvido,
+              utilzando um conjunto de casos de teste.
             </Col>
           </Row>
           <Row>

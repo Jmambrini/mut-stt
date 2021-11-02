@@ -82,7 +82,7 @@ function ferramentas(props) {
             <Col span={24} justify="center" className="text">
               As linguagens foram selecionadas baseando-se nas mais usadas em 2021,
               de acordo com o ranking da IEEE.
-              <sup><a href="https://spectrum.ieee.org/top-programming-languages-2021" target="_blank" rel="noreferrer">[Link]</a></sup>
+              <sup>[1]</sup>
             </Col>
           </Row>
           <Row justify="center">
@@ -153,6 +153,13 @@ function ferramentas(props) {
                   Mut.py
                 </div>
               </Card>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} className="text" style={{ marginTop: '16px' }}>
+              [1]:
+              {' '}
+              <a href="https://spectrum.ieee.org/top-programming-languages-2021" target="_blank" rel="noreferrer">https://spectrum.ieee.org/top-programming-languages-2021</a>
             </Col>
           </Row>
         </div>

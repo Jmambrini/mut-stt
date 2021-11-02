@@ -24,7 +24,7 @@ function Sobre() {
           <br />
           Após se interessar pelo tema na disciplina &ldquo;Teste e Inspeção de Software&ldquo;,
           o aluno buscou materiais de estudo na Internet, e pode observar a carência destes
-          sobre Teste de Mutação, principalmente no idioma português. Assim, surgiu a ideia do REA,
+          sobre teste de mutação, principalmente no idioma português. Assim, surgiu a ideia do REA,
           em conjunto com o TCC.
           <br />
           <br />

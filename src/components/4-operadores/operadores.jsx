@@ -83,43 +83,43 @@ function operadores(props) {
     areas: [
       {
         key: '1',
-        name: 'Mutante 1:',
+        name: 'Programa Mutante 1:',
         shape: 'rect',
         coords: [160, 24, 0, 125],
       },
       {
         key: '2',
-        name: 'Mutante 2:',
+        name: 'Programa Mutante 2:',
         shape: 'rect',
         coords: [162, 147, 2, 247],
       },
       {
         key: '3',
-        name: 'Mutante 3:',
+        name: 'Programa Mutante 3:',
         shape: 'rect',
         coords: [272, 270, 115, 372],
       },
       {
         key: '4',
-        name: 'Mutante 4:',
+        name: 'Programa Mutante 4:',
         shape: 'rect',
         coords: [329, 270, 490, 372],
       },
       {
         key: '5',
-        name: 'Mutante 5:',
+        name: 'Programa Mutante 5:',
         shape: 'rect',
         coords: [439, 148, 599, 248],
       },
       {
         key: '6',
-        name: 'Mutante 6:',
+        name: 'Programa Mutante 6:',
         shape: 'rect',
         coords: [439, 22, 599, 124],
       },
       {
         key: 'original',
-        name: 'Código Original:',
+        name: 'Programa Original:',
         shape: 'rect',
         coords: [217, 96, 379, 198],
       },
@@ -157,7 +157,7 @@ function operadores(props) {
           </Row>
           <Row>
             <Col span={24} className="text">
-              Um Operador de Mutação é um conjunto de regras que irão definir
+              Um operador de mutação é um conjunto de regras que irão definir
               qual alteração será feita no código original, o qual o usuário possui
               casos de teste criados e deseja testar a efetividade desses.
             </Col>
@@ -167,8 +167,8 @@ function operadores(props) {
           </Row>
           <Row>
             <Col span={24} className="text">
-              Por exemplo, um determinado Operador de Mutação possui regras desenvolvidas
-              para modificar um operador aritmético por outro. Então ao utilizar esse
+              Por exemplo, um determinado operador de mutação possui regras desenvolvidas
+              para alterar um operador aritmético por outro. Então ao utilizar esse
               operador em um código que realiza uma soma de dois números, o mutante
               trocará essa soma por uma subtração, e tentará utilizar os casos de teste para
               verificar se essa mudança será testada por eles.
@@ -194,20 +194,19 @@ function operadores(props) {
           </Row>
           <Row>
             <Col span={24} className="text">
-              Com ambos os conceitos de Operadores de Mutação e Mutantes explicados,
-              é possível entender melhor como funciona um Teste de Mutação na prática.
+              Com ambos os conceitos de operadores de mutação e mutantes explicados,
+              é possível entender melhor como funciona um teste de mutação na prática.
             </Col>
           </Row>
           <Row>
             <Col span={24} className="text">
               Com um código inicial, são utilizados operadores de mutação
-              para gerar vários Mutantes do mesmo código.
+              para gerar vários mutantes do mesmo código. Esse código é analisado,
+              e então verifica-se quais dos operadores poderão ser utilizados.
               <br />
-              Utilizando as regras de cada Operador, o código inicial é analisado,
-              e verifica-se quais dos Operadores poderão ser utilizados.
-              Então, somente os Operadores compatíveis com o código que serão utilizados.
-              Por exemplo, um Operador de Mutação que altera um operador aritmético não
-              ser usado em um código que não realiza operações aritméticas.
+              Serão usados somente os operadores compatíveis com o código,
+              por exemplo, um operador de mutação que altera um operador aritmético não
+              poderá ser usado em um código que não realiza operações aritméticas.
             </Col>
           </Row>
           <Row>
@@ -221,7 +220,7 @@ function operadores(props) {
               <br />
               <br />
               E a geração de mutantes segue dessa maneira, até gerar todos os
-              possíveis para o código original, dado seu conjunto limitado de Operadores.
+              possíveis para o código original, dado seu conjunto limitado de operadores.
             </Col>
             <Col offset={1}>
               <img src={mutations} alt="mutations" style={{ height: '250px' }} />
@@ -237,12 +236,10 @@ function operadores(props) {
           <Row>
             <Col span={24} className="text">
               Utilizando o mesmo exemplo do tópico anterior, e possuindo o conhecimento
-              do conceito de Operadores de Mutação, é possível analisar os mutantes abaixo de
+              do conceito de operadores de mutação, é possível analisar os mutantes abaixo de
               outra maneira.
               <br />
-              <b>
-                Clique em cada um do Mutantes para observar como a alteração ocorreu.
-              </b>
+              Clique em cada um do mutantes para observar como a alteração ocorreu.
             </Col>
           </Row>
           <Row>
@@ -258,81 +255,81 @@ function operadores(props) {
                       case '1':
                         return (
                           <div>
-                            No Programa Mutante 1, foi utilizado um Operador de Mutação
+                            No Programa Mutante 1, foi utilizado um operador de mutação
                             que altera uma constante por outra constante.
                             <br />
                             <br />
-                            Nesse caso, o
+                            Nesse caso, o número
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>número 3</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>3</i>
                             {' '}
-                            da linha 2 do Código Original foi alterado pelo
+                            da linha 2 do Código Original foi alterado pelo número
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>número 5</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>5</i>
                             .
                           </div>
                         );
                       case '2':
                         return (
                           <div>
-                            No Programa Mutante 2, foi utilizado um Operador de Mutação
+                            No Programa Mutante 2, foi utilizado um operador de mutação
                             que altera um operador relacional por outro operador relacional.
                             <br />
                             <br />
-                            Nesse caso, o
+                            Nesse caso, o operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador &gt;</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; &gt; &quot;</i>
                             {' '}
-                            da linha 2 do Código Original foi alterado pelo
+                            da linha 2 do Código Original foi alterado pelo operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador &lt;</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; &lt; &quot;</i>
                             .
                           </div>
                         );
                       case '3':
                         return (
                           <div>
-                            No Programa Mutante 3, foi utilizado um Operador de Mutação
+                            No Programa Mutante 3, foi utilizado um operador de mutação
                             que altera um operador aritmético por outro operador aritmético.
                             <br />
                             <br />
-                            Nesse caso, o
+                            Nesse caso, o operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador *</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; * &quot;</i>
                             {' '}
-                            da linha 6 do Código Original foi alterado pelo
+                            da linha 6 do Código Original foi alterado pelo operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador /</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; / &quot;</i>
                             .
                           </div>
                         );
                       case '4':
                         return (
                           <div>
-                            No Programa Mutante 4, foi utilizado um Operador de Mutação
+                            No Programa Mutante 4, foi utilizado um operador de mutação
                             que altera um operador de comparação por outro operador de comparação.
                             <br />
                             <br />
-                            Nesse caso, o
+                            Nesse caso, o operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador ==</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; == &quot;</i>
                             {' '}
-                            da linha 5 do Código Original foi alterado pelo
+                            da linha 5 do Código Original foi alterado pelo operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador !=</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; != &quot;</i>
                             .
                           </div>
                         );
                       case '5':
                         return (
                           <div>
-                            No Programa Mutante 5, foi utilizado um Operador de Mutação
+                            No Programa Mutante 5, foi utilizado um operador de mutação
                             que insere um operador de comparação no código original.
                             <br />
                             <br />
-                            Nesse caso, o
+                            Nesse caso, o operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador not</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>not</i>
                             {' '}
                             foi inserido na linha 2 do Código Original
                             .
@@ -341,17 +338,17 @@ function operadores(props) {
                       case '6':
                         return (
                           <div>
-                            No Programa Mutante 6, foi utilizado um Operador de Mutação
+                            No Programa Mutante 6, foi utilizado um operador de mutação
                             que altera um operador aritmético por outro operador aritmético.
                             <br />
                             <br />
-                            Nesse caso, o
+                            Nesse caso, o operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador +</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; + &quot;</i>
                             {' '}
-                            da linha 3 do Código Original foi alterado pelo
+                            da linha 3 do Código Original foi alterado pelo operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador -</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; - &quot;</i>
                             .
                           </div>
                         );
@@ -360,7 +357,7 @@ function operadores(props) {
                           <div>
                             Esse código foi criado com o intuito de ser o mais
                             simples possível, justamente para explicar como são
-                            gerados os Mutantes. Por exemplo, as duas condições
+                            gerados os mutantes. Por exemplo, as duas condições
                             inseridas no código,
                             <br />
                             {' '}
@@ -1142,9 +1139,8 @@ function operadores(props) {
           </Row>
           <Row style={{ height: '400px' }}>
             <Col span={12} className="text" style={{ alignSelf: 'center' }}>
-              Agora, será possível seguir para o tópico voltado
-              aos Tipos de Mutantes, ou aprofundar o conhecimento adquirido até aqui
-              com os Exercícios Propostos.
+              A seguir será discutido com detalhes os tipos de mutantes.
+              Você pode fazer alguns exercícios de fixação, ou seguir para o próximo tópico.
             </Col>
             <Col offset={2} span={8} style={{ alignSelf: 'center' }}>
               <Button
@@ -1227,10 +1223,10 @@ function operadores(props) {
             </Col>
           </Row>
           <div className="quizz-question">
-            Uma ferramenta hipotética de apoio ao Teste de Mutação suporta cem
+            Uma ferramenta hipotética de apoio ao teste de mutação suporta cem
             operadores de mutação.
             <br />
-            Ao utilizá-la em um código, todos os Operadores de Mutação disponíveis realizarão alguma
+            Ao utilizá-la em um código, todos os operadores de mutação disponíveis realizarão alguma
             modificação no Código Original.
             <br />
             <br />
@@ -1263,10 +1259,10 @@ function operadores(props) {
                 ? (
                   <div>
                     Pela teoria explicada anteriormente, a afirmação está
-                    incorreta pois, como os Operadores de Mutação possuem regras
+                    incorreta pois, como os operadores de mutação possuem regras
                     para realizar a mutação, somente os Operadores compatíveis
-                    com o código que serão utilizados. Por exemplo, um Operador
-                    de Mutação que altera um operador aritmético não ser usado em
+                    com o código que serão utilizados. Por exemplo, um operador
+                    de mutação que altera um operador aritmético não ser usado em
                     um código que não realiza operações aritméticas.
                   </div>
                 ) : null}

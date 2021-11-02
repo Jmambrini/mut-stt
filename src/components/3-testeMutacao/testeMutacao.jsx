@@ -79,43 +79,43 @@ function testeMutacao(props) {
     areas: [
       {
         key: '1',
-        name: 'Mutante 1:',
+        name: 'Programa Mutante 1:',
         shape: 'rect',
         coords: [160, 24, 0, 125],
       },
       {
         key: '2',
-        name: 'Mutante 2:',
+        name: 'Programa Mutante 2:',
         shape: 'rect',
         coords: [162, 147, 2, 247],
       },
       {
         key: '3',
-        name: 'Mutante 3:',
+        name: 'Programa Mutante 3:',
         shape: 'rect',
         coords: [272, 270, 115, 372],
       },
       {
         key: '4',
-        name: 'Mutante 4:',
+        name: 'Programa Mutante 4:',
         shape: 'rect',
         coords: [329, 270, 490, 372],
       },
       {
         key: '5',
-        name: 'Mutante 5:',
+        name: 'Programa Mutante 5:',
         shape: 'rect',
         coords: [439, 148, 599, 248],
       },
       {
         key: '6',
-        name: 'Mutante 6:',
+        name: 'Programa Mutante 6:',
         shape: 'rect',
         coords: [439, 22, 599, 124],
       },
       {
         key: 'original',
-        name: 'Código Original:',
+        name: 'Programa Original:',
         shape: 'rect',
         coords: [217, 96, 379, 198],
       },
@@ -153,20 +153,19 @@ function testeMutacao(props) {
           </Row>
           <Row>
             <Col span={24} className="text">
-              O Teste de Mutação é uma técnica utilizada para que um desenvolvedor possa
-              criar novos casos de teste, e também avaliar a qualidade dos casos que já
-              criou.
+              O teste de mutação é um critério utilizado para que um testador possa
+              criar novos casos, e também avaliar a qualidade do conjunto
+              de casos de teste já existente.
               <br />
               <br />
-              Essa técnica se assemelha à de &ldquo;Semeadura de Defeitos&ldquo;
-              citada no tópico anterior, porém, com a introdução dos conceitos de
-              Mutantes e Operadores de Mutação, que serão explicados no decorrer
-              dos próximos tópicos.
+              Ele se assemelha ao critério de semeadura de defeitos
+              citado no tópico anterior, porém, com a introdução de conceitos importantes,
+              como o de mutantes e o de operadores de mutação.
               <br />
               <br />
-              Ela se baseia em duas hipóteses: a primeira é
-              a do &ldquo;Programador Competente&ldquo;, e a segunda é a do &ldquo;Efeito de
-              Acoplamento&ldquo;, ambas explicadas abaixo:
+              Ele se baseia em dois conceitos: o primeiro é
+              o do &ldquo;Programador Competente&ldquo;, e o segundo é o do &ldquo;Efeito de
+              Acoplamento&ldquo;, ambos explicadas abaixo:
               <br />
             </Col>
           </Row>
@@ -180,14 +179,14 @@ function testeMutacao(props) {
                     <div>
                       <Row>
                         <div>
-                          A Hipótese do Programador Competente diz que um programador
+                          A Hipótese do Programador Competente assume que um programador
                           experiente consegue escrever programas corretos, ou muito
                           próximo do correto.
                           <br />
                           <br />
-                          Por esse motivo, a hipótese afirma que as falhas de um código criado
-                          por um programador experiente são ocasionadas por pequenos erros de
-                          código, como um erro sintático, por exemplo.
+                          Por esse motivo, a hipótese assume que os defeitos de um código criado
+                          por um programador experiente são ocasionadas por pequenos equívocos
+                          comentidos no código, como um erro da sintaxe da linguagem.
                         </div>
                       </Row>
                     </div>
@@ -206,9 +205,9 @@ function testeMutacao(props) {
                     <div>
                       <Row>
                         <div>
-                          O Efeito de Acoplamento diz que casos de testes
-                          capazes de detectar erros simples, também possuem uma
-                          alta porcentagem de detecção de erros complexos.
+                          O Efeito de Acoplamento assume que casos de testes
+                          capazes de detectar defeitos simples, também possuem uma
+                          alta porcentagem de detecção de defeitos complexos.
                         </div>
                       </Row>
                     </div>
@@ -217,14 +216,6 @@ function testeMutacao(props) {
               >
                 Efeito de Acoplamento
               </Card>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={24} className="text">
-              Baseando-se nas duas hipóteses, a técnica de Teste
-              de Mutação utiliza os Mutantes e os Operadores de Mutação, conceitos
-              que serão explicados a seguir, para criar esses códigos
-              com pequenos erros inseridos.
             </Col>
           </Row>
         </div>
@@ -236,15 +227,12 @@ function testeMutacao(props) {
           </Row>
           <Row>
             <Col span={24} className="text">
-              Os Mutantes são um dos conceitos do Teste de Mutação.
-              Eles são é gerados à partir do código original, introduzindo um pequeno
-              erro dentro desse código. Abaixo, estão representados exemplos
-              de Mutantes, sendo derivados de um código original.
-              <br />
-              <b>
-                Clique inicialmente no &quot;Código Original&quot;,
-                e depois em cada um do Mutantes para observar o que foi alterado.
-              </b>
+              O teste de mutação envolve a criação de programas mutantes, isto é,
+              programas que possuem uma alteração, que são geradas a partir do
+              código original, introduzindo um pequeno
+              defeito dentro desse código.
+              Abaixo, estão representados exemplos
+              de programas mutantes, sendo derivados de um código original.
             </Col>
           </Row>
           <Row>
@@ -260,13 +248,13 @@ function testeMutacao(props) {
                       case '1':
                         return (
                           <div>
-                            No Mutante 1, o
+                            No Programa Mutante 1, o número
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>número 3</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>3</i>
                             {' '}
-                            da linha 2 do Código Original foi alterado pelo
+                            da linha 2 do Código Original foi alterado pelo número
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>número 5</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>5</i>
                             .
                             <br />
                             <br />
@@ -275,19 +263,19 @@ function testeMutacao(props) {
                             {' '}
                             <i style={{ color: 'red', fontWeight: 'bold' }}>( 12 )</i>
                             {' '}
-                            , gerando uma falha no caso de teste criado.
+                            , expondo um defeito no programa executado.
                           </div>
                         );
                       case '2':
                         return (
                           <div>
-                            No Mutante 2, o
+                            No Programa Mutante 2, o operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador &gt;</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; &gt; &quot;</i>
                             {' '}
-                            da linha 2 do Código Original foi alterado pelo
+                            da linha 2 do Código Original foi alterado pelo operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador &lt;</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; &lt; &quot;</i>
                             .
                             <br />
                             <br />
@@ -296,19 +284,19 @@ function testeMutacao(props) {
                             {' '}
                             <i style={{ color: 'red', fontWeight: 'bold' }}>( 12 )</i>
                             {' '}
-                            , gerando uma falha no caso de teste criado.
+                            , expondo um defeito no programa executado.
                           </div>
                         );
                       case '3':
                         return (
                           <div>
-                            No Mutante 3, o
+                            No Programa Mutante 3, o operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador *</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; * &quot;</i>
                             {' '}
-                            da linha 6 do Código Original foi alterado pelo
+                            da linha 6 do Código Original foi alterado pelo operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador /</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; / &quot;</i>
                             .
                             <br />
                             <br />
@@ -316,19 +304,19 @@ function testeMutacao(props) {
                             <br />
                             <i style={{ color: 'red', fontWeight: 'bold' }}>( 7 e 0.75 )</i>
                             {' '}
-                            , gerando uma falha no caso de teste criado.
+                            , expondo um defeito no programa executado.
                           </div>
                         );
                       case '4':
                         return (
                           <div>
-                            No Mutante 4, o
+                            No Programa Mutante 4, o operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador ==</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; == &quot;</i>
                             {' '}
-                            da linha 5 do Código Original foi alterado pelo
+                            da linha 5 do Código Original foi alterado pelo operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador !=</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; != &quot;</i>
                             .
                             <br />
                             <br />
@@ -337,15 +325,15 @@ function testeMutacao(props) {
                             {' '}
                             <i style={{ color: 'red', fontWeight: 'bold' }}>( 7 )</i>
                             {' '}
-                            , gerando uma falha no caso de teste criado.
+                            , expondo um defeito no programa executado.
                           </div>
                         );
                       case '5':
                         return (
                           <div>
-                            No Mutante 5, foi inserido um
+                            No Programa Mutante 5, foi inserido um operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador not</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>not</i>
                             {' '}
                             na linha 2 do Código Original
                             .
@@ -356,19 +344,19 @@ function testeMutacao(props) {
                             {' '}
                             <i style={{ color: 'red', fontWeight: 'bold' }}>( 12 )</i>
                             {' '}
-                            , gerando uma falha no caso de teste criado.
+                            , expondo um defeito no programa executado.
                           </div>
                         );
                       case '6':
                         return (
                           <div>
-                            No Mutante 6, o
+                            No Programa Mutante 6, o operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador +</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; + &quot;</i>
                             {' '}
-                            da linha 3 do Código Original foi alterado pelo
+                            da linha 3 do Código Original foi alterado pelo operador
                             {' '}
-                            <i style={{ color: 'red', fontWeight: 'bold' }}>operador -</i>
+                            <i style={{ color: 'red', fontWeight: 'bold' }}>&quot; - &quot;</i>
                             .
                             <br />
                             <br />
@@ -376,7 +364,7 @@ function testeMutacao(props) {
                             <br />
                             <i style={{ color: 'red', fontWeight: 'bold' }}>( -1 e 12 )</i>
                             {' '}
-                            , gerando uma falha no caso de teste criado.
+                            , expondo um defeito no programa executado.
                           </div>
                         );
                       case 'original':
@@ -384,16 +372,16 @@ function testeMutacao(props) {
                           <div>
                             Esse código foi criado com o intuito de ser o mais
                             simples possível, justamente para explicar como são
-                            gerados os Mutantes. Por exemplo, as duas condições
+                            gerados os mutantes. Por exemplo, as duas condições
                             inseridas no código,
                             <br />
                             {' '}
                             <div style={{ textAlignLast: 'center' }}>
-                              <div style={{ color: 'red' }}>
+                              <div style={{ color: 'red', fontWeight: 'bold' }}>
                                 if (4 &gt; 3)
                               </div>
                               e
-                              <div style={{ color: 'red' }}>
+                              <div style={{ color: 'red', fontWeight: 'bold' }}>
                                 if (1 + 1 == 2)
                               </div>
                             </div>
@@ -405,7 +393,7 @@ function testeMutacao(props) {
                             de teste desenvolvido também será simples. Ele apenas verifica se
                             o retorno do programa será
                             {' '}
-                            <div style={{ color: 'red', textAlignLast: 'center' }}>( 7 e 12 )</div>
+                            <div style={{ color: 'red', textAlignLast: 'center', fontWeight: 'bold' }}>( 7 e 12 )</div>
                           </div>
                         );
                       default:
@@ -414,6 +402,23 @@ function testeMutacao(props) {
                   },
                 })}
               />
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} className="text" style={{ marginTop: '16px' }}>
+              Clique inicialmente no
+              {' '}
+              <b>
+                código original
+              </b>
+              {' '}
+              e depois em cada um dos
+              {' '}
+              <b>
+                programas mutantes
+              </b>
+              {' '}
+              para observar o que foi alterado.
             </Col>
           </Row>
         </div>
@@ -425,9 +430,8 @@ function testeMutacao(props) {
           </Row>
           <Row style={{ height: '400px' }}>
             <Col span={12} className="text" style={{ alignSelf: 'center' }}>
-              Agora, será possível seguir para o tópico voltado
-              aos Operadores de Mutação, ou aprofundar o conhecimento adquirido até aqui
-              com os Exercícios Propostos.
+              A seguir será discutido com detalhes os operadores de mutação.
+              Você pode fazer alguns exercícios de fixação, ou seguir para o próximo tópico.
             </Col>
             <Col offset={2} span={8} style={{ alignSelf: 'center' }}>
               <Button

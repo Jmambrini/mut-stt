@@ -53,12 +53,12 @@ function critMutacao(props) {
           </Row>
           <Row>
             <Col span={24} className="text">
-              Nos testes baseados em defeitos, os requisitos são criados a partir
-              da análise do erros mais comuns e frequentes que podem ser cometidos
-              durante o desenvolvimento de software. O desenvolvedor utilizará esses
-              erros mais comuns para tentar criar casos de testes que sejam mais eficientes,
-              e que garantam que o código esteja o mais correto possível, de acordo com as
-              suas especificações. De maneira simples, um erro é usado para descobrir outros
+              Nos testes baseados em defeitos, são utilizados dos defeitos mais
+              comuns e frequentes que podem ser cometidos
+              durante o desenvolvimento de software para encontrar problemas.
+              O testador utilizará esses defeitos para tentar criar casos de testes
+              que sejam mais eficientes, e que garantam que o código esteja de acordo com a
+              sua especificação. De maneira simples, um defeito é usado para descobrir outros
               do mesmo tipo.
             </Col>
           </Row>
@@ -98,18 +98,19 @@ function critMutacao(props) {
           </Row>
           <Row>
             <Col span={24} className="text">
-              A Semeadura de Defeitos é um dos critérios de teste baseado em defeitos.
-              É uma técnica no qual o desenvolvedor introduz
-              diversos erros no seu código para checar se os casos de testes desenvolvidos
-              são efetivos na captura dos erros que foram inseridos.
+              A semeadura de defeitos é um dos critérios de teste baseado em defeitos.
+              É um critério no qual o testador introduz aleatoriamente
+              diversos defeitos no seu código para checar se os casos de testes desenvolvidos
+              são efetivos na captura dos defeitos que foram inseridos.
               <br />
-              Esse técnica tenta obter uma proporção entre os erros
-              inseridos pelo desenvolvedor, e os erros que ainda são desconhecidos e
+              <br />
+              Esse critério tenta obter uma proporção entre os defeitos
+              inseridos pelo testador, e os defeitos que ainda são desconhecidos e
               que serão revelados com os casos de teste.
-              No caso abaixo, alguns erros foram inseridos no código original, marcados
-              com um traço branco no programa com os erros inseridos.
+              No caso abaixo, alguns defeitos foram inseridos no código original, marcados
+              com um traço branco no programa com os defeitos inseridos.
               <div style={{ textAlign: '-webkit-center' }}>
-                <img src={errorSeeding} alt="muter" style={{ width: '600px' }} />
+                <img src={errorSeeding} alt="muter" style={{ width: '50%' }} />
               </div>
             </Col>
           </Row>
@@ -122,17 +123,8 @@ function critMutacao(props) {
           </Row>
           <Row style={{ height: '400px' }}>
             <Col span={12} className="text" style={{ alignSelf: 'center' }}>
-              O Teste de Mutação é o critério mais utilizado nos testes
-              baseados em defeitos. E por isso, também é o foco desse REA.
-              <br />
-              <br />
-              Por esse motivo, a técnica será abordada em tópicos separados
-              para explicar o conteúdo de maneira mais aprofundada.
-              <br />
-              <br />
-              À partir desse ponto, será possível seguir para o tópico voltado
-              ao Teste de Mutação, ou aprofundar o conhecimento adquirido até aqui
-              com os Exercícios Propostos.
+              A seguir será discutido com detalhes o critério de teste de mutação.
+              Você pode fazer alguns exercícios de fixação, ou seguir para o próximo tópico.
             </Col>
             <Col offset={2} span={8} style={{ alignSelf: 'center' }}>
               <Button

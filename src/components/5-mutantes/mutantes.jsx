@@ -405,19 +405,19 @@ function mutantes(props) {
           </Row>
           <Row>
             <Col span={24} className="text">
-              O Escore de Mutação um método utilizado para avaliar a eficiência
-              e o nível de confianca dos Casos de Teste desenvolvidos pelo usuário.
+              O escore de mutação um método utilizado para avaliar a eficiência
+              e o nível de confianca dos casos de teste desenvolvidos pelo usuário.
             </Col>
           </Row>
           <Row>
             <Col span={24} className="text">
               Ele possui um intervalo entre 0% e 100%, sendo que quanto maior o resultado,
-              maior é a efetividade do Caso de Teste em detectar erros do código.
+              maior é a efetividade do caso de teste em detectar erros do código.
             </Col>
           </Row>
           <Row>
             <Col span={24} className="text">
-              O Escore de Mutação é obtido utilizando a equação abaixo:
+              O escore de mutação é obtido utilizando a equação abaixo:
             </Col>
           </Row>
           <Row justify="center">
@@ -433,7 +433,7 @@ function mutantes(props) {
                   total de mutantes do programa
                   {' '}
                   <i style={{ color: 'red', fontWeight: 'bold' }}>P</i>
-                  , que foram mortos pelos Casos de Teste
+                  , que foram mortos pelos casos de teste
                   {' '}
                   <i style={{ color: 'red', fontWeight: 'bold' }}>T</i>
                   ;
@@ -473,7 +473,7 @@ function mutantes(props) {
           <Row style={{ height: '400px' }}>
             <Col span={12} className="text" style={{ alignSelf: 'center' }}>
               Agora, será possível seguir para o tópico voltado
-              às ferramentas de apoio ao Teste de Mutação, ou
+              às ferramentas de apoio ao teste de mutação, ou
               aprofundar o conhecimento adquirido até aqui
               com os Exercícios Propostos.
             </Col>
@@ -550,7 +550,7 @@ function mutantes(props) {
               {disabled1
                 ? (
                   <div>
-                    O mutante gerado é um Mutante Equivalente pois, mesmo com a mudança,
+                    O mutante gerado é um mutante equivalente pois, mesmo com a mudança,
                     o resultado do Programa Mutante será o mesmo do Programa Original,
                     independente do valor de
                     {' '}

@@ -22,55 +22,52 @@ function Intro() {
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
-              O MUT-STT é um Recurso Educacional Aberto (REA) que foi desenvolvido para
-              apoiar o ensino introdutório de Teste de Mutação.
+              O MUT-STT é um recurso educacional aberto (REA) que foi desenvolvido para
+              apoiar o ensino introdutório de teste de mutação.
             </Col>
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
-              Nesse REA, foram utilizados exemplos de código da linguagem Python,
-              linguagem escolhida devido à sua popularidade, sendo a linguagem mais
-              utilizada no ano de 2021. (Fonte:
-              {' '}
-              <a href="https://spectrum.ieee.org/top-programming-languages-2021" target="_blank" rel="noreferrer">ieee.org</a>
-              )
+              Nesse REA, são utilizados exemplos de código da linguagem Python,
+              linguagem escolhida devido à sua popularidade.
+              <sup>[1]</sup>
             </Col>
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
-              Nesse REA, são abordados os seguintes tópicos:
+              Nesse REA, são abordados os seguintes conteúdos:
               <ul style={{ marginTop: '12px' }}>
                 <li className="list">
                   <Link to="/criterio-defeitos">
                     Critérios de teste
                   </Link>
-                  : um breve resumo sobre os critérios de teste baseados em defeitos
+                  : um breve resumo sobre os critérios de teste baseados em defeitos;
                 </li>
                 <li className="list">
                   <Link to="/teste-mutacao">
-                    Teste de Mutação
+                    Teste de mutação
                   </Link>
-                  : explicação mais aprofundada sobre Teste de Mutação
+                  : explicação sobre teste de mutação;
                 </li>
                 <li className="list">
                   <Link to="/operadores">
-                    Operadores de Mutação
+                    Operadores de mutação
                   </Link>
                   : explicação sobre os operadores de mutação, com um foco nos operadores
-                  da linguagem Python
+                  da linguagem Python;
                 </li>
                 <li className="list">
                   <Link to="/mutantes">
-                    Tipos de Mutantes
+                    Tipos de mutantes
                   </Link>
                   : listagem dos diferentes tipos de mutantes existentes, e também uma explicação
-                  sobre eles
+                  sobre eles;
                 </li>
                 <li className="list">
                   <Link to="/ferramentas">
                     Ferramentas
                   </Link>
-                  : compilado de algumas ferramentas que podem apoiar o teste de mutação
+                  : compilado de algumas ferramentas que podem apoiar o teste de mutação;
                 </li>
                 <li className="list">
                   <Link to="/mutpy-def">
@@ -83,16 +80,21 @@ function Intro() {
                   e
                   {' '}
                   <Link to="/mutpy-app">aplicação</Link>
-                  {' '}
-                  da mesma
+                  ;
                 </li>
               </ul>
             </Col>
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
-              Além dos tópicos, você também poderá realizar pequenos testes
-              sobre o conteúdo apresentado, a fim de aprofundar o conhecimento obtido.
+              Ainda, há testes disponíveis para você exercitar o conhecimento aprendido.
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} justify="center" className="text">
+              [1]:
+              {' '}
+              <a href="https://spectrum.ieee.org/top-programming-languages-2021" target="_blank" rel="noreferrer">https://spectrum.ieee.org/top-programming-languages-2021</a>
             </Col>
           </Row>
           <div style={{ textAlign: '-webkit-right' }}>
