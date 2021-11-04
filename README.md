@@ -6,7 +6,7 @@ Yarn: 1.22.5
 Node-sass: 4.14.1
 Node.js: 14.17.6
 
-# Como compilar
+# Como executar
 
 Para compilar o código, é necessário instalar o Node.js na versão indicada, e também o Yarn.
 Com ambos instalados, utilizar o seguinte código na pasta do projeto (já clonado do github):
