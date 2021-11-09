@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import {
   Carousel, Button, Row, Col,
 } from 'antd';
+import { saveAs } from 'file-saver';
 
 import { DownloadOutlined, WindowsOutlined, QqOutlined } from '@ant-design/icons';
 
@@ -23,6 +24,14 @@ import results4 from '../../generics/app/results4.png';
 
 function mutPyAp() {
   const slider = useRef();
+
+  const saveFile1 = () => {
+    saveAs(codigo, 'codigo.py');
+  };
+
+  const saveFile2 = () => {
+    saveAs(testes, 'testes.py');
+  };
 
   return (
     <div className="mutPyAp">
@@ -53,13 +62,13 @@ function mutPyAp() {
           </Row>
           <Row>
             <Col offset={5} span={6} justify="center" className="text">
-              <Button href={codigo} download="codigo.py" className="download-button">
+              <Button onClick={saveFile1} download="codigo.py" className="download-button">
                 <DownloadOutlined />
                 Baixar código inicial
               </Button>
             </Col>
             <Col offset={2} span={6} justify="center" className="text">
-              <Button href={testes} download="testes.py" className="download-button">
+              <Button onClick={saveFile2} download="testes.py" className="download-button">
                 <DownloadOutlined />
                 Baixar casos de teste
               </Button>

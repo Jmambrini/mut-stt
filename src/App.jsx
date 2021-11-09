@@ -30,7 +30,7 @@ function useWindowDimensions() {
 function App() {
   const { width } = useWindowDimensions();
   if (width < 600) {
-    return <div>asuiodhaiusdhasuihd</div>;
+    return <div>Esse REA foi desenvolvido inicialmente para funcionar somente no Web</div>;
   }
   return (<Routes />);
 }
