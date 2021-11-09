@@ -8,8 +8,8 @@ import { DownloadOutlined, WindowsOutlined, QqOutlined } from '@ant-design/icons
 
 import './mutPyAp.scss';
 
-import codigo from '../../generics/mutpytest/codigo.py';
-import testes from '../../generics/mutpytest/testes.py';
+// import codigo from '../../generics/mutpytest/codigo.py';
+// import testes from '../../generics/mutpytest/testes.py';
 
 import linux1 from '../../generics/app/linux1.png';
 import linux2 from '../../generics/app/linux2.png';
@@ -26,11 +26,11 @@ function mutPyAp() {
   const slider = useRef();
 
   const saveFile1 = () => {
-    saveAs(codigo, 'codigo.py');
+    saveAs('https://drive.google.com/u/0/uc?export=download&confirm=UDn0&id=1MoON7IrSWuCRvDbZd064syWjahXTw7Cz', 'codigo.py');
   };
 
   const saveFile2 = () => {
-    saveAs(testes, 'testes.py');
+    saveAs('https://drive.google.com/u/0/uc?export=download&confirm=ApfZ&id=1c7QtRvlzg4jBZJcdhJVw5GWp5cgD0S1J', 'testes.py');
   };
 
   return (
