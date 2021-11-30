@@ -639,7 +639,7 @@ function testeMutacao(props) {
                       <Radio value={2}>Um operador condicional foi alterado</Radio>
                     </Card>
                     <Card className="cards1" style={{ backgroundColor: color4[2], textAlignLast: 'left', cursor: 'default' }}>
-                      <Radio value={3}>Um operador aritmético foi alterado</Radio>
+                      <Radio value={3}>Um operador relacional foi alterado</Radio>
                     </Card>
                     <Card className="cards1" style={{ backgroundColor: color4[3], textAlignLast: 'left', cursor: 'default' }}>
                       <Radio value={4}>Um operador lógico foi alterado</Radio>
