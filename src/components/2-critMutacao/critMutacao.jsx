@@ -101,7 +101,8 @@ function critMutacao(props) {
               A semeadura de defeitos é um dos critérios de teste baseado
               em defeitos.
               É um critério no qual o testador introduz aleatoriamente
-              diversos defeitos no seu código para checar se os casos de testes desenvolvidos
+              diversos defeitos no seu código para checar se os casos de testes
+              desenvolvidos
               são efetivos na captura dos defeitos que foram inseridos.
               <br />
               <br />
