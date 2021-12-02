@@ -98,7 +98,8 @@ function critMutacao(props) {
           </Row>
           <Row>
             <Col span={24} className="text">
-              A semeadura de defeitos é um dos critérios de teste baseado em defeitos.
+              A semeadura de defeitos é um dos critérios de teste baseado
+              em defeitos.
               É um critério no qual o testador introduz aleatoriamente
               diversos defeitos no seu código para checar se os casos de testes desenvolvidos
               são efetivos na captura dos defeitos que foram inseridos.
