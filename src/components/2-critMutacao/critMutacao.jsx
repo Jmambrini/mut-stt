@@ -197,7 +197,8 @@ function critMutacao(props) {
             </Col>
           </Row>
           <div className="quizz-question">
-            Analizando os códigos ao lado, quantos defeitos foram inseridos no Programa com Defeitos?
+            Analizando os códigos ao lado, quantos defeitos foram inseridos no
+            Programa com Defeitos?
           </div>
           <Row>
             <Col span={10}>
