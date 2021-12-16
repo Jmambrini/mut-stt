@@ -487,7 +487,7 @@ function mutantes(props) {
                 <CaretRightOutlined style={{ fontSize: '20px' }} />
               </Button>
               <Button
-                onClick={() => props.history.push('/mutantes')}
+                onClick={() => props.history.push('/ferramentas')}
               >
                 Ferramentas
                 <CaretDownOutlined style={{ fontSize: '20px' }} />

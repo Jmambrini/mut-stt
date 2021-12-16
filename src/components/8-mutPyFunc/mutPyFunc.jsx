@@ -51,7 +51,7 @@ function mutPyFunc(props) {
               para testar o código.
             </Row>
             <Row className="text">
-              Abaixo é apresentado um conjunto de caoses de teste
+              Abaixo é apresentado um conjunto de casos de teste
               escritos em unittest:
             </Row>
             <Row justify="center">

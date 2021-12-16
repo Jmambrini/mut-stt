@@ -28,9 +28,10 @@ function Intro() {
           </Row>
           <Row>
             <Col span={24} justify="center" className="text">
-              Nesse REA, são utilizados exemplos de código da linguagem Python,
-              linguagem escolhida devido à sua popularidade.
+              Nesse REA, são utilizados exemplos de código da linguagem Python
               <sup>[1]</sup>
+              , linguagem escolhida devido à sua popularidade.
+              <sup>[2]</sup>
             </Col>
           </Row>
           <Row>
@@ -93,6 +94,11 @@ function Intro() {
           <Row>
             <Col span={24} justify="center" className="text">
               [1]:
+              {' '}
+              <a href="https://www.python.org/" target="_blank" rel="noreferrer">https://www.python.org/</a>
+            </Col>
+            <Col span={24} justify="center" className="text">
+              [2]:
               {' '}
               <a href="https://spectrum.ieee.org/top-programming-languages-2021" target="_blank" rel="noreferrer">https://spectrum.ieee.org/top-programming-languages-2021</a>
             </Col>

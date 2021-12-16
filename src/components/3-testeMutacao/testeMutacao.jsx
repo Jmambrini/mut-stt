@@ -184,9 +184,9 @@ function testeMutacao(props) {
                           próximo do correto.
                           <br />
                           <br />
-                          Por esse motivo, a hipótese assume que os defeitos de um código criado
-                          por um programador experiente são ocasionadas por pequenos equívocos
-                          comentidos no código, como um erro da sintaxe da linguagem.
+                          Por esse motivo, a hipótese assume que se o código produzido
+                          estiver próximo do correto, mas possuir defeitos, ao remover tais
+                          defeitos o programa vai funcionar corretamente.
                         </div>
                       </Row>
                     </div>
@@ -206,8 +206,8 @@ function testeMutacao(props) {
                       <Row>
                         <div>
                           O Efeito de Acoplamento assume que casos de testes
-                          capazes de detectar defeitos simples, também possuem uma
-                          alta porcentagem de detecção de defeitos complexos.
+                          capazes de detectar o defeito do programa mutante, também possuem uma
+                          alta porcentagem de detecção de defeitos do programa original.
                         </div>
                       </Row>
                     </div>
@@ -430,7 +430,7 @@ function testeMutacao(props) {
           </Row>
           <Row style={{ height: '400px' }}>
             <Col span={12} className="text" style={{ alignSelf: 'center' }}>
-              A seguir será discutido com detalhes os operadores de mutação.
+              A seguir serão discutidos com detalhes os operadores de mutação.
               Você pode fazer alguns exercícios de fixação, ou seguir para o próximo tópico.
             </Col>
             <Col offset={2} span={8} style={{ alignSelf: 'center' }}>
